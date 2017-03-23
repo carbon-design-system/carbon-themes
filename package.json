@@ -1,0 +1,9 @@
+{
+  "name": "carbon-themes",
+  "version": "0.0.1",
+  "description": "A collectino of thetmes for use with Carbon Components",
+  "main": "index.js",
+  "repository": "git@github.com:carbon-design-system/carbon-themes.git",
+  "author": "chrisdhanaraj <chrisdhanaraj@us.ibm.com>",
+  "license": "Apache 2.0"
+}
