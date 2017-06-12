@@ -20,7 +20,12 @@ $support-04: #5c1f1b;
 $nav-01: #1b2834;
 $nav-02: #1c496d;
 
-// Button Variables
+// Global
+$use-layer: false;
+$input-border: 1px solid $ui-05;
+$input-label-weight: 400;
+
+// Button
 $button-font-weight: 400;
 $button-font-size: 1rem;
 $button-border-radius: 1rem;
@@ -28,3 +33,26 @@ $button-height: 32px;
 $button-padding: 0 2rem;
 $button-padding-sm: 0 1rem;
 $button-border-width: 1px;
+
+// Accordion (Reverse)
+$accordion-flex-direction: row-reverse;
+$accordion-justify-content: space-between;
+$accordion-arrow-margin: 0 .25rem 0 0;
+$accordion-title-margin: 0 0 0 0;
+$accordion-content-padding: 0 1.75rem 0 0;
+
+// Checkbox
+$checkbox-border-width: 1px;
+
+// Content Switcher
+$content-switcher-border-radius: 1.5rem;
+$content-switcher-option-border: none;
+
+// Data Table
+$data-table-heading-transform: none;
+
+// Modal
+$modal-border-top: none;
+
+// Radio Button
+$radio-border-width: 2px !default;
