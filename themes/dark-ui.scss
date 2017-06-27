@@ -17,3 +17,44 @@ $support-01: #ff5050;
 $support-02: #8cd211;
 $support-03: #efc100;
 $support-04: #7cc7ff;
+
+// Global
+$use-layer: true;
+$input-border: 1px solid transparent;
+$input-label-weight: 700;
+
+// Button Theme Variables
+$button-font-weight: 700;
+$button-font-size: .875rem;
+$button-border-radius: 0;
+$button-height: 40px;
+$button-padding: 0 1rem;
+$button-padding-sm: 0 .5rem;
+$button-border-width: 2px;
+
+// Accordion (Reverse)
+$accordion-flex-direction: row;
+$accordion-justify-content: flex-start;
+$accordion-arrow-margin: 0 0 0 .25rem;
+$accordion-title-margin: 0 0 0 1rem;
+$accordion-content-padding: 0 1rem 0 1.75rem;
+
+// Checkbox
+$checkbox-border-width: 2px;
+
+// Content Switcher
+$content-switcher-border-radius: 8px;
+$content-switcher-option-border: 1px solid $brand-01;
+
+// Data Table
+$data-table-heading-transform: uppercase;
+
+// Modal
+$modal-border-top: $brand-01 4px solid;
+
+// Radio Button
+$radio-border-width: 2px;
+
+// Structured Theme Variables
+$structured-list-padding: 2rem;
+
