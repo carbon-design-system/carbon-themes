@@ -39,8 +39,15 @@ $accordion-arrow-margin: 0 0 0 .25rem;
 $accordion-title-margin: 0 0 0 1rem;
 $accordion-content-padding: 0 1rem 0 1.75rem;
 
+// Card
+$card-text-align: center;
+$card-flex-align: center;
+
 // Checkbox
 $checkbox-border-width: 2px;
+
+// Code Snippet
+$snippet-background-color: $field-01;
 
 // Content Switcher
 $content-switcher-border-radius: 8px;
@@ -51,10 +58,11 @@ $data-table-heading-transform: uppercase;
 
 // Modal
 $modal-border-top: $brand-01 4px solid;
+$modal-footer-background-color: $ui-03;
 
 // Radio Button
 $radio-border-width: 2px;
 
-// Structured Theme Variables
-$structured-list-padding: 2rem;
+// Structured List
+$structured-list-text-transform: uppercase;
 
