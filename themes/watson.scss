@@ -23,7 +23,6 @@ $nav-02: #1c496d;
 // Global
 $use-layer: false;
 $input-border: 1px solid $ui-04;
-$input-label-weight: 400;
 
 // Button
 $button-font-weight: 400;
@@ -57,10 +56,17 @@ $content-switcher-option-border: none;
 
 // Data Table
 $data-table-heading-transform: none;
+$data-table-heading-border-bottom: 1px solid $ui-04;
+$data-table-row-height: 5rem;
 
 // Modal
 $modal-border-top: none;
 $modal-footer-background-color: transparent;
+
+// Progress Indicator
+$progress-indicator-bar-width: none;
+$progress-indicator-stroke-width: 2;
+$progress-indicator-line-offset: .7rem;
 
 // Radio Button
 $radio-border-width: 1px;
