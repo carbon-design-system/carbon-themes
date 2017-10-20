@@ -11,5 +11,32 @@
   },
   "devDependencies": {
     "semantic-release": "^6.3.2"
+  },
+  "keywords": [
+    "carbon",
+    "component",
+    "components",
+    "watson",
+    "watson-theme",
+    "genesis-theme",
+    "carbon-themes",
+    "css",
+    "html",
+    "ibm",
+    "javascript",
+    "js",
+    "library",
+    "pattern",
+    "patterns",
+    "sass",
+    "scss",
+    "style guide",
+    "eyeglass-module"
+  ],
+  "eyeglass": {
+    "sassDir": "themes",
+    "exports": false,
+    "name": "carbon-themes",
+    "needs": "^1.2.1"
   }
 }
