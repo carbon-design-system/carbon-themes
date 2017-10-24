@@ -1,7 +1,7 @@
 {
   "name": "carbon-themes",
   "version": "0.0.0-development",
-  "description": "A collection of thetmes for use with Carbon Components",
+  "description": "A collection of themes for use with Carbon Components",
   "main": "index.js",
   "repository": "git@github.com:carbon-design-system/carbon-themes.git",
   "author": "chrisdhanaraj <chrisdhanaraj@us.ibm.com>",
@@ -10,6 +10,11 @@
     "semantic-release": "semantic-release pre && npm publish && semantic-release post"
   },
   "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^4.0.0",
+    "gulp-clean-css": "^3.9.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^3.1.0",
     "semantic-release": "^6.3.2"
   },
   "keywords": [
@@ -38,5 +43,8 @@
     "exports": false,
     "name": "carbon-themes",
     "needs": "^1.2.1"
+  },
+  "dependencies": {
+    "carbon-components": "^7.26.2"
   }
 }
