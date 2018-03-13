@@ -46,6 +46,6 @@
     "needs": "^1.2.1"
   },
   "dependencies": {
-    "carbon-components": "^7.26.2"
+    "carbon-components": "^8.0.0"
   }
 }

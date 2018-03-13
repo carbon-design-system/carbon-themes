@@ -87,11 +87,14 @@ video {
   vertical-align: baseline; }
 
 button,
-input[type="button"],
-input[type="submit"],
-input[type="reset"],
-input[type="file"] {
+input[type='button'],
+input[type='submit'],
+input[type='reset'],
+input[type='file'] {
   border-radius: 0; }
+
+input[type='text']::-ms-clear {
+  display: none; }
 
 /* HTML5 display-role reset for older browsers */
 article,
@@ -109,6 +112,12 @@ section {
 
 body {
   line-height: 1; }
+
+sup {
+  vertical-align: super; }
+
+sub {
+  vertical-align: sub; }
 
 ol,
 ul {
@@ -133,41 +142,177 @@ table {
   -webkit-box-sizing: border-box;
   box-sizing: border-box; }
 
+/**
+ * Generic `deprecate` mixin that is being used to indicate that a component is
+ * no longer going to be present in the next major release of Carbon.
+ */
 @font-face {
-  font-family: 'IBM Helvetica';
+  font-family: 'ibm-plex-mono';
   font-style: normal;
   font-weight: 300;
-  src: url("https://unpkg.com/carbon-components@latest/src/globals/fonts/helvetica-neue-light.woff2") format("woff2"), url("https://unpkg.com/carbon-components@latest/src/globals/fonts/helvetica-neue-light.woff") format("woff"); }
+  src: url("https://unpkg.com/carbon-components@latest/src/globals/fonts/IBMPlexMono-Light-Pi.woff2") format("woff2"), url("https://unpkg.com/carbon-components@latest/src/globals/fonts/IBMPlexMono-Light-Pi.woff") format("woff");
+  unicode-range: "U+03C0, U+0E3F, U+2070, U+2074-2079, U+2080-2089, U+2113, U+2116, U+2126, U+212E, U+2150-2151, U+2153-215E, U+2190-2199, U+21A9-21AA, U+21B0-21B3, U+21B6-21B7, U+21BA-21BB, U+21C4, U+21C6, U+2202, U+2206, U+220F, U+2211, U+221A, U+221E, U+222B, U+2248, U+2260, U+2264-2265, U+25CA, U+2713, U+274C, U+2B0E-2B11, U+EBE1, U+EBE3-EBE4, U+EBE6-EBE7, U+ECE0, U+EFCC"; }
 
 @font-face {
-  font-family: 'IBM Helvetica';
-  font-style: italic;
+  font-family: 'ibm-plex-mono';
+  font-style: normal;
   font-weight: 300;
-  src: url("https://unpkg.com/carbon-components@latest/src/globals/fonts/helvetica-neue-light-italic.woff2") format("woff2"), url("https://unpkg.com/carbon-components@latest/src/globals/fonts/helvetica-neue-light-italic.woff") format("woff"); }
+  src: url("https://unpkg.com/carbon-components@latest/src/globals/fonts/IBMPlexMono-Light-Latin3.woff2") format("woff2"), url("https://unpkg.com/carbon-components@latest/src/globals/fonts/IBMPlexMono-Light-Latin3.woff") format("woff");
+  unicode-range: "U+0102-0103, U+1EA0-1EF9, U+20AB"; }
 
 @font-face {
-  font-family: 'IBM Helvetica';
+  font-family: 'ibm-plex-mono';
+  font-style: normal;
+  font-weight: 300;
+  src: url("https://unpkg.com/carbon-components@latest/src/globals/fonts/IBMPlexMono-Light-Latin2.woff2") format("woff2"), url("https://unpkg.com/carbon-components@latest/src/globals/fonts/IBMPlexMono-Light-Latin2.woff") format("woff");
+  unicode-range: "U+0100-024F, U+0259, U+1E00-1EFF, U+20A0-20AB, U+20AD-20CF, U+2C60-2C7F, U+A720-A7FF, U+FB01-FB02"; }
+
+@font-face {
+  font-family: 'ibm-plex-mono';
+  font-style: normal;
+  font-weight: 300;
+  src: url("https://unpkg.com/carbon-components@latest/src/globals/fonts/IBMPlexMono-Light-Latin1.woff2") format("woff2"), url("https://unpkg.com/carbon-components@latest/src/globals/fonts/IBMPlexMono-Light-Latin1.woff") format("woff");
+  unicode-range: "U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+20AC, U+2122, U+2212, U+FB01-FB02"; }
+
+@font-face {
+  font-family: 'ibm-plex-mono';
   font-style: normal;
   font-weight: 400;
-  src: url("https://unpkg.com/carbon-components@latest/src/globals/fonts/helvetica-neue-roman.woff2") format("woff2"), url("https://unpkg.com/carbon-components@latest/src/globals/fonts/helvetica-neue-roman.woff") format("woff"); }
+  src: url("https://unpkg.com/carbon-components@latest/src/globals/fonts/IBMPlexMono-Regular-Pi.woff2") format("woff2"), url("https://unpkg.com/carbon-components@latest/src/globals/fonts/IBMPlexMono-Regular-Pi.woff") format("woff");
+  unicode-range: "U+03C0, U+0E3F, U+2070, U+2074-2079, U+2080-2089, U+2113, U+2116, U+2126, U+212E, U+2150-2151, U+2153-215E, U+2190-2199, U+21A9-21AA, U+21B0-21B3, U+21B6-21B7, U+21BA-21BB, U+21C4, U+21C6, U+2202, U+2206, U+220F, U+2211, U+221A, U+221E, U+222B, U+2248, U+2260, U+2264-2265, U+25CA, U+2713, U+274C, U+2B0E-2B11, U+EBE1, U+EBE3-EBE4, U+EBE6-EBE7, U+ECE0, U+EFCC"; }
 
 @font-face {
-  font-family: 'IBM Helvetica';
-  font-style: italic;
-  font-weight: 400;
-  src: url("https://unpkg.com/carbon-components@latest/src/globals/fonts/helvetica-neue-roman-italic.woff2") format("woff2"), url("https://unpkg.com/carbon-components@latest/src/globals/fonts/helvetica-neue-roman-italic.woff") format("woff"); }
-
-@font-face {
-  font-family: 'IBM Helvetica';
+  font-family: 'ibm-plex-mono';
   font-style: normal;
-  font-weight: 700;
-  src: url("https://unpkg.com/carbon-components@latest/src/globals/fonts/helvetica-neue-bold.woff2") format("woff2"), url("https://unpkg.com/carbon-components@latest/src/globals/fonts/helvetica-neue-bold.woff") format("woff"); }
+  font-weight: 400;
+  src: url("https://unpkg.com/carbon-components@latest/src/globals/fonts/IBMPlexMono-Regular-Latin3.woff2") format("woff2"), url("https://unpkg.com/carbon-components@latest/src/globals/fonts/IBMPlexMono-Regular-Latin3.woff") format("woff");
+  unicode-range: "U+0102-0103, U+1EA0-1EF9, U+20AB"; }
 
 @font-face {
-  font-family: 'IBM Helvetica';
-  font-style: italic;
-  font-weight: 700;
-  src: url("https://unpkg.com/carbon-components@latest/src/globals/fonts/helvetica-neue-bold-italic.woff2") format("woff2"), url("https://unpkg.com/carbon-components@latest/src/globals/fonts/helvetica-neue-bold-italic.woff") format("woff"); }
+  font-family: 'ibm-plex-mono';
+  font-style: normal;
+  font-weight: 400;
+  src: url("https://unpkg.com/carbon-components@latest/src/globals/fonts/IBMPlexMono-Regular-Latin2.woff2") format("woff2"), url("https://unpkg.com/carbon-components@latest/src/globals/fonts/IBMPlexMono-Regular-Latin2.woff") format("woff");
+  unicode-range: "U+0100-024F, U+0259, U+1E00-1EFF, U+20A0-20AB, U+20AD-20CF, U+2C60-2C7F, U+A720-A7FF, U+FB01-FB02"; }
+
+@font-face {
+  font-family: 'ibm-plex-mono';
+  font-style: normal;
+  font-weight: 400;
+  src: url("https://unpkg.com/carbon-components@latest/src/globals/fonts/IBMPlexMono-Regular-Latin1.woff2") format("woff2"), url("https://unpkg.com/carbon-components@latest/src/globals/fonts/IBMPlexMono-Regular-Latin1.woff") format("woff");
+  unicode-range: "U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+20AC, U+2122, U+2212, U+FB01-FB02"; }
+
+@font-face {
+  font-family: 'ibm-plex-mono';
+  font-style: normal;
+  font-weight: 600;
+  src: url("https://unpkg.com/carbon-components@latest/src/globals/fonts/IBMPlexMono-SemiBold-Pi.woff2") format("woff2"), url("https://unpkg.com/carbon-components@latest/src/globals/fonts/IBMPlexMono-SemiBold-Pi.woff") format("woff");
+  unicode-range: "U+03C0, U+0E3F, U+2070, U+2074-2079, U+2080-2089, U+2113, U+2116, U+2126, U+212E, U+2150-2151, U+2153-215E, U+2190-2199, U+21A9-21AA, U+21B0-21B3, U+21B6-21B7, U+21BA-21BB, U+21C4, U+21C6, U+2202, U+2206, U+220F, U+2211, U+221A, U+221E, U+222B, U+2248, U+2260, U+2264-2265, U+25CA, U+2713, U+274C, U+2B0E-2B11, U+EBE1, U+EBE3-EBE4, U+EBE6-EBE7, U+ECE0, U+EFCC"; }
+
+@font-face {
+  font-family: 'ibm-plex-mono';
+  font-style: normal;
+  font-weight: 600;
+  src: url("https://unpkg.com/carbon-components@latest/src/globals/fonts/IBMPlexMono-SemiBold-Latin3.woff2") format("woff2"), url("https://unpkg.com/carbon-components@latest/src/globals/fonts/IBMPlexMono-SemiBold-Latin3.woff") format("woff");
+  unicode-range: "U+0102-0103, U+1EA0-1EF9, U+20AB"; }
+
+@font-face {
+  font-family: 'ibm-plex-mono';
+  font-style: normal;
+  font-weight: 600;
+  src: url("https://unpkg.com/carbon-components@latest/src/globals/fonts/IBMPlexMono-SemiBold-Latin2.woff2") format("woff2"), url("https://unpkg.com/carbon-components@latest/src/globals/fonts/IBMPlexMono-SemiBold-Latin2.woff") format("woff");
+  unicode-range: "U+0100-024F, U+0259, U+1E00-1EFF, U+20A0-20AB, U+20AD-20CF, U+2C60-2C7F, U+A720-A7FF, U+FB01-FB02"; }
+
+@font-face {
+  font-family: 'ibm-plex-mono';
+  font-style: normal;
+  font-weight: 600;
+  src: url("https://unpkg.com/carbon-components@latest/src/globals/fonts/IBMPlexMono-SemiBold-Latin1.woff2") format("woff2"), url("https://unpkg.com/carbon-components@latest/src/globals/fonts/IBMPlexMono-SemiBold-Latin1.woff") format("woff");
+  unicode-range: "U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+20AC, U+2122, U+2212, U+FB01-FB02"; }
+
+@font-face {
+  font-family: 'ibm-plex-sans';
+  font-style: normal;
+  font-weight: 300;
+  src: url("https://unpkg.com/carbon-components@latest/src/globals/fonts/IBMPlexSans-Light-Pi.woff2") format("woff2"), url("https://unpkg.com/carbon-components@latest/src/globals/fonts/IBMPlexSans-Light-Pi.woff") format("woff");
+  unicode-range: "U+03C0, U+0E3F, U+2070, U+2074-2079, U+2080-2089, U+2113, U+2116, U+2126, U+212E, U+2150-2151, U+2153-215E, U+2190-2199, U+21A9-21AA, U+21B0-21B3, U+21B6-21B7, U+21BA-21BB, U+21C4, U+21C6, U+2202, U+2206, U+220F, U+2211, U+221A, U+221E, U+222B, U+2248, U+2260, U+2264-2265, U+25CA, U+2713, U+274C, U+2B0E-2B11, U+EBE1, U+EBE3-EBE4, U+EBE6-EBE7, U+ECE0, U+EFCC"; }
+
+@font-face {
+  font-family: 'ibm-plex-sans';
+  font-style: normal;
+  font-weight: 300;
+  src: url("https://unpkg.com/carbon-components@latest/src/globals/fonts/IBMPlexSans-Light-Latin3.woff2") format("woff2"), url("https://unpkg.com/carbon-components@latest/src/globals/fonts/IBMPlexSans-Light-Latin3.woff") format("woff");
+  unicode-range: "U+0102-0103, U+1EA0-1EF9, U+20AB"; }
+
+@font-face {
+  font-family: 'ibm-plex-sans';
+  font-style: normal;
+  font-weight: 300;
+  src: url("https://unpkg.com/carbon-components@latest/src/globals/fonts/IBMPlexSans-Light-Latin2.woff2") format("woff2"), url("https://unpkg.com/carbon-components@latest/src/globals/fonts/IBMPlexSans-Light-Latin2.woff") format("woff");
+  unicode-range: "U+0100-024F, U+0259, U+1E00-1EFF, U+20A0-20AB, U+20AD-20CF, U+2C60-2C7F, U+A720-A7FF, U+FB01-FB02"; }
+
+@font-face {
+  font-family: 'ibm-plex-sans';
+  font-style: normal;
+  font-weight: 300;
+  src: url("https://unpkg.com/carbon-components@latest/src/globals/fonts/IBMPlexSans-Light-Latin1.woff2") format("woff2"), url("https://unpkg.com/carbon-components@latest/src/globals/fonts/IBMPlexSans-Light-Latin1.woff") format("woff");
+  unicode-range: "U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+20AC, U+2122, U+2212, U+FB01-FB02"; }
+
+@font-face {
+  font-family: 'ibm-plex-sans';
+  font-style: normal;
+  font-weight: 400;
+  src: url("https://unpkg.com/carbon-components@latest/src/globals/fonts/IBMPlexSans-Regular-Pi.woff2") format("woff2"), url("https://unpkg.com/carbon-components@latest/src/globals/fonts/IBMPlexSans-Regular-Pi.woff") format("woff");
+  unicode-range: "U+03C0, U+0E3F, U+2070, U+2074-2079, U+2080-2089, U+2113, U+2116, U+2126, U+212E, U+2150-2151, U+2153-215E, U+2190-2199, U+21A9-21AA, U+21B0-21B3, U+21B6-21B7, U+21BA-21BB, U+21C4, U+21C6, U+2202, U+2206, U+220F, U+2211, U+221A, U+221E, U+222B, U+2248, U+2260, U+2264-2265, U+25CA, U+2713, U+274C, U+2B0E-2B11, U+EBE1, U+EBE3-EBE4, U+EBE6-EBE7, U+ECE0, U+EFCC"; }
+
+@font-face {
+  font-family: 'ibm-plex-sans';
+  font-style: normal;
+  font-weight: 400;
+  src: url("https://unpkg.com/carbon-components@latest/src/globals/fonts/IBMPlexSans-Regular-Latin3.woff2") format("woff2"), url("https://unpkg.com/carbon-components@latest/src/globals/fonts/IBMPlexSans-Regular-Latin3.woff") format("woff");
+  unicode-range: "U+0102-0103, U+1EA0-1EF9, U+20AB"; }
+
+@font-face {
+  font-family: 'ibm-plex-sans';
+  font-style: normal;
+  font-weight: 400;
+  src: url("https://unpkg.com/carbon-components@latest/src/globals/fonts/IBMPlexSans-Regular-Latin2.woff2") format("woff2"), url("https://unpkg.com/carbon-components@latest/src/globals/fonts/IBMPlexSans-Regular-Latin2.woff") format("woff");
+  unicode-range: "U+0100-024F, U+0259, U+1E00-1EFF, U+20A0-20AB, U+20AD-20CF, U+2C60-2C7F, U+A720-A7FF, U+FB01-FB02"; }
+
+@font-face {
+  font-family: 'ibm-plex-sans';
+  font-style: normal;
+  font-weight: 400;
+  src: url("https://unpkg.com/carbon-components@latest/src/globals/fonts/IBMPlexSans-Regular-Latin1.woff2") format("woff2"), url("https://unpkg.com/carbon-components@latest/src/globals/fonts/IBMPlexSans-Regular-Latin1.woff") format("woff");
+  unicode-range: "U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+20AC, U+2122, U+2212, U+FB01-FB02"; }
+
+@font-face {
+  font-family: 'ibm-plex-sans';
+  font-style: normal;
+  font-weight: 600;
+  src: url("https://unpkg.com/carbon-components@latest/src/globals/fonts/IBMPlexSans-SemiBold-Pi.woff2") format("woff2"), url("https://unpkg.com/carbon-components@latest/src/globals/fonts/IBMPlexSans-SemiBold-Pi.woff") format("woff");
+  unicode-range: "U+03C0, U+0E3F, U+2070, U+2074-2079, U+2080-2089, U+2113, U+2116, U+2126, U+212E, U+2150-2151, U+2153-215E, U+2190-2199, U+21A9-21AA, U+21B0-21B3, U+21B6-21B7, U+21BA-21BB, U+21C4, U+21C6, U+2202, U+2206, U+220F, U+2211, U+221A, U+221E, U+222B, U+2248, U+2260, U+2264-2265, U+25CA, U+2713, U+274C, U+2B0E-2B11, U+EBE1, U+EBE3-EBE4, U+EBE6-EBE7, U+ECE0, U+EFCC"; }
+
+@font-face {
+  font-family: 'ibm-plex-sans';
+  font-style: normal;
+  font-weight: 600;
+  src: url("https://unpkg.com/carbon-components@latest/src/globals/fonts/IBMPlexSans-SemiBold-Latin3.woff2") format("woff2"), url("https://unpkg.com/carbon-components@latest/src/globals/fonts/IBMPlexSans-SemiBold-Latin3.woff") format("woff");
+  unicode-range: "U+0102-0103, U+1EA0-1EF9, U+20AB"; }
+
+@font-face {
+  font-family: 'ibm-plex-sans';
+  font-style: normal;
+  font-weight: 600;
+  src: url("https://unpkg.com/carbon-components@latest/src/globals/fonts/IBMPlexSans-SemiBold-Latin2.woff2") format("woff2"), url("https://unpkg.com/carbon-components@latest/src/globals/fonts/IBMPlexSans-SemiBold-Latin2.woff") format("woff");
+  unicode-range: "U+0100-024F, U+0259, U+1E00-1EFF, U+20A0-20AB, U+20AD-20CF, U+2C60-2C7F, U+A720-A7FF, U+FB01-FB02"; }
+
+@font-face {
+  font-family: 'ibm-plex-sans';
+  font-style: normal;
+  font-weight: 600;
+  src: url("https://unpkg.com/carbon-components@latest/src/globals/fonts/IBMPlexSans-SemiBold-Latin1.woff2") format("woff2"), url("https://unpkg.com/carbon-components@latest/src/globals/fonts/IBMPlexSans-SemiBold-Latin1.woff") format("woff");
+  unicode-range: "U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+20AC, U+2122, U+2212, U+FB01-FB02"; }
 
 .bx--visually-hidden {
   position: absolute;
@@ -182,17 +327,25 @@ table {
   white-space: nowrap; }
 
 .bx--body {
-  font-family: 'IBM Helvetica', Helvetica Neue, HelveticaNeue, Helvetica, sans-serif;
-  color: #171717;
-  background-color: #fff;
+  font-family: "ibm-plex-sans", Helvetica Neue, Arial, sans-serif;
+  color: #252525;
+  background-color: #ffffff;
   line-height: 1; }
 
+/**
+ * Generic `deprecate` mixin that is being used to indicate that a component is
+ * no longer going to be present in the next major release of Carbon.
+ */
 body {
-  font-family: 'IBM Helvetica', Helvetica Neue, HelveticaNeue, Helvetica, sans-serif;
-  color: #171717;
-  background-color: #fff;
+  font-family: "ibm-plex-sans", Helvetica Neue, Arial, sans-serif;
+  color: #252525;
+  background-color: #ffffff;
   line-height: 1; }
 
+/**
+ * Generic `deprecate` mixin that is being used to indicate that a component is
+ * no longer going to be present in the next major release of Carbon.
+ */
 .bx--type-giga {
   font-size: 4.75rem;
   line-height: 1.25;
@@ -234,7 +387,7 @@ em {
   font-style: italic; }
 
 a {
-  color: #0f6dff; }
+  color: #006aff; }
 
 h1,
 .bx--type-alpha {
@@ -582,6 +735,15 @@ h6,
   flex-grow: 1;
   max-width: 100%; }
 
+/**
+ * We flag this variable as true if someone uses the globals/scss/styles.scss
+ * entry-point. This allows us to collect all the messages and display them at
+ * the end of the file instead of bringing it up per-component.
+ *
+ * If a consumer instead gets the components by importing the partial directly,
+ * this variable _will not_ be set to true, so the deprecation message will be
+ * displayed after the @import.
+ */
 button.bx--btn {
   display: inline-block; }
 
@@ -598,7 +760,7 @@ button.bx--btn .bx--btn__icon {
       top: 0; } }
 
 .bx--btn {
-  font-family: 'IBM Helvetica', Helvetica Neue, HelveticaNeue, Helvetica, sans-serif;
+  font-family: "ibm-plex-sans", Helvetica Neue, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   letter-spacing: 0.5px;
@@ -640,20 +802,20 @@ button.bx--btn .bx--btn__icon {
     transition-timing-function: ease-in; }
 
 .bx--btn--primary {
-  background-color: #0f6dff;
+  background-color: #006aff;
   border-width: 2px;
   border-style: solid;
   border-color: transparent;
-  color: #fff; }
+  color: #ffffff; }
   .bx--btn--primary:focus, .bx--btn--primary:hover {
-    background-color: #0530ad; }
+    background-color: #006aff; }
   .bx--btn--primary:focus {
-    border: 2px solid #fff;
-    outline: 2px solid #0530ad; }
+    border: 2px solid #ffffff;
+    outline: 2px solid #006aff; }
   .bx--btn--primary:disabled:hover, .bx--btn--primary:disabled:focus {
-    background-color: #0f6dff; }
+    background-color: #006aff; }
   .bx--btn--primary:active {
-    background-color: #0042a8; }
+    background-color: #004099; }
   .bx--btn--primary .bx--btn__icon {
     fill: #f3f3f3; }
 
@@ -661,94 +823,141 @@ button.bx--btn .bx--btn__icon {
   background-color: transparent;
   border-width: 2px;
   border-style: solid;
-  border-color: #0f6dff;
-  color: #0f6dff; }
+  border-color: #006aff;
+  color: #006aff; }
   .bx--btn--secondary:focus, .bx--btn--secondary:hover {
-    background-color: #0f6dff; }
+    background-color: #006aff; }
   .bx--btn--secondary:focus {
-    border: 2px solid #fff;
-    outline: 2px solid #0f6dff; }
+    border: 2px solid #ffffff;
+    outline: 2px solid #006aff; }
   .bx--btn--secondary:disabled:hover, .bx--btn--secondary:disabled:focus {
     background-color: transparent; }
   .bx--btn--secondary:active {
     background-color: transparent; }
   .bx--btn--secondary .bx--btn__icon {
-    fill: #0f6dff; }
+    fill: #006aff; }
   .bx--btn--secondary:hover, .bx--btn--secondary:focus {
-    color: #fff; }
+    color: #ffffff; }
   .bx--btn--secondary:active {
-    color: #0f6dff; }
+    color: #006aff; }
   .bx--btn--secondary:hover > .bx--btn__icon,
   .bx--btn--secondary:focus > .bx--btn__icon {
-    fill: #fff; }
+    fill: #ffffff; }
   .bx--btn--secondary:hover:disabled, .bx--btn--secondary:focus:disabled {
-    color: #0f6dff; }
+    color: #006aff; }
+
+.bx--btn--tertiary {
+  background-color: transparent;
+  border-width: 2px;
+  border-style: solid;
+  border-color: #bebebe;
+  color: #bebebe; }
+  .bx--btn--tertiary:focus, .bx--btn--tertiary:hover {
+    background-color: #bebebe; }
+  .bx--btn--tertiary:focus {
+    border: 2px solid #ffffff;
+    outline: 2px solid #bebebe; }
+  .bx--btn--tertiary:disabled:hover, .bx--btn--tertiary:disabled:focus {
+    background-color: transparent; }
+  .bx--btn--tertiary:active {
+    background-color: transparent; }
+  .bx--btn--tertiary .bx--btn__icon {
+    fill: #bebebe; }
+  .bx--btn--tertiary:hover, .bx--btn--tertiary:focus {
+    color: #ffffff; }
+  .bx--btn--tertiary:active {
+    color: #bebebe; }
+  .bx--btn--tertiary:hover:disabled, .bx--btn--tertiary:focus:disabled {
+    color: #bebebe; }
 
 .bx--btn--ghost {
   background-color: transparent;
   border-width: 2px;
   border-style: solid;
   border-color: transparent;
-  color: #0f6dff; }
+  color: #006aff; }
   .bx--btn--ghost:focus, .bx--btn--ghost:hover {
-    background-color: #0f6dff; }
+    background-color: #006aff; }
   .bx--btn--ghost:focus {
-    border: 2px solid #fff;
-    outline: 2px solid #0f6dff; }
+    border: 2px solid #ffffff;
+    outline: 2px solid #006aff; }
   .bx--btn--ghost:disabled:hover, .bx--btn--ghost:disabled:focus {
     background-color: transparent; }
   .bx--btn--ghost:active {
     background-color: transparent; }
   .bx--btn--ghost .bx--btn__icon {
-    fill: #0f6dff; }
+    fill: #006aff; }
   .bx--btn--ghost:hover, .bx--btn--ghost:focus {
-    color: #fff; }
+    color: #ffffff; }
     .bx--btn--ghost:hover .bx--btn__icon, .bx--btn--ghost:focus .bx--btn__icon {
-      fill: #fff; }
+      fill: #ffffff; }
   .bx--btn--ghost .bx--btn__icon {
-    margin-left: 0.275rem; }
+    margin-left: 0.5rem; }
   .bx--btn--ghost:hover:disabled, .bx--btn--ghost:focus:disabled {
-    color: #0f6dff; }
+    color: #006aff; }
     .bx--btn--ghost:hover:disabled .bx--btn__icon, .bx--btn--ghost:focus:disabled .bx--btn__icon {
-      fill: #0f6dff; }
+      fill: #006aff; }
 
 .bx--btn--danger {
   background-color: transparent;
   border-width: 2px;
   border-style: solid;
-  border-color: #e02730;
-  color: #e02730; }
+  border-color: #e32328;
+  color: #e32328; }
   .bx--btn--danger:focus, .bx--btn--danger:hover {
-    background-color: #e02730; }
+    background-color: #e32328; }
   .bx--btn--danger:focus {
-    border: 2px solid #fff;
-    outline: 2px solid #e02730; }
+    border: 2px solid #ffffff;
+    outline: 2px solid #e32328; }
   .bx--btn--danger:disabled:hover, .bx--btn--danger:disabled:focus {
     background-color: transparent; }
   .bx--btn--danger:active {
     background-color: transparent; }
   .bx--btn--danger .bx--btn__icon {
-    fill: #e02730; }
+    fill: #e32328; }
   .bx--btn--danger:hover {
-    color: #fff;
+    color: #ffffff;
     border: 2px solid transparent; }
   .bx--btn--danger:focus {
-    color: #fff; }
+    color: #ffffff; }
   .bx--btn--danger:hover:disabled, .bx--btn--danger:focus:disabled {
-    color: #171717;
-    border: 2px solid currentColor; }
-  .bx--btn--danger:hover > .bx--btn__icon,
-  .bx--btn--danger:focus > .bx--btn__icon {
-    fill: #fff; }
+    color: #e32328;
+    border: 2px solid #e32328; }
+
+.bx--btn--danger--primary {
+  background-color: #e32328;
+  border-width: 2px;
+  border-style: solid;
+  border-color: transparent;
+  color: #ffffff; }
+  .bx--btn--danger--primary:focus, .bx--btn--danger--primary:hover {
+    background-color: #bb181c; }
+  .bx--btn--danger--primary:focus {
+    border: 2px solid #ffffff;
+    outline: 2px solid #bb181c; }
+  .bx--btn--danger--primary:disabled:hover, .bx--btn--danger--primary:disabled:focus {
+    background-color: #e32328; }
+  .bx--btn--danger--primary:active {
+    background-color: #8e1215; }
+  .bx--btn--danger--primary .bx--btn__icon {
+    fill: #f3f3f3; }
+  .bx--btn--danger--primary:hover:disabled, .bx--btn--danger--primary:focus:disabled {
+    color: #f3f3f3;
+    border: 2px solid #e32328; }
 
 .bx--btn--sm {
   height: 2rem;
   padding: 0 0.5rem;
   letter-spacing: 0; }
 
-.bx--btn--secondary + .bx--btn--primary {
+.bx--btn--secondary + .bx--btn--primary,
+.bx--btn--tertiary + .bx--btn--danger--primary {
   margin-left: 1rem; }
 
+/**
+ * Generic `deprecate` mixin that is being used to indicate that a component is
+ * no longer going to be present in the next major release of Carbon.
+ */
 .bx--btn--copy {
   position: relative;
   overflow: visible; }
@@ -766,8 +975,8 @@ button.bx--btn .bx--btn__icon {
     font-size: 0.75rem;
     top: 1.1rem;
     padding: 0.5rem 1rem;
-    border: 1px solid #8a8a8a;
-    color: #171717;
+    border: 1px solid #f3f3f3;
+    color: #252525;
     content: attr(data-feedback);
     -webkit-transform: translateX(-50%);
     transform: translateX(-50%);
@@ -777,8 +986,8 @@ button.bx--btn .bx--btn__icon {
     top: 0.85rem;
     width: 0.5rem;
     height: 0.5rem;
-    border-right: 1px solid #8a8a8a;
-    border-bottom: 1px solid #8a8a8a;
+    border-right: 1px solid #f3f3f3;
+    border-bottom: 1px solid #f3f3f3;
     content: '';
     -webkit-transform: rotate(-135deg);
     transform: rotate(-135deg); }
@@ -791,11 +1000,19 @@ button.bx--btn .bx--btn__icon {
     display: -ms-inline-flexbox;
     display: inline-flex; }
 
+/**
+ * Generic `deprecate` mixin that is being used to indicate that a component is
+ * no longer going to be present in the next major release of Carbon.
+ */
+/**
+ * Generic `deprecate` mixin that is being used to indicate that a component is
+ * no longer going to be present in the next major release of Carbon.
+ */
 .bx--fieldset {
   margin-bottom: 2rem; }
 
 .bx--form-item {
-  font-family: 'IBM Helvetica', Helvetica Neue, HelveticaNeue, Helvetica, sans-serif;
+  font-family: "ibm-plex-sans", Helvetica Neue, Arial, sans-serif;
   -webkit-box-flex: 1;
   -ms-flex: 1;
   flex: 1;
@@ -806,12 +1023,15 @@ button.bx--btn .bx--btn__icon {
     margin-bottom: 0; }
 
 .bx--label {
-  font-family: 'IBM Helvetica', Helvetica Neue, HelveticaNeue, Helvetica, sans-serif;
+  font-family: "ibm-plex-sans", Helvetica Neue, Arial, sans-serif;
   font-size: 0.875rem;
   font-weight: 700;
   display: inline-block;
   vertical-align: baseline;
-  margin-bottom: 0.625rem; }
+  margin-bottom: 0.5rem; }
+
+.bx--label .bx--tooltip__trigger {
+  font-size: 0.875rem; }
 
 .bx--label--disabled {
   opacity: 0.5; }
@@ -819,8 +1039,8 @@ button.bx--btn .bx--btn__icon {
 input[data-invalid],
 textarea[data-invalid],
 select[data-invalid] {
-  -webkit-box-shadow: 0 2px 0px 0px #e02730;
-  box-shadow: 0 2px 0px 0px #e02730; }
+  -webkit-box-shadow: 0 2px 0px 0px #e32328;
+  box-shadow: 0 2px 0px 0px #e32328; }
   input[data-invalid] ~ .bx--form-requirement,
   textarea[data-invalid] ~ .bx--form-requirement,
   select[data-invalid] ~ .bx--form-requirement {
@@ -836,7 +1056,7 @@ select[data-invalid] {
   .bx--form-requirement::before {
     content: '*';
     display: inline-block;
-    color: #e02730; }
+    color: #e32328; }
 
 @-webkit-keyframes rotate {
   0% {
@@ -921,7 +1141,7 @@ select[data-invalid] {
 
 .bx--loading__svg {
   fill: transparent;
-  stroke: #0f6dff;
+  stroke: #006aff;
   stroke-width: 7;
   stroke-linecap: butt;
   stroke-dasharray: 240;
@@ -946,7 +1166,7 @@ select[data-invalid] {
   width: 2rem;
   height: 2rem; }
   .bx--loading--small .bx--loading__svg {
-    stroke: #171717; }
+    stroke: #bebebe; }
 
 .bx--loading-overlay {
   position: fixed;
@@ -965,7 +1185,8 @@ select[data-invalid] {
   -ms-flex-align: center;
   align-items: center;
   -webkit-transition: background-color 2000ms cubic-bezier(0.5, 0, 0.1, 1);
-  transition: background-color 2000ms cubic-bezier(0.5, 0, 0.1, 1); }
+  transition: background-color 2000ms cubic-bezier(0.5, 0, 0.1, 1);
+  z-index: 8000; }
 
 .bx--loading-overlay--stop {
   display: none; }
@@ -995,20 +1216,19 @@ select[data-invalid] {
   font-size: 0.875rem;
   line-height: 1.5;
   color: #565656;
-  margin-top: 0.25rem;
-  margin-bottom: 1.25rem; }
+  margin-bottom: 1.5rem; }
 
 .bx--file-container {
   display: block;
   width: 100%;
-  margin-top: 1.25rem; }
+  margin-top: 1.5rem; }
 
 .bx--file__selected-file {
   display: block;
-  width: 300px;
   overflow-x: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+  width: 300px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1021,24 +1241,24 @@ select[data-invalid] {
   min-height: 1.875rem;
   background-color: #f3f3f3;
   padding: 0 1rem;
-  margin-bottom: 1.25rem; }
+  margin-bottom: 1rem; }
   .bx--file__selected-file:last-child {
     margin-bottom: 0; }
 
 .bx--file-filename {
   font-size: 0.75rem;
   display: block;
-  width: 100%;
   overflow-x: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+  width: 100%;
   display: -webkit-inline-box;
   display: -ms-inline-flexbox;
   display: inline-flex;
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  color: #171717;
+  color: #252525;
   margin-right: 1rem;
   height: 1.875rem; }
 
@@ -1052,30 +1272,34 @@ select[data-invalid] {
   .bx--file__state-container .bx--loading {
     width: 1.125rem;
     height: 1.125rem;
-    margin-right: -7px; }
+    margin-right: 0.5rem; }
   .bx--file__state-container .bx--loading__svg {
-    stroke: #171717; }
+    stroke: #bebebe; }
 
 .bx--file__state-container .bx--file-close,
 .bx--file__state-container .bx--file-complete {
   width: 1rem;
   height: 1rem;
-  fill: #171717;
+  fill: #252525;
   cursor: pointer; }
   .bx--file__state-container .bx--file-close:focus,
   .bx--file__state-container .bx--file-complete:focus {
-    outline: 1px solid #0f6dff; }
+    outline: 1px solid #006aff; }
 
 .bx--file__state-container .bx--file-close {
-  fill: #171717; }
+  fill: #bebebe; }
 
 .bx--file__state-container .bx--file-complete {
-  fill: #24a249; }
+  fill: #118837; }
 
+/**
+ * Generic `deprecate` mixin that is being used to indicate that a component is
+ * no longer going to be present in the next major release of Carbon.
+ */
 .bx--form-item.bx--checkbox-wrapper {
   margin-bottom: 1rem; }
   .bx--form-item.bx--checkbox-wrapper:first-of-type {
-    margin-top: 0.375rem; }
+    margin-top: 0.5rem; }
   .bx--form-item.bx--checkbox-wrapper:last-of-type {
     margin-bottom: 0; }
 
@@ -1092,7 +1316,7 @@ select[data-invalid] {
   white-space: nowrap; }
 
 .bx--checkbox-label {
-  font-family: 'IBM Helvetica', Helvetica Neue, HelveticaNeue, Helvetica, sans-serif;
+  font-family: "ibm-plex-sans", Helvetica Neue, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-size: 0.875rem;
@@ -1102,16 +1326,85 @@ select[data-invalid] {
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  cursor: pointer; }
+  cursor: pointer;
+  position: relative;
+  padding-left: 1.5rem;
+  min-height: 1rem; }
+
+.bx--checkbox-label::before {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  content: '';
+  position: absolute;
+  left: 0;
+  top: calc(50% - 9px);
+  height: 1.125rem;
+  width: 1.125rem;
+  border: 2px solid #bebebe;
+  background-color: #f3f3f3; }
+
+.bx--checkbox-label::after {
+  content: '';
+  width: 10px;
+  height: 5px;
+  background: none;
+  border-left: 2px solid #ffffff;
+  border-bottom: 2px solid #ffffff;
+  -webkit-transform: scale(0) rotate(-45deg);
+  transform: scale(0) rotate(-45deg);
+  position: absolute;
+  left: 0.1875rem;
+  top: 50%;
+  margin-top: -0.3125rem; }
+
+.bx--checkbox:checked + .bx--checkbox-label::before,
+.bx--checkbox:indeterminate + .bx--checkbox-label::before,
+.bx--checkbox-label[data-contained-checkbox-state='true']::before,
+.bx--checkbox-label[data-contained-checkbox-state='mixed']::before {
+  background-color: #006aff;
+  border-color: #006aff; }
+
+.bx--checkbox:checked + .bx--checkbox-label::after,
+.bx--checkbox-label[data-contained-checkbox-state='true']::after {
+  opacity: 1;
+  -webkit-transform: scale(1) rotate(-45deg);
+  transform: scale(1) rotate(-45deg); }
+
+.bx--checkbox:not(:checked) + .bx--checkbox-label::after {
+  opacity: 0;
+  -webkit-transform: scale(0) rotate(-45deg);
+  transform: scale(0) rotate(-45deg); }
+
+.bx--checkbox:focus + .bx--checkbox-label::before,
+.bx--checkbox-label__focus::before {
+  -webkit-box-shadow: 0 0 0 3px #7cc7ff;
+  box-shadow: 0 0 0 3px #7cc7ff;
+  outline: 1px solid transparent; }
+
+.bx--checkbox:indeterminate + .bx--checkbox-label::after,
+.bx--checkbox-label[data-contained-checkbox-state='mixed']::after {
+  -webkit-transform: scale(1) rotate(0deg);
+  transform: scale(1) rotate(0deg);
+  border-left: 0 solid #ffffff;
+  border-bottom: 2px solid #ffffff;
+  opacity: 1;
+  width: 0.75rem;
+  margin-top: -0.375rem; }
 
 .bx--checkbox-appearance {
+  position: absolute;
+  left: 0;
+  top: calc(50% - 9px);
   display: inline-block;
   height: 1.125rem;
   width: 1.125rem;
   margin-right: 0.5rem;
   background-color: #f3f3f3;
-  border: 2px solid #171717;
-  min-width: 18px; }
+  border: 2px solid #bebebe;
+  min-width: 1.125rem; }
+
+.bx--checkbox:checked + .bx--checkbox-label .bx--checkbox-appearance {
+  top: -0.0625rem; }
 
 .bx--checkbox:checked + .bx--checkbox-appearance,
 .bx--checkbox:checked + .bx--checkbox-label .bx--checkbox-appearance {
@@ -1121,8 +1414,8 @@ select[data-invalid] {
   -webkit-box-align: baseline;
   -ms-flex-align: baseline;
   align-items: baseline;
-  background-color: #0f6dff;
-  border-color: #0f6dff; }
+  background-color: #006aff;
+  border-color: #006aff; }
 
 .bx--checkbox:disabled + .bx--checkbox-label,
 .bx--checkbox:disabled + .bx--checkbox-appearance,
@@ -1138,7 +1431,7 @@ select[data-invalid] {
 
 .bx--checkbox-checkmark {
   display: none;
-  fill: #fff;
+  fill: #ffffff;
   width: 100%;
   height: 100%; }
 
@@ -1149,8 +1442,242 @@ select[data-invalid] {
 @-moz-document url-prefix() {
   .bx--checkbox:checked + .bx--checkbox-appearance .bx--checkbox-checkmark,
   .bx--checkbox:checked + .bx--checkbox-label .bx--checkbox-appearance .bx--checkbox-checkmark {
-    stroke: #0f6dff; } }
+    stroke: #006aff; } }
 
+.bx--list-box {
+  position: relative;
+  width: 100%;
+  height: 2.5rem;
+  max-height: 2.5rem;
+  background-color: rgba(243, 243, 243, 0.1); }
+
+.bx--list-box--disabled {
+  opacity: 0.5; }
+
+.bx--list-box--disabled,
+.bx--list-box--disabled .bx--list-box__field,
+.bx--list-box--disabled .bx--list-box__menu-icon {
+  cursor: not-allowed; }
+
+.bx--list-box--inline {
+  background-color: inherit;
+  width: auto;
+  height: 2rem; }
+
+.bx--list-box--inline .bx--list-box__label {
+  color: #006aff; }
+
+.bx--list-box--inline .bx--list-box__field {
+  padding: 0 0 0 0.625rem; }
+
+.bx--list-box--inline .bx--list-box__menu-icon {
+  position: static;
+  padding: 0 0.625rem 0 0.75rem; }
+
+.bx--list-box--inline > .bx--list-box__menu {
+  top: 2rem;
+  width: 18.75rem; }
+
+.bx--list-box--inline > .bx--list-box__field[aria-expanded='true'] ~ .bx--list-box__menu {
+  outline: 1px solid #006aff;
+  -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1); }
+
+.bx--list-box--inline > .bx--list-box__field[aria-expanded='true'] {
+  outline: none; }
+
+.bx--list-box__field {
+  font-family: "ibm-plex-sans", Helvetica Neue, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  letter-spacing: 0.5px;
+  display: inline-block;
+  background: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+  width: 100%;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  padding: 0 1rem;
+  cursor: pointer; }
+  .bx--list-box__field::-moz-focus-inner {
+    border: 0; }
+
+.bx--list-box__field:hover {
+  background: #f3f3f3; }
+
+.bx--list-box__field:focus,
+.bx--list-box__field[aria-expanded='true'] {
+  outline: 1px solid #006aff; }
+
+.bx--list-box__field[disabled] {
+  outline: none; }
+
+.bx--list-box__field[aria-expanded='true'] ~ .bx--list-box__menu {
+  -webkit-box-shadow: 0 1px 0 0 #006aff, 1px 0 0 0 #006aff, -1px 0 0 0 #006aff, 0 4px 8px 0 rgba(0, 0, 0, 0.1);
+  box-shadow: 0 1px 0 0 #006aff, 1px 0 0 0 #006aff, -1px 0 0 0 #006aff, 0 4px 8px 0 rgba(0, 0, 0, 0.1); }
+
+.bx--list-box__label {
+  font-size: 0.875rem;
+  color: #252525;
+  font-weight: 600;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none; }
+
+.bx--list-box__menu-icon {
+  display: inline-block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  height: 100%;
+  padding: 0 1rem;
+  -webkit-transition: -webkit-transform 200ms cubic-bezier(0.5, 0, 0.1, 1);
+  transition: -webkit-transform 200ms cubic-bezier(0.5, 0, 0.1, 1);
+  transition: transform 200ms cubic-bezier(0.5, 0, 0.1, 1);
+  transition: transform 200ms cubic-bezier(0.5, 0, 0.1, 1), -webkit-transform 200ms cubic-bezier(0.5, 0, 0.1, 1);
+  cursor: pointer; }
+
+.bx--list-box__menu-icon > svg {
+  fill: #006aff;
+  height: 100%; }
+
+.bx--list-box__menu-icon--open {
+  -webkit-transform: rotate(180deg);
+  transform: rotate(180deg); }
+
+.bx--list-box__selection {
+  display: inline-block;
+  position: absolute;
+  top: 0;
+  right: 1.625rem;
+  bottom: 0;
+  height: 2.5rem;
+  padding: 0 1rem;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-transition: background-color 200ms cubic-bezier(0.5, 0, 0.1, 1);
+  transition: background-color 200ms cubic-bezier(0.5, 0, 0.1, 1); }
+
+.bx--list-box__selection > svg {
+  fill: #bebebe;
+  height: 100%; }
+
+.bx--list-box__selection:focus {
+  outline: 1px solid #006aff; }
+
+.bx--list-box__selection--multi {
+  font-size: 0.75rem;
+  position: static;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  padding: 0;
+  background-color: #006aff;
+  height: 1.125rem;
+  color: white;
+  line-height: 0;
+  padding: 0.3125rem;
+  margin-right: 0.625rem;
+  border-radius: 0.8125rem; }
+
+.bx--list-box__selection--multi > svg {
+  fill: white;
+  width: 0.5rem;
+  height: 0.5rem;
+  margin-left: 0.3125rem; }
+
+.bx--list-box__selection--multi:focus,
+.bx--list-box__selection--multi:hover {
+  background-color: #006aff;
+  outline: none; }
+
+.bx--list-box__menu {
+  -webkit-box-shadow: 0px 3px 3px 0 rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 3px 3px 0 rgba(0, 0, 0, 0.1);
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 2.5rem;
+  width: 100%;
+  background-color: #f3f3f3;
+  max-height: 7.5rem;
+  overflow-y: auto;
+  z-index: 7000; }
+
+.bx--list-box__menu-item {
+  font-size: 0.875rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  height: 2.5rem;
+  padding: 0 1rem;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none; }
+
+.bx--list-box__menu-item:hover,
+.bx--list-box__menu-item--highlighted {
+  background-color: rgba(243, 243, 243, 0.1);
+  color: #252525; }
+
+.bx--list-box__menu-item > .bx--form-item.bx--checkbox-wrapper {
+  margin: 0; }
+
+.bx--list-box input[role='combobox'] {
+  background-color: inherit;
+  font-weight: 600;
+  outline-offset: 0; }
+
+.bx--list-box input[role='combobox']::-webkit-input-placeholder {
+  font-weight: 400; }
+
+.bx--list-box input[role='combobox']:-ms-input-placeholder {
+  font-weight: 400; }
+
+.bx--list-box input[role='combobox']::-ms-input-placeholder {
+  font-weight: 400; }
+
+.bx--list-box input[role='combobox']::placeholder {
+  font-weight: 400; }
+
+.bx--list-box--disabled input[role='combobox'] {
+  opacity: 1; }
+
+.bx--combo-box > .bx--list-box__field {
+  padding: 0; }
+
+/**
+ * Generic `deprecate` mixin that is being used to indicate that a component is
+ * no longer going to be present in the next major release of Carbon.
+ */
 .bx--radio-button-group {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1158,7 +1685,7 @@ select[data-invalid] {
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  margin-top: 0.375rem; }
+  margin-top: 0.5rem; }
 
 .bx--radio-button {
   position: absolute;
@@ -1174,7 +1701,7 @@ select[data-invalid] {
 
 .bx--radio-button__label {
   font-size: 0.875rem;
-  font-family: 'IBM Helvetica', Helvetica Neue, HelveticaNeue, Helvetica, sans-serif;
+  font-family: "ibm-plex-sans", Helvetica Neue, Arial, sans-serif;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1185,14 +1712,14 @@ select[data-invalid] {
   margin-right: 1rem; }
 
 .bx--radio-button__appearance {
-  background-color: #fff;
+  background-color: #ffffff;
   border-radius: 50%;
-  border: 2px solid #171717;
+  border: 2px solid #bebebe;
   -ms-flex-negative: 0;
   flex-shrink: 0;
   height: 1.125rem;
   width: 1.125rem;
-  margin-right: 0.625rem; }
+  margin-right: 0.5rem; }
 
 .bx--radio-button:checked + .bx--radio-button__label .bx--radio-button__appearance {
   display: -webkit-box;
@@ -1204,7 +1731,7 @@ select[data-invalid] {
   -webkit-box-pack: center;
   -ms-flex-pack: center;
   justify-content: center;
-  border-color: #0f6dff; }
+  border-color: #006aff; }
   .bx--radio-button:checked + .bx--radio-button__label .bx--radio-button__appearance:before {
     content: '';
     display: inline-block;
@@ -1212,7 +1739,7 @@ select[data-invalid] {
     width: 0.5rem;
     height: 0.5rem;
     border-radius: 50%;
-    background-color: #0f6dff; }
+    background-color: #006aff; }
 
 .bx--radio-button:disabled + .bx--radio-button__label {
   opacity: 0.5;
@@ -1223,6 +1750,10 @@ select[data-invalid] {
   box-shadow: 0 0 0 3px #7cc7ff;
   outline: 1px solid transparent; }
 
+/**
+ * Generic `deprecate` mixin that is being used to indicate that a component is
+ * no longer going to be present in the next major release of Carbon.
+ */
 .bx--toggle {
   position: absolute;
   width: 1px;
@@ -1236,7 +1767,7 @@ select[data-invalid] {
   white-space: nowrap; }
 
 .bx--toggle__label {
-  font-family: 'IBM Helvetica', Helvetica Neue, HelveticaNeue, Helvetica, sans-serif;
+  font-family: "ibm-plex-sans", Helvetica Neue, Arial, sans-serif;
   position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1251,15 +1782,15 @@ select[data-invalid] {
 
 .bx--toggle__appearance {
   position: relative;
-  width: 48px; }
+  width: 3rem; }
   .bx--toggle__appearance:before {
     position: absolute;
     display: block;
     content: '';
     width: 100%;
-    height: 4px;
+    height: 0.25rem;
     top: -2px;
-    background-color: #171717;
+    background-color: #bebebe;
     -webkit-transition: 250ms cubic-bezier(0.5, 0, 0.1, 1);
     transition: 250ms cubic-bezier(0.5, 0, 0.1, 1);
     cursor: pointer; }
@@ -1268,16 +1799,55 @@ select[data-invalid] {
     box-sizing: border-box;
     position: absolute;
     display: block;
-    border: 2px solid #171717;
+    border: 2px solid #bebebe;
     cursor: pointer;
     top: -12px;
-    width: 24px;
-    height: 24px;
+    width: 1.5rem;
+    height: 1.5rem;
     background-color: #f3f3f3;
     border-radius: 50%;
     content: '';
     -webkit-transition: 250ms cubic-bezier(0.5, 0, 0.1, 1);
     transition: 250ms cubic-bezier(0.5, 0, 0.1, 1); }
+
+.bx--toggle--small + .bx--toggle__label {
+  width: 2rem; }
+
+.bx--toggle--small + .bx--toggle__label .bx--toggle__appearance {
+  width: 2rem;
+  height: 1rem; }
+  .bx--toggle--small + .bx--toggle__label .bx--toggle__appearance:before {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    height: 1rem;
+    width: 2rem;
+    border-radius: 0.9375rem;
+    background-color: transparent;
+    border: 2px solid #bebebe;
+    top: 0; }
+  .bx--toggle--small + .bx--toggle__label .bx--toggle__appearance:after {
+    width: 0.625rem;
+    height: 0.625rem;
+    background-color: #bebebe;
+    border: none;
+    top: 3px;
+    left: 3px; }
+
+.bx--toggle__check {
+  fill: #bebebe;
+  position: absolute;
+  left: 6px;
+  top: 6px;
+  z-index: 1;
+  -webkit-transition: 250ms cubic-bezier(0.5, 0, 0.1, 1);
+  transition: 250ms cubic-bezier(0.5, 0, 0.1, 1);
+  -webkit-transform: scale(0.2);
+  transform: scale(0.2); }
+
+.bx--toggle--small:checked + .bx--toggle__label .bx--toggle__check {
+  fill: #006aff;
+  -webkit-transform: scale(1) translateX(16px);
+  transform: scale(1) translateX(16px); }
 
 .bx--toggle__text--left,
 .bx--toggle__text--right {
@@ -1291,15 +1861,26 @@ select[data-invalid] {
   margin-left: 0.5rem; }
 
 .bx--toggle:checked + .bx--toggle__label .bx--toggle__appearance:before {
-  background-color: #0f6dff; }
+  background-color: #006aff; }
 
 .bx--toggle:checked + .bx--toggle__label .bx--toggle__appearance:after {
   -webkit-transform: translateX(24px);
   transform: translateX(24px);
-  background-color: #0f6dff;
+  background-color: #006aff;
   -webkit-box-shadow: none;
   box-shadow: none;
-  border-color: #0f6dff; }
+  border-color: #006aff; }
+
+.bx--toggle--small:checked + .bx--toggle__label .bx--toggle__appearance:before {
+  background-color: #006aff;
+  border-color: #006aff; }
+
+.bx--toggle--small:checked + .bx--toggle__label .bx--toggle__appearance:after {
+  background-color: #f3f3f3;
+  border-color: #f3f3f3;
+  margin-left: 0px;
+  -webkit-transform: translateX(17px);
+  transform: translateX(17px); }
 
 .bx--toggle:focus + .bx--toggle__label .bx--toggle__appearance:before {
   outline: 1px solid transparent; }
@@ -1308,6 +1889,16 @@ select[data-invalid] {
   -webkit-box-shadow: 0 0 0 3px #7cc7ff;
   box-shadow: 0 0 0 3px #7cc7ff;
   outline: 1px solid transparent; }
+
+.bx--toggle--small:focus + .bx--toggle__label .bx--toggle__appearance:before {
+  -webkit-box-shadow: 0 0 0 3px #7cc7ff;
+  box-shadow: 0 0 0 3px #7cc7ff;
+  outline: 1px solid transparent; }
+
+.bx--toggle--small:focus + .bx--toggle__label .bx--toggle__appearance:after {
+  outline: none;
+  -webkit-box-shadow: none;
+  box-shadow: none; }
 
 .bx--toggle:disabled + .bx--toggle__label {
   cursor: not-allowed;
@@ -1318,6 +1909,10 @@ select[data-invalid] {
   -webkit-transition: 250ms cubic-bezier(0.5, 0, 0.1, 1);
   transition: 250ms cubic-bezier(0.5, 0, 0.1, 1); }
 
+/**
+ * Generic `deprecate` mixin that is being used to indicate that a component is
+ * no longer going to be present in the next major release of Carbon.
+ */
 .bx--search {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1338,31 +1933,33 @@ select[data-invalid] {
   white-space: nowrap; }
 
 .bx--search-input {
-  font-family: 'IBM Helvetica', Helvetica Neue, HelveticaNeue, Helvetica, sans-serif;
+  font-family: "ibm-plex-sans", Helvetica Neue, Arial, sans-serif;
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
   border: none;
   background-color: #f3f3f3;
-  color: #171717;
+  color: #252525;
   font-weight: 600;
-  padding: 0 2.5rem 0 2.5rem;
+  padding: 0 2.5rem;
   text-overflow: ellipsis;
   width: 100%; }
   .bx--search-input:focus {
-    outline: 1px solid #0f6dff; }
+    outline: 1px solid #006aff; }
   .bx--search-input::-webkit-input-placeholder {
-    color: #a3a3a3;
+    color: #252525;
     font-weight: 400; }
   .bx--search-input:-ms-input-placeholder {
-    color: #a3a3a3;
+    color: #252525;
     font-weight: 400; }
   .bx--search-input::-ms-input-placeholder {
-    color: #a3a3a3;
+    color: #252525;
     font-weight: 400; }
   .bx--search-input::placeholder {
-    color: #a3a3a3;
+    color: #252525;
     font-weight: 400; }
+  .bx--search-input::-ms-clear {
+    display: none; }
 
 .bx--search--sm .bx--search-input {
   font-size: 0.875rem;
@@ -1381,12 +1978,12 @@ select[data-invalid] {
 
 .bx--search-magnifier {
   left: 0.75rem;
-  fill: #171717; }
+  fill: #bebebe; }
 
 .bx--search-close {
   -webkit-transition: 250ms;
   transition: 250ms;
-  fill: #171717;
+  fill: #bebebe;
   cursor: pointer;
   visibility: visible;
   opacity: 1; }
@@ -1396,6 +1993,9 @@ select[data-invalid] {
 
 .bx--search--lg .bx--search-close {
   right: 6.25rem; }
+
+.bx--search--lg .bx--search-close:last-child {
+  right: 0.75rem; }
 
 .bx--search-button {
   border: 0;
@@ -1417,14 +2017,14 @@ select[data-invalid] {
   vertical-align: middle;
   -webkit-transition: 250ms;
   transition: 250ms;
-  fill: #0f6dff;
+  fill: #006aff;
   height: 1rem;
   width: 1rem; }
 
 .bx--search-button:hover,
 .bx--search-button:focus {
   cursor: pointer;
-  background-color: #0f6dff;
+  background-color: #006aff;
   outline: 1px solid transparent; }
 
 .bx--search-button:hover svg,
@@ -1438,20 +2038,24 @@ select[data-invalid] {
 .bx--search-view--hidden {
   display: none; }
 
+/**
+ * Generic `deprecate` mixin that is being used to indicate that a component is
+ * no longer going to be present in the next major release of Carbon.
+ */
 .bx--select {
   position: relative;
   display: block; }
 
 .bx--select-input {
-  font-family: 'IBM Helvetica', Helvetica Neue, HelveticaNeue, Helvetica, sans-serif;
+  font-family: "ibm-plex-sans", Helvetica Neue, Arial, sans-serif;
   font-size: 0.875rem;
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
   display: block;
   width: 100%;
-  padding: 0.75rem 2.75rem 0.75rem 1rem;
-  color: #171717;
+  padding: 0.75rem 2.5rem 0.75rem 1rem;
+  color: #252525;
   background-color: #f3f3f3;
   border: 1px solid transparent;
   border-radius: 0;
@@ -1459,13 +2063,13 @@ select[data-invalid] {
   .bx--select-input::-ms-expand {
     display: none; }
   .bx--select-input:focus {
-    outline: 1px solid #0f6dff; }
+    outline: 1px solid #006aff; }
   .bx--select-input:disabled {
     opacity: 0.5;
     cursor: not-allowed; }
 
 .bx--select__arrow {
-  fill: #0f6dff;
+  fill: #006aff;
   position: absolute;
   right: 1rem;
   top: 1.175rem;
@@ -1475,14 +2079,14 @@ select[data-invalid] {
 
 .bx--select-optgroup,
 .bx--select-option {
-  color: #171717; }
+  color: #252525; }
 
 @-moz-document url-prefix() {
   .bx--select-option {
     background-color: #f3f3f3;
-    color: #171717; }
+    color: #252525; }
   .bx--select-optgroup {
-    color: #171717; } }
+    color: #252525; } }
 
 .bx--select--inline {
   display: -webkit-box;
@@ -1497,53 +2101,65 @@ select[data-invalid] {
     font-weight: 400; }
   .bx--select--inline .bx--select-input {
     background-color: transparent;
-    color: #0f6dff;
+    color: #006aff;
     font-weight: 600; }
     .bx--select--inline .bx--select-input:disabled ~ * {
       opacity: 0.5;
       cursor: not-allowed; }
 
+/**
+ * Generic `deprecate` mixin that is being used to indicate that a component is
+ * no longer going to be present in the next major release of Carbon.
+ */
 .bx--text-input {
-  font-family: 'IBM Helvetica', Helvetica Neue, HelveticaNeue, Helvetica, sans-serif;
+  font-family: "ibm-plex-sans", Helvetica Neue, Arial, sans-serif;
   font-size: 0.875rem;
   display: block;
   width: 100%;
   height: 2.5rem;
   min-width: 10rem;
   padding: 0 1rem;
-  color: #171717;
+  color: #252525;
   background-color: #f3f3f3;
   border: 1px solid transparent; }
   .bx--text-input::-webkit-input-placeholder {
-    color: #a3a3a3; }
+    color: #252525; }
   .bx--text-input:focus {
-    outline: 1px solid #0f6dff; }
+    outline: 1px solid #006aff; }
   .bx--text-input:disabled {
     opacity: 0.5;
     cursor: not-allowed; }
   .bx--text-input:disabled:hover {
     border: 1px solid transparent; }
 
+/**
+ * Generic `deprecate` mixin that is being used to indicate that a component is
+ * no longer going to be present in the next major release of Carbon.
+ */
 .bx--text-area {
-  font-family: 'IBM Helvetica', Helvetica Neue, HelveticaNeue, Helvetica, sans-serif;
+  font-family: "ibm-plex-sans", Helvetica Neue, Arial, sans-serif;
   font-size: 0.875rem;
   width: 100%;
   min-width: 10rem;
   padding: 1rem;
-  color: #171717;
+  color: #252525;
   background-color: #f3f3f3;
   border: 1px solid transparent;
   resize: vertical; }
   .bx--text-area:focus {
-    outline: 1px solid #0f6dff; }
+    outline: 1px solid #006aff; }
   .bx--text-area::-webkit-input-placeholder {
-    color: #a3a3a3; }
+    color: #252525; }
   .bx--text-area:disabled {
     opacity: 0.5;
     cursor: not-allowed; }
   .bx--text-area:disabled:hover {
     border: 1px solid transparent; }
 
+/**
+ * Generic `deprecate` mixin that is being used to indicate that a component is
+ * no longer going to be present in the next major release of Carbon.
+ */
 .bx--number {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1551,7 +2167,7 @@ select[data-invalid] {
 
 .bx--number input[type='number'] {
   font-size: 0.875rem;
-  font-family: 'IBM Helvetica', Helvetica Neue, HelveticaNeue, Helvetica, sans-serif;
+  font-family: "ibm-plex-sans", Helvetica Neue, Arial, sans-serif;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
   display: -webkit-inline-box;
@@ -1563,12 +2179,19 @@ select[data-invalid] {
   padding-right: 2rem;
   font-weight: 300;
   height: 2.5rem;
-  color: #171717;
+  color: #252525;
   background-color: #f3f3f3;
   border: 1px solid transparent;
   border-radius: 0; }
   .bx--number input[type='number']:focus {
-    outline: 1px solid #0f6dff; }
+    outline: 1px solid #006aff; }
+  .bx--number input[type='number']:disabled {
+    opacity: 0.5;
+    cursor: not-allowed; }
+  .bx--number input[type='number']:disabled ~ .bx--number__controls {
+    opacity: 0.5;
+    cursor: not-allowed;
+    pointer-events: none; }
 
 .bx--number input[type='number'] {
   -webkit-appearance: textfield;
@@ -1599,7 +2222,7 @@ select[data-invalid] {
   align-items: center; }
 
 .bx--number__control-btn {
-  font-family: 'IBM Helvetica', Helvetica Neue, HelveticaNeue, Helvetica, sans-serif;
+  font-family: "ibm-plex-sans", Helvetica Neue, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   letter-spacing: 0.5px;
@@ -1619,41 +2242,55 @@ select[data-invalid] {
   .bx--number__control-btn::-moz-focus-inner {
     border: 0; }
   .bx--number__control-btn:focus {
-    outline: 1px solid #0f6dff; }
+    outline: 1px solid #006aff; }
   .bx--number__control-btn:hover {
     cursor: pointer; }
   .bx--number__control-btn:hover svg {
-    fill: #0530ad; }
+    fill: #006aff; }
 
 .bx--number__controls svg {
-  fill: #0f6dff;
+  fill: #006aff;
   width: 0.5625rem;
   height: 0.5625rem; }
   .bx--number__controls svg:hover {
     cursor: pointer;
-    fill: #0530ad; }
+    fill: #006aff; }
 
+.bx--number[data-invalid] input[type='number'] {
+  -webkit-box-shadow: 0 2px 0px 0px #e32328;
+  box-shadow: 0 2px 0px 0px #e32328; }
+
+.bx--number[data-invalid] ~ .bx--form-requirement {
+  max-height: 12.5rem; }
+
+/**
+ * Generic `deprecate` mixin that is being used to indicate that a component is
+ * no longer going to be present in the next major release of Carbon.
+ */
 .bx--link {
-  font-family: 'IBM Helvetica', Helvetica Neue, HelveticaNeue, Helvetica, sans-serif;
+  font-family: "ibm-plex-sans", Helvetica Neue, Arial, sans-serif;
   font-size: 0.875rem;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-weight: 600;
-  color: #0f6dff;
+  color: #006aff;
   text-decoration: underline;
   -webkit-transition: 250ms;
   transition: 250ms; }
   .bx--link:visited {
-    color: #0f6dff; }
+    color: #006aff; }
   .bx--link:active, .bx--link:hover, .bx--link:focus {
-    color: #0530ad; }
+    color: #006aff; }
   .bx--link:focus {
-    outline: 1px solid #0f6dff; }
+    outline: 1px solid #006aff; }
+  .bx--link[aria-disabled="true"] {
+    opacity: .5;
+    pointer-events: none; }
 
 .bx--list--nested,
 .bx--list--unordered,
 .bx--list--ordered {
-  font-family: 'IBM Helvetica', Helvetica Neue, HelveticaNeue, Helvetica, sans-serif;
+  font-family: "ibm-plex-sans", Helvetica Neue, Arial, sans-serif;
   font-size: 0.875rem;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -1685,21 +2322,35 @@ select[data-invalid] {
   content: '-';
   padding-right: 0.25rem; }
 
+/**
+ * Generic `deprecate` mixin that is being used to indicate that a component is
+ * no longer going to be present in the next major release of Carbon.
+ */
+/**
+ * Generic `deprecate` mixin that is being used to indicate that a component is
+ * no longer going to be present in the next major release of Carbon.
+ */
+/**
+ * Generic `deprecate` mixin that is being used to indicate that a component is
+ * no longer going to be present in the next major release of Carbon.
+ */
 .bx--overflow-menu {
   position: relative;
   width: 1.25rem;
   height: 2.375rem;
   cursor: pointer; }
   .bx--overflow-menu:focus {
-    outline: 1px solid #0f6dff; }
+    outline: 1px solid transparent;
+    -webkit-box-shadow: 0 0 0 1px #006aff;
+    box-shadow: 0 0 0 1px #006aff; }
 
 .bx--overflow-menu__icon {
   width: 100%;
   height: 100%;
   padding: 0.5rem;
-  fill: #171717; }
+  fill: #bebebe; }
   .bx--overflow-menu__icon:hover, .bx--overflow-menu__icon:focus {
-    fill: #0f6dff; }
+    fill: #006aff; }
 
 .bx--overflow-menu-options {
   -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1);
@@ -1713,13 +2364,13 @@ select[data-invalid] {
   -ms-flex-align: start;
   align-items: flex-start;
   position: absolute;
-  z-index: 1;
-  background-color: #fff;
-  border: 1px solid #8a8a8a;
+  z-index: 10000;
+  background-color: #ffffff;
+  border: 1px solid #f3f3f3;
   width: 11.25rem;
   list-style: none;
   margin-top: 0.25rem;
-  padding: 0.285rem 0 0.5rem;
+  padding: 0.25rem 0 0.5rem;
   left: -20px; }
 
 .bx--overflow-menu-options--open {
@@ -1736,9 +2387,9 @@ select[data-invalid] {
   z-index: -1;
   -webkit-transform: rotate(45deg);
   transform: rotate(45deg);
-  background-color: #fff;
-  border-top: 1px solid #8a8a8a;
-  border-left: 1px solid #8a8a8a;
+  background-color: #ffffff;
+  border-top: 1px solid #f3f3f3;
+  border-left: 1px solid #f3f3f3;
   top: -5px;
   left: 24px; }
 
@@ -1754,11 +2405,11 @@ select[data-invalid] {
   padding: 0; }
 
 .bx--overflow-menu--divider {
-  border-top: 1px solid #8a8a8a; }
+  border-top: 1px solid #f3f3f3; }
 
 .bx--overflow-menu-options__btn {
   font-size: 0.875rem;
-  font-family: 'IBM Helvetica', Helvetica Neue, HelveticaNeue, Helvetica, sans-serif;
+  font-family: "ibm-plex-sans", Helvetica Neue, Arial, sans-serif;
   font-weight: 400;
   width: 100%;
   height: 100%;
@@ -1766,26 +2417,26 @@ select[data-invalid] {
   display: inline-block;
   background-color: transparent;
   text-align: left;
-  padding: 0.5625rem 1rem;
+  padding: 0.5rem 1rem;
   cursor: pointer; }
   .bx--overflow-menu-options__btn:focus {
     outline: 1px solid transparent;
-    background-color: #0f6dff;
-    color: #fff; }
+    background-color: #006aff;
+    color: #ffffff; }
   .bx--overflow-menu-options__option--danger .bx--overflow-menu-options__btn:focus {
-    background-color: #e02730; }
+    background-color: #e32328; }
 
 .bx--overflow-menu-options__option:hover {
-  background-color: #0f6dff; }
+  background-color: #006aff; }
 
 .bx--overflow-menu-options__option:hover .bx--overflow-menu-options__btn {
-  color: #fff; }
+  color: #ffffff; }
 
 .bx--overflow-menu-options__option--danger {
-  border-top: 1px solid #8a8a8a; }
+  border-top: 1px solid #f3f3f3; }
 
 .bx--overflow-menu-options__option--danger:hover {
-  background-color: #e02730; }
+  background-color: #e32328; }
 
 .bx--overflow-menu--flip {
   left: -140px; }
@@ -1793,7 +2444,7 @@ select[data-invalid] {
     left: 145px; }
 
 .bx--responsive-table-container {
-  font-family: 'IBM Helvetica', Helvetica Neue, HelveticaNeue, Helvetica, sans-serif;
+  font-family: "ibm-plex-sans", Helvetica Neue, Arial, sans-serif;
   overflow-x: auto;
   overflow-y: hidden;
   width: 99.9%; }
@@ -1804,7 +2455,7 @@ select[data-invalid] {
   min-width: 500px;
   border-collapse: collapse;
   border-spacing: 0;
-  border: 2px solid #8a8a8a; }
+  border: 2px solid #f3f3f3; }
   .bx--responsive-table td {
     font-size: 0.875rem;
     padding: 0 0.375rem;
@@ -1819,7 +2470,7 @@ select[data-invalid] {
     .bx--responsive-table th:focus {
       outline: 1px solid transparent; }
       .bx--responsive-table th:focus span {
-        outline: 1px solid #0f6dff; }
+        outline: 1px solid #006aff; }
   .bx--responsive-table--tall td,
   .bx--responsive-table--tall th {
     padding-top: 0.9375rem;
@@ -1827,7 +2478,7 @@ select[data-invalid] {
   .bx--responsive-table--static-size {
     border-collapse: collapse;
     width: auto;
-    border: 2px solid #8a8a8a; }
+    border: 2px solid #f3f3f3; }
     .bx--responsive-table--static-size tr td:first-child,
     .bx--responsive-table--static-size tr th:first-child {
       padding-left: 1.5rem; }
@@ -1842,7 +2493,7 @@ select[data-invalid] {
   padding-left: 1rem; }
 
 .bx--table-head .bx--table-row {
-  border-bottom: 1px solid #0f6dff;
+  border-bottom: 1px solid #006aff;
   height: 2rem; }
 
 .bx--table-header {
@@ -1861,22 +2512,22 @@ select[data-invalid] {
     background-color: #f3f3f3; }
   .bx--table-body > .bx--parent-row--even,
   .bx--table-body > .bx--parent-row--even {
-    background-color: #d8d8d8; }
+    background-color: #dcdcdc; }
     .bx--table-body > .bx--parent-row--even + .bx--expandable-row,
     .bx--table-body > .bx--parent-row--even + .bx--expandable-row {
-      background-color: #d8d8d8; }
+      background-color: #dcdcdc; }
 
 .bx--table-body .bx--table-row {
   border: 1px solid transparent; }
   .bx--table-body .bx--table-row:first-child:hover, .bx--table-body .bx--table-row:first-child:focus {
-    border-left: 2px solid #0530ad;
-    outline: 1px solid #0530ad; }
+    border-left: 2px solid #006aff;
+    outline: 1px solid #006aff; }
   .bx--table-body .bx--table-row:not(:first-child):hover, .bx--table-body .bx--table-row:not(:first-child):focus {
-    border-left: 2px solid #0530ad;
-    outline: 1px solid #0530ad; }
+    border-left: 2px solid #006aff;
+    outline: 1px solid #006aff; }
 
 .bx--expandable-row > td {
-  border-left: 4px solid #0f6dff;
+  border-left: 4px solid #006aff;
   padding: 2rem; }
 
 .bx--expandable-row--hidden {
@@ -1891,10 +2542,10 @@ select[data-invalid] {
   .bx--table-expand:focus {
     outline: 1px solid transparent; }
     .bx--table-expand:focus svg {
-      outline: 1px solid #0f6dff; }
+      outline: 1px solid #006aff; }
 
 .bx--table-expand__svg {
-  fill: #171717;
+  fill: #bebebe;
   -webkit-transform: rotate(0deg);
   transform: rotate(0deg);
   -webkit-transition: -webkit-transform 200ms cubic-bezier(0.5, 0, 0.1, 1);
@@ -1921,7 +2572,7 @@ select[data-invalid] {
   cursor: pointer; }
 
 .bx--table-sort__svg {
-  fill: #171717;
+  fill: #bebebe;
   width: 8px;
   height: 8px;
   -webkit-transform: rotate(0deg);
@@ -1961,6 +2612,10 @@ select[data-invalid] {
   .bx--table-overflow .bx--overflow-menu {
     padding: 0; }
 
+/**
+ * Generic `deprecate` mixin that is being used to indicate that a component is
+ * no longer going to be present in the next major release of Carbon.
+ */
 .bx--table-toolbar {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1972,9 +2627,13 @@ select[data-invalid] {
   .bx--table-toolbar .bx--search-input {
     position: relative; }
     .bx--table-toolbar .bx--search-input:focus {
-      -webkit-box-shadow: inset 0px 0px 0px 1px #0f6dff;
-      box-shadow: inset 0px 0px 0px 1px #0f6dff;
+      -webkit-box-shadow: inset 0px 0px 0px 1px #006aff;
+      box-shadow: inset 0px 0px 0px 1px #006aff;
       outline: 0; }
+  .bx--table-toolbar .bx--search-close {
+    height: 10px;
+    width: 10px;
+    top: calc(50% - 5px); }
 
 .bx--toolbar-content {
   display: -webkit-box;
@@ -1983,7 +2642,7 @@ select[data-invalid] {
   margin-left: auto; }
 
 .bx--toolbar-action {
-  font-family: 'IBM Helvetica', Helvetica Neue, HelveticaNeue, Helvetica, sans-serif;
+  font-family: "ibm-plex-sans", Helvetica Neue, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   letter-spacing: 0.5px;
@@ -2002,24 +2661,24 @@ select[data-invalid] {
   .bx--toolbar-action::-moz-focus-inner {
     border: 0; }
   .bx--toolbar-action:hover > .bx--toolbar-action__icon {
-    fill: #0f6dff; }
+    fill: #006aff; }
   .bx--toolbar-action:focus {
-    outline: 1px solid #0f6dff; }
+    outline: 1px solid #006aff; }
     .bx--toolbar-action:focus > .bx--toolbar-action__icon {
-      fill: #0f6dff; }
+      fill: #006aff; }
   .bx--toolbar-action:active > .bx--toolbar-action__icon {
-    fill: #0060f5; }
+    fill: #005fe6; }
   .bx--toolbar-action:last-of-type {
     padding-right: 0; }
   .bx--toolbar-action ~ .bx--btn {
     margin-left: 0.75rem;
-    margin-right: 0.125rem; }
+    margin-right: 0.75rem; }
 
 .bx--toolbar-action__icon {
   height: 1rem;
   width: auto;
   max-width: 16px;
-  fill: #171717;
+  fill: #bebebe;
   -webkit-transition: 250ms;
   transition: 250ms; }
 
@@ -2038,30 +2697,30 @@ select[data-invalid] {
   padding-right: 1.5rem;
   width: 100%;
   height: 100%;
-  z-index: 99999;
+  z-index: 6000;
   background-color: transparent;
   -webkit-transition: opacity 200ms cubic-bezier(0.5, 0, 0.1, 1), background-color 200ms cubic-bezier(0.5, 0, 0.1, 1);
   transition: opacity 200ms cubic-bezier(0.5, 0, 0.1, 1), background-color 200ms cubic-bezier(0.5, 0, 0.1, 1);
   pointer-events: none;
   visibility: hidden; }
   .bx--batch-actions:focus {
-    outline: 1px solid #0f6dff; }
+    outline: 1px solid #006aff; }
   .bx--batch-actions .bx--btn {
     color: #f3f3f3; }
   .bx--batch-actions .bx--btn__icon {
     fill: #f3f3f3; }
   .bx--batch-actions .bx--btn--ghost:hover, .bx--batch-actions .bx--btn--ghost:focus {
     background-color: #f3f3f3;
-    color: #0f6dff; }
+    color: #006aff; }
     .bx--batch-actions .bx--btn--ghost:hover .bx--btn__icon, .bx--batch-actions .bx--btn--ghost:focus .bx--btn__icon {
-      fill: #0f6dff; }
+      fill: #006aff; }
   .bx--batch-actions .bx--btn--ghost:focus {
-    border: 2px solid #0f6dff;
-    outline: 2px solid #fff; }
+    border: 2px solid #006aff;
+    outline: 2px solid #ffffff; }
 
 .bx--batch-actions--active {
   visibility: visible;
-  background-color: #0f6dff;
+  background-color: #006aff;
   pointer-events: all;
   -webkit-transition: opacity 200ms cubic-bezier(0.5, 0, 0.1, 1), background-color 200ms cubic-bezier(0.5, 0, 0.1, 1);
   transition: opacity 200ms cubic-bezier(0.5, 0, 0.1, 1), background-color 200ms cubic-bezier(0.5, 0, 0.1, 1);
@@ -2093,7 +2752,7 @@ select[data-invalid] {
   margin-right: 1.5rem; }
 
 .bx--batch-summary__cancel {
-  font-family: 'IBM Helvetica', Helvetica Neue, HelveticaNeue, Helvetica, sans-serif;
+  font-family: "ibm-plex-sans", Helvetica Neue, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   letter-spacing: 0.5px;
@@ -2106,13 +2765,16 @@ select[data-invalid] {
   padding: 0;
   cursor: pointer;
   font-size: 0.875rem;
-  -webkit-font-smoothing: auto;
   color: #f3f3f3;
-  border-bottom: 1px solid #f3f3f3;
+  border-bottom: 1px solid transparent;
   font-weight: 600;
-  cursor: pointer; }
+  cursor: pointer;
+  -webkit-transition: border 250ms cubic-bezier(0.5, 0, 0.1, 1);
+  transition: border 250ms cubic-bezier(0.5, 0, 0.1, 1); }
   .bx--batch-summary__cancel::-moz-focus-inner {
     border: 0; }
+  .bx--batch-summary__cancel:hover, .bx--batch-summary__cancel:focus {
+    border-bottom: 1px solid #f3f3f3; }
 
 .bx--batch-actions ~ .bx--toolbar-search-container,
 .bx--batch-actions ~ .bx--toolbar-content {
@@ -2128,16 +2790,16 @@ select[data-invalid] {
   width: 100%;
   min-width: 31.25rem;
   overflow-x: auto;
-  padding-top: 2px; }
+  padding-top: 0.125rem; }
 
 .bx--data-table-v2 {
   border-collapse: collapse;
   border-spacing: 0;
   width: 100%;
-  border-bottom: 1px solid #8a8a8a; }
+  border-bottom: 1px solid #f3f3f3; }
   .bx--data-table-v2 thead {
     font-size: 0.875rem;
-    background-color: #fff;
+    background-color: #ffffff;
     font-weight: 700; }
   .bx--data-table-v2 tbody {
     font-size: 0.875rem;
@@ -2145,47 +2807,52 @@ select[data-invalid] {
   .bx--data-table-v2 tr {
     height: 3rem; }
     .bx--data-table-v2 tr:hover td {
-      background-color: rgba(5, 48, 173, 0.1);
-      border-top: 1px solid #0f6dff;
-      border-bottom: 1px solid #0f6dff; }
+      background-color: rgba(0, 106, 255, 0.1);
+      border-top: 1px solid #006aff;
+      border-bottom: 1px solid #006aff; }
       .bx--data-table-v2 tr:hover td:first-of-type {
-        border-left: 1px solid #0f6dff; }
+        border-left: 1px solid #006aff; }
       .bx--data-table-v2 tr:hover td:last-of-type {
-        border-right: 1px solid #0f6dff; }
+        border-right: 1px solid #006aff; }
     .bx--data-table-v2 tr:hover .bx--overflow-menu {
       opacity: 1; }
   .bx--data-table-v2 th {
-    border-top: 1px solid #8a8a8a; }
+    border-top: 1px solid #f3f3f3; }
   .bx--data-table-v2 th,
   .bx--data-table-v2 td {
-    border-top: 1px solid #8a8a8a;
+    border-top: 1px solid #f3f3f3;
     padding-left: 0.75rem;
     vertical-align: middle;
     text-align: left; }
     .bx--data-table-v2 th:first-of-type,
     .bx--data-table-v2 td:first-of-type {
       padding-left: 1.5rem;
-      border-left: 1px solid #8a8a8a; }
+      border-left: 1px solid #f3f3f3; }
     .bx--data-table-v2 th:last-of-type,
     .bx--data-table-v2 td:last-of-type {
       padding-right: 1.5rem;
-      border-right: 1px solid #8a8a8a; }
-  .bx--data-table-v2 .bx--checkbox-appearance {
-    margin-right: 0; }
+      border-right: 1px solid #f3f3f3; }
+  .bx--data-table-v2 .bx--checkbox-label {
+    padding-left: 1.75rem; }
   .bx--data-table-v2 .bx--overflow-menu {
     opacity: 0; }
     .bx--data-table-v2 .bx--overflow-menu:focus {
       outline: 0;
-      opacity: 1; }
+      opacity: 1;
+      -webkit-box-shadow: none;
+      box-shadow: none; }
       .bx--data-table-v2 .bx--overflow-menu:focus .bx--overflow-menu__icon {
-        -webkit-box-shadow: inset 0px 0px 0px 1px #0f6dff;
-        box-shadow: inset 0px 0px 0px 1px #0f6dff; }
+        -webkit-box-shadow: inset 0px 0px 0px 1px #006aff;
+        box-shadow: inset 0px 0px 0px 1px #006aff; }
   .bx--data-table-v2 .bx--overflow-menu__icon {
     -webkit-transform: rotate(90deg);
     transform: rotate(90deg); }
 
+.bx--data-table-v2-header {
+  margin-bottom: 0.5rem; }
+
 .bx--data-table-v2--zebra tbody tr:nth-child(even) {
-  background-color: #fff; }
+  background-color: #ffffff; }
 
 .bx--data-table-v2--no-border tr:last-of-type td {
   border-bottom-color: transparent; }
@@ -2196,7 +2863,7 @@ select[data-invalid] {
 
 .bx--data-table-v2--no-border th:last-of-type,
 .bx--data-table-v2--no-border td:last-of-type {
-  border-right-color: #8a8a8a; }
+  border-right-color: #f3f3f3; }
 
 .bx--data-table-v2--compact tbody tr {
   height: 1.5rem; }
@@ -2209,6 +2876,10 @@ select[data-invalid] {
 
 .bx--data-table-v2--static {
   width: auto; }
+
+.bx--data-table-v2--zebra tbody tr.bx--data-table-v2--selected,
+tbody tr.bx--data-table-v2--selected {
+  background-color: rgba(0, 106, 255, 0.1); }
 
 tr.bx--expandable-row-v2.bx--expandable-row--hidden-v2 {
   display: none; }
@@ -2225,35 +2896,35 @@ tr.bx--expandable-row-v2 > td:first-of-type {
     left: 0;
     height: 100%;
     width: 2px;
-    background-color: #0f6dff; }
+    background-color: #006aff; }
 
 tr.bx--expandable-row-v2 + tr[data-child-row] td {
   border-top: 0;
   padding-bottom: 0.5rem; }
 
 tr.bx--expandable-row-v2:hover > td {
-  background-color: rgba(5, 48, 173, 0.1); }
+  background-color: rgba(0, 106, 255, 0.1); }
 
 tr.bx--expandable-row-v2:hover > td:first-of-type {
   border-left: 1px solid transparent; }
 
 tr.bx--expandable-row-v2:hover > td:last-of-type {
-  border-right: 1px solid #0f6dff; }
+  border-right: 1px solid #006aff; }
 
 tr.bx--expandable-row-v2:hover[data-parent-row] > td {
   border-bottom: 0; }
 
 tr.bx--expandable-row-v2:hover + tr[data-child-row] > td {
-  background-color: rgba(5, 48, 173, 0.1);
-  border-bottom: 1px solid #0f6dff;
-  border-right: 1px solid #0f6dff; }
+  background-color: rgba(0, 106, 255, 0.1);
+  border-bottom: 1px solid #006aff;
+  border-right: 1px solid #006aff; }
 
 tr.bx--expandable-row--hover-v2 > td {
-  background-color: rgba(5, 48, 173, 0.1);
-  border-top: 1px solid #0f6dff; }
+  background-color: rgba(0, 106, 255, 0.1);
+  border-top: 1px solid #006aff; }
 
 tr.bx--expandable-row--hover-v2 > td:last-of-type {
-  border-right: 1px solid #0f6dff; }
+  border-right: 1px solid #006aff; }
 
 .bx--table-expand-v2[data-previous-value='collapsed'] .bx--table-expand-v2__svg {
   -webkit-transform: rotate(90deg);
@@ -2264,7 +2935,7 @@ tr.bx--expandable-row--hover-v2 > td:last-of-type {
   transition: transform 200ms cubic-bezier(0.5, 0, 0.1, 1), -webkit-transform 200ms cubic-bezier(0.5, 0, 0.1, 1); }
 
 .bx--table-expand-v2__button {
-  font-family: 'IBM Helvetica', Helvetica Neue, HelveticaNeue, Helvetica, sans-serif;
+  font-family: "ibm-plex-sans", Helvetica Neue, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   letter-spacing: 0.5px;
@@ -2281,11 +2952,11 @@ tr.bx--expandable-row--hover-v2 > td:last-of-type {
   .bx--table-expand-v2__button:focus {
     outline: 1px solid transparent; }
     .bx--table-expand-v2__button:focus svg {
-      -webkit-box-shadow: inset 0px 0px 0px 1px #0f6dff;
-      box-shadow: inset 0px 0px 0px 1px #0f6dff; }
+      -webkit-box-shadow: inset 0px 0px 0px 1px #006aff;
+      box-shadow: inset 0px 0px 0px 1px #006aff; }
 
 .bx--table-expand-v2__svg {
-  fill: #171717;
+  fill: #bebebe;
   -webkit-transform: rotate(0deg);
   transform: rotate(0deg);
   -webkit-transition: -webkit-transform 200ms cubic-bezier(0.5, 0, 0.1, 1);
@@ -2295,7 +2966,7 @@ tr.bx--expandable-row--hover-v2 > td:last-of-type {
   height: 16px;
   width: auto;
   max-width: 16px;
-  padding: 2px; }
+  padding: 0.125rem; }
 
 .bx--table-sort-v2--ascending .bx--table-sort-v2__icon {
   -webkit-transform: rotate(180deg);
@@ -2312,7 +2983,7 @@ tr.bx--expandable-row--hover-v2 > td:last-of-type {
   opacity: 1; }
 
 .bx--table-sort-v2 {
-  font-family: 'IBM Helvetica', Helvetica Neue, HelveticaNeue, Helvetica, sans-serif;
+  font-family: "ibm-plex-sans", Helvetica Neue, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   letter-spacing: 0.5px;
@@ -2341,8 +3012,8 @@ tr.bx--expandable-row--hover-v2 > td:last-of-type {
     outline: 0; }
     .bx--table-sort-v2:focus svg {
       opacity: 1;
-      outline: 1px solid #0f6dff;
-      fill: #0f6dff;
+      outline: 1px solid #006aff;
+      fill: #006aff;
       outline-offset: -0.5px; }
 
 .bx--table-sort-v2__icon {
@@ -2355,9 +3026,9 @@ tr.bx--expandable-row--hover-v2 > td:last-of-type {
   -webkit-transform: rotate(0);
   transform: rotate(0);
   opacity: 0;
-  fill: #171717;
+  fill: #bebebe;
   height: 0.5625rem;
-  padding: 2px;
+  padding: 0.125rem;
   width: auto;
   max-width: 14px; }
 
@@ -2378,7 +3049,7 @@ tr.bx--expandable-row--hover-v2 > td:last-of-type {
   display: none; }
 
 .bx--inline-edit-label__action {
-  font-family: 'IBM Helvetica', Helvetica Neue, HelveticaNeue, Helvetica, sans-serif;
+  font-family: "ibm-plex-sans", Helvetica Neue, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   letter-spacing: 0.5px;
@@ -2395,14 +3066,14 @@ tr.bx--expandable-row--hover-v2 > td:last-of-type {
   .bx--inline-edit-label__action:hover {
     cursor: pointer; }
   .bx--inline-edit-label__action:focus {
-    outline: 1px solid #0f6dff;
-    padding: 2px; }
+    outline: 1px solid #006aff;
+    padding: 0.125rem; }
     .bx--inline-edit-label__action:focus .bx--inline-edit-label__icon {
       width: auto;
       opacity: 1; }
 
 .bx--inline-edit-label__icon {
-  fill: #171717;
+  fill: #bebebe;
   opacity: 0; }
 
 .bx--inline-edit-input {
@@ -2423,6 +3094,10 @@ tr.bx--expandable-row--hover-v2 > td:last-of-type {
 .bx--data-table-v2--short .bx--select__arrow {
   top: 0.875rem; }
 
+/**
+ * Generic `deprecate` mixin that is being used to indicate that a component is
+ * no longer going to be present in the next major release of Carbon.
+ */
 .bx--structured-list--selection .bx--structured-list-td,
 .bx--structured-list--selection .bx--structured-list-th {
   padding-left: 1rem;
@@ -2451,7 +3126,7 @@ tr.bx--expandable-row--hover-v2 > td:last-of-type {
   display: none; }
 
 .bx--structured-list {
-  font-family: 'IBM Helvetica', Helvetica Neue, HelveticaNeue, Helvetica, sans-serif;
+  font-family: "ibm-plex-sans", Helvetica Neue, Arial, sans-serif;
   display: table;
   overflow-x: auto;
   overflow-y: hidden;
@@ -2462,29 +3137,29 @@ tr.bx--expandable-row--hover-v2 > td:last-of-type {
   margin-bottom: 5rem;
   background-color: transparent; }
   .bx--structured-list.bx--structured-list--border {
-    border: 1px solid #8a8a8a;
+    border: 1px solid #f3f3f3;
     background-color: #f3f3f3; }
   .bx--structured-list.bx--structured-list--condensed .bx--structured-list-td {
     padding: 0.5rem; }
 
 .bx--structured-list-row {
   display: table-row;
-  border-bottom: 1px solid #8a8a8a;
+  border-bottom: 1px solid #f3f3f3;
   -webkit-transition: 250ms cubic-bezier(0.5, 0, 0.1, 1);
   transition: 250ms cubic-bezier(0.5, 0, 0.1, 1); }
   .bx--structured-list--selection .bx--structured-list-row:hover:not(.bx--structured-list-row--header-row) {
-    background-color: rgba(5, 48, 173, 0.1);
+    background-color: rgba(0, 106, 255, 0.1);
     cursor: pointer; }
   [data-structured-list] .bx--structured-list-row:hover:not(.bx--structured-list-row--header-row) {
-    background-color: rgba(5, 48, 173, 0.1);
+    background-color: rgba(0, 106, 255, 0.1);
     cursor: pointer; }
   .bx--structured-list-row.bx--structured-list-row--selected {
-    background-color: rgba(5, 48, 173, 0.1); }
+    background-color: rgba(0, 106, 255, 0.1); }
   .bx--structured-list-row.bx--structured-list-row--header-row {
-    border-bottom: 2px solid #0f6dff;
+    border-bottom: 2px solid #006aff;
     cursor: inherit; }
   .bx--structured-list-row:focus:not(.bx--structured-list-row--header-row) {
-    outline: 1px solid #0f6dff; }
+    outline: 1px solid #006aff; }
 
 .bx--structured-list-thead {
   display: table-header-group;
@@ -2531,16 +3206,20 @@ tr.bx--expandable-row--hover-v2 > td:last-of-type {
   -webkit-transition: 250ms cubic-bezier(0.5, 0, 0.1, 1);
   transition: 250ms cubic-bezier(0.5, 0, 0.1, 1); }
   .bx--structured-list-row:hover .bx--structured-list-svg {
-    fill: rgba(5, 48, 173, 0.1); }
+    fill: rgba(0, 106, 255, 0.1); }
   .bx--structured-list-input:checked + .bx--structured-list-row .bx--structured-list-svg,
   .bx--structured-list-input:checked + .bx--structured-list-td .bx--structured-list-svg {
-    fill: #0530ad; }
+    fill: #006aff; }
 
 .bx--structured-list-content {
   font-size: 0.875rem; }
 
+/**
+ * Generic `deprecate` mixin that is being used to indicate that a component is
+ * no longer going to be present in the next major release of Carbon.
+ */
 .bx--snippet--code {
-  font-family: monospace;
+  font-family: "ibm-plex-mono", "Menlo", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", Courier, monospace;
   position: relative;
   max-width: 40rem;
   width: 100%;
@@ -2560,12 +3239,12 @@ tr.bx--expandable-row--hover-v2 > td:last-of-type {
   white-space: pre-wrap; }
 
 .bx--snippet--terminal {
-  font-family: monospace;
+  font-family: "ibm-plex-mono", "Menlo", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", Courier, monospace;
   position: relative;
   max-width: 40rem;
   width: 100%;
-  background-color: #171717;
-  color: #fff;
+  background-color: #252525;
+  color: #ffffff;
   height: 3.5rem;
   padding: 0 2.5rem 0 1rem; }
 
@@ -2582,21 +3261,21 @@ tr.bx--expandable-row--hover-v2 > td:last-of-type {
   position: relative; }
 
 .bx--snippet__icon {
-  cursor: pointer;
-  fill: #0f6dff;
+  fill: #006aff;
   height: 1.5rem;
   width: 1.125rem;
   -webkit-transition: 250ms;
   transition: 250ms; }
   .bx--snippet__icon:hover {
-    fill: #0530ad; }
+    fill: #006aff; }
 
 .bx--snippet--terminal .bx--snippet__icon {
-  fill: #fff; }
+  fill: #ffffff; }
   .bx--snippet--terminal .bx--snippet__icon:hover {
-    fill: #0530ad; }
+    fill: #006aff; }
 
 .bx--snippet-button {
+  cursor: pointer;
   position: absolute;
   top: 0.5rem;
   right: 0.5rem;
@@ -2607,18 +3286,38 @@ tr.bx--expandable-row--hover-v2 > td:last-of-type {
   height: 2rem;
   width: 2rem; }
   .bx--snippet-button:focus {
-    outline: 1px solid #0f6dff; }
+    outline: 1px solid #006aff; }
 
 .bx--snippet .bx--btn--copy__feedback {
-  font-family: 'IBM Helvetica', Helvetica Neue, HelveticaNeue, Helvetica, sans-serif;
+  font-family: "ibm-plex-sans", Helvetica Neue, Arial, sans-serif;
   z-index: 8000;
   font-weight: 600;
   left: inherit;
   top: 1rem;
   right: 1.25rem; }
 
+/**
+ * Generic `deprecate` mixin that is being used to indicate that a component is
+ * no longer going to be present in the next major release of Carbon.
+ */
+/**
+ * Generic `deprecate` mixin that is being used to indicate that a component is
+ * no longer going to be present in the next major release of Carbon.
+ */
+/**
+ * Generic `deprecate` mixin that is being used to indicate that a component is
+ * no longer going to be present in the next major release of Carbon.
+ */
+/**
+ * Generic `deprecate` mixin that is being used to indicate that a component is
+ * no longer going to be present in the next major release of Carbon.
+ */
+/**
+ * Generic `deprecate` mixin that is being used to indicate that a component is
+ * no longer going to be present in the next major release of Carbon.
+ */
 .bx--card {
-  font-family: 'IBM Helvetica', Helvetica Neue, HelveticaNeue, Helvetica, sans-serif;
+  font-family: "ibm-plex-sans", Helvetica Neue, Arial, sans-serif;
   -webkit-box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.1);
   box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.1);
   display: -webkit-box;
@@ -2631,9 +3330,9 @@ tr.bx--expandable-row--hover-v2 > td:last-of-type {
   width: 12.5rem;
   height: 15rem;
   background-color: #f3f3f3;
-  border: 1px solid #8a8a8a; }
+  border: 1px solid #f3f3f3; }
   .bx--card:focus {
-    outline: 1px solid #0f6dff; }
+    outline: 1px solid #006aff; }
 
 .bx--card__card-overview {
   position: relative;
@@ -2652,7 +3351,7 @@ tr.bx--expandable-row--hover-v2 > td:last-of-type {
     position: absolute;
     top: 1rem;
     right: 1rem;
-    z-index: 1;
+    z-index: 10000;
     margin: 0; }
 
 .bx--card-footer {
@@ -2666,14 +3365,23 @@ tr.bx--expandable-row--hover-v2 > td:last-of-type {
   -ms-flex-pack: justify;
   justify-content: space-between;
   height: 3rem;
-  background-color: #d8d8d8;
+  background-color: #dcdcdc;
   padding-left: 1rem;
   padding-right: 1rem; }
+  .bx--card-footer > .bx--btn {
+    display: block;
+    overflow-x: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    margin-right: 0.25rem;
+    -webkit-box-flex: 1;
+    -ms-flex: 1;
+    flex: 1; }
 
 .bx--card-footer__link {
   font-size: 0.875rem; }
   .bx--card-footer__link:focus {
-    outline: 1px solid #0f6dff; }
+    outline: 1px solid #006aff; }
 
 .bx--card-overview__about {
   display: -webkit-box;
@@ -2689,42 +3397,40 @@ tr.bx--expandable-row--hover-v2 > td:last-of-type {
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  padding-top: 1rem; }
+  padding-top: 1rem;
+  width: 100%; }
 
 .bx--about__title {
   font-weight: 400;
-  padding-top: 1.5rem; }
+  padding-top: 1.5rem;
+  width: 100%; }
 
 .bx--about__title--name {
   font-size: 1.125rem;
   display: block;
-  width: 11.25rem;
   overflow-x: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
   font-weight: 400;
   margin: 0;
-  line-height: 1.2; }
+  line-height: 1.2;
+  overflow: hidden; }
 
 .bx--about__title--link {
   font-size: 0.75rem;
   display: block;
-  width: 11.25rem;
   overflow-x: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
-  display: inline;
   font-weight: 400;
   text-align: center; }
 
 .bx--about__title--additional-info {
   font-size: 0.75rem;
   display: block;
-  width: 11.25rem;
   overflow-x: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
-  display: inline;
   font-weight: 400;
   padding: 0;
   margin: 0;
@@ -2745,7 +3451,7 @@ tr.bx--expandable-row--hover-v2 > td:last-of-type {
   width: 3.125rem;
   height: 3.125rem;
   background-color: #f3f3f3;
-  border: 1px solid #8a8a8a;
+  border: 1px solid #f3f3f3;
   border-radius: 100%; }
   .bx--about__icon .bx--about__icon--img {
     width: 2rem;
@@ -2770,7 +3476,7 @@ tr.bx--expandable-row--hover-v2 > td:last-of-type {
     border-radius: 100%;
     margin-right: 0.25rem; }
   .bx--card-footer__app-status--running::before {
-    background-color: #24a249; }
+    background-color: #118837; }
 
 .bx--card-footer__app-status--not-running {
   font-size: 0.75rem;
@@ -2785,7 +3491,7 @@ tr.bx--expandable-row--hover-v2 > td:last-of-type {
     border-radius: 100%;
     margin-right: 0.25rem; }
   .bx--card-footer__app-status--not-running::before {
-    background-color: #e02730; }
+    background-color: #e32328; }
 
 .bx--card-footer__app-status--stopped {
   font-size: 0.75rem;
@@ -2827,9 +3533,9 @@ tr.bx--expandable-row--hover-v2 > td:last-of-type {
   background: none;
   border: none; }
   .bx--app-actions__button:hover .bx--app-actions__button--icon, .bx--app-actions__button:focus .bx--app-actions__button--icon {
-    fill: #0f6dff; }
+    fill: #006aff; }
   .bx--app-actions__button:focus {
-    outline: 1px solid #0f6dff; }
+    outline: 1px solid #006aff; }
 
 .bx--app-actions__button--icon {
   width: 1rem;
@@ -2837,11 +3543,15 @@ tr.bx--expandable-row--hover-v2 > td:last-of-type {
   margin: 0 0.125rem;
   -webkit-transition: 200ms;
   transition: 200ms;
-  fill: #171717;
+  fill: #bebebe;
   cursor: pointer; }
 
+/**
+ * Generic `deprecate` mixin that is being used to indicate that a component is
+ * no longer going to be present in the next major release of Carbon.
+ */
 .bx--content-switcher {
-  font-family: 'IBM Helvetica', Helvetica Neue, HelveticaNeue, Helvetica, sans-serif;
+  font-family: "ibm-plex-sans", Helvetica Neue, Arial, sans-serif;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -2851,7 +3561,7 @@ tr.bx--expandable-row--hover-v2 > td:last-of-type {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-size: 0.875rem;
-  font-family: 'IBM Helvetica', Helvetica Neue, HelveticaNeue, Helvetica, sans-serif;
+  font-family: "ibm-plex-sans", Helvetica Neue, Arial, sans-serif;
   background-color: transparent;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -2862,35 +3572,41 @@ tr.bx--expandable-row--hover-v2 > td:last-of-type {
   padding: 0 2rem;
   margin: 0;
   text-decoration: none;
-  border: 1px solid #0f6dff;
-  color: #0f6dff; }
+  border: 1px solid #006aff;
+  color: #006aff; }
   .bx--content-switcher-btn:focus {
     outline: 1px solid transparent;
     -webkit-box-shadow: 0 2px 0 0 #7cc7ff, 0 -2px 0 0 #7cc7ff;
     box-shadow: 0 2px 0 0 #7cc7ff, 0 -2px 0 0 #7cc7ff;
-    background-color: #0530ad;
+    background-color: #006aff;
     z-index: 2;
-    border-color: #0530ad;
+    border-color: #006aff;
     text-decoration: underline;
-    color: #fff; }
+    color: #ffffff; }
   .bx--content-switcher-btn:hover {
     cursor: pointer; }
   .bx--content-switcher-btn:hover, .bx--content-switcher-btn:active {
-    background-color: #0530ad;
-    border-color: #0530ad;
-    color: #fff; }
+    background-color: #006aff;
+    border-color: #006aff;
+    color: #ffffff; }
+
+.bx--content-switcher__icon {
+  margin-right: 0.5rem;
+  fill: currentColor; }
+  .bx--content-switcher__icon * {
+    fill: currentColor; }
 
 .bx--content-switcher-btn:not(:last-of-type) {
   border-right: none; }
 
 .bx--content-switcher-btn:not(:first-of-type) {
-  border-left: 1px solid #0f6dff; }
+  border-left: 1px solid #006aff; }
 
 .bx--content-switcher-btn:first-of-type {
   border-bottom-left-radius: 8px;
   border-top-left-radius: 8px; }
   .bx--content-switcher-btn:first-of-type:hover {
-    border-color: #0530ad; }
+    border-color: #006aff; }
   .bx--content-switcher-btn:first-of-type:focus {
     -webkit-box-shadow: -2px 0 0 0 #7cc7ff, 0 2px 0 0 #7cc7ff, 0 -2px 0 0 #7cc7ff;
     box-shadow: -2px 0 0 0 #7cc7ff, 0 2px 0 0 #7cc7ff, 0 -2px 0 0 #7cc7ff;
@@ -2900,20 +3616,24 @@ tr.bx--expandable-row--hover-v2 > td:last-of-type {
   border-top-right-radius: 8px;
   border-bottom-right-radius: 8px; }
   .bx--content-switcher-btn:last-of-type:hover {
-    border-color: #0530ad; }
+    border-color: #006aff; }
   .bx--content-switcher-btn:last-of-type:focus {
     -webkit-box-shadow: 2px 0 0 0 #7cc7ff, 0 2px 0 0 #7cc7ff, 0 -2px 0 0 #7cc7ff;
     box-shadow: 2px 0 0 0 #7cc7ff, 0 2px 0 0 #7cc7ff, 0 -2px 0 0 #7cc7ff;
     z-index: 0; }
 
 .bx--content-switcher-btn.bx--content-switcher--selected {
-  background-color: #0f6dff;
-  color: #fff;
+  background-color: #006aff;
+  color: #ffffff;
   font-weight: 400;
   outline: 1px solid transparent; }
   .bx--content-switcher-btn.bx--content-switcher--selected:hover {
-    border-color: #0f6dff; }
+    border-color: #006aff; }
 
+/**
+ * Generic `deprecate` mixin that is being used to indicate that a component is
+ * no longer going to be present in the next major release of Carbon.
+ */
 .flatpickr-calendar {
   background: transparent;
   overflow: hidden;
@@ -3652,7 +4372,7 @@ span.flatpickr-weekday {
   width: 9rem; }
 
 .bx--date-picker__input {
-  font-family: 'IBM Helvetica', Helvetica Neue, HelveticaNeue, Helvetica, sans-serif;
+  font-family: "ibm-plex-sans", Helvetica Neue, Arial, sans-serif;
   font-size: 0.875rem;
   display: block;
   position: relative;
@@ -3660,28 +4380,28 @@ span.flatpickr-weekday {
   max-width: 9rem;
   padding: 0 1rem;
   background-color: #f3f3f3;
-  color: #171717;
+  color: #252525;
   border: 1px solid transparent; }
   .bx--date-picker__input:focus, .bx--date-picker__input.bx--focused {
-    outline: 1px solid #0f6dff; }
+    outline: 1px solid #006aff; }
   .bx--date-picker__input:disabled {
     opacity: 0.5;
     cursor: not-allowed; }
   .bx--date-picker__input:disabled:hover {
     border: 1px solid transparent; }
   .bx--date-picker__input::-webkit-input-placeholder {
-    color: #a3a3a3; }
+    color: #252525; }
 
 .bx--date-picker__icon {
   position: absolute;
   top: 2.25rem;
   left: 1rem;
-  fill: #0f6dff;
+  fill: #006aff;
   cursor: pointer;
   z-index: 1; }
 
 .bx--date-picker__icon + .bx--date-picker__input {
-  padding-left: 2.9rem; }
+  padding-left: 3rem; }
 
 .bx--date-picker--range {
   display: -webkit-box;
@@ -3703,6 +4423,7 @@ span.flatpickr-weekday {
 .flatpickr-calendar.open {
   -webkit-box-shadow: 0 12px 24px 0 rgba(0, 0, 0, 0.1);
   box-shadow: 0 12px 24px 0 rgba(0, 0, 0, 0.1);
+  background-color: #f3f3f3;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -3716,7 +4437,7 @@ span.flatpickr-weekday {
   -webkit-box-pack: center;
   -ms-flex-pack: center;
   justify-content: center;
-  padding: 0.875rem 1rem 0.25rem;
+  padding: 1rem 1rem 0.25rem;
   width: 17.8125rem;
   height: 14.375rem;
   border-radius: 0;
@@ -3729,24 +4450,25 @@ span.flatpickr-weekday {
     display: none; }
   .bx--date-picker__calendar:focus,
   .flatpickr-calendar.open:focus {
-    outline: 1px solid #0f6dff; }
+    outline: 1px solid #006aff; }
 
 .bx--date-picker__month,
 .flatpickr-month {
   width: 100%;
-  margin-bottom: 0.2rem; }
+  margin-bottom: 0.25rem; }
 
 .bx--date-picker__month .flatpickr-prev-month,
 .bx--date-picker__month .flatpickr-next-month,
 .flatpickr-month .flatpickr-prev-month,
 .flatpickr-month .flatpickr-next-month {
   padding: 0;
-  line-height: 1.25rem; }
+  line-height: 1.25rem;
+  fill: #252525; }
   .bx--date-picker__month .flatpickr-prev-month:hover svg,
   .bx--date-picker__month .flatpickr-next-month:hover svg,
   .flatpickr-month .flatpickr-prev-month:hover svg,
   .flatpickr-month .flatpickr-next-month:hover svg {
-    fill: #0f6dff; }
+    fill: #006aff; }
 
 .bx--date-picker__month .flatpickr-current-month,
 .flatpickr-month .flatpickr-current-month {
@@ -3756,11 +4478,12 @@ span.flatpickr-weekday {
 
 .bx--date-picker__month .flatpickr-current-month svg,
 .flatpickr-month .flatpickr-current-month svg {
-  fill: #171717; }
+  fill: #252525; }
 
 .bx--date-picker__month .flatpickr-current-month .cur-month,
 .flatpickr-month .flatpickr-current-month .cur-month {
-  margin-right: 0.25rem; }
+  margin-right: 0.25rem;
+  color: #252525; }
 
 .numInputWrapper,
 .flatpickr-current-month .numInputWrapper {
@@ -3770,16 +4493,16 @@ span.flatpickr-weekday {
 .bx--date-picker__month .numInputWrapper .numInput,
 .flatpickr-month .numInputWrapper .numInput {
   font-weight: 600;
-  color: #171717;
+  color: #252525;
   background-color: #f3f3f3;
   border: none;
   border-radius: 0;
   min-width: 2.375rem;
   width: 2.375rem;
-  padding: .25rem; }
+  padding: 0.25rem; }
   .bx--date-picker__month .numInputWrapper .numInput:focus,
   .flatpickr-month .numInputWrapper .numInput:focus {
-    outline: 1px solid #0f6dff; }
+    outline: 1px solid #006aff; }
 
 .bx--date-picker__month .numInputWrapper span.arrowUp,
 .bx--date-picker__month .numInputWrapper span.arrowDown,
@@ -3797,14 +4520,14 @@ span.flatpickr-weekday {
     .bx--date-picker__month .numInputWrapper span.arrowDown:hover:after,
     .flatpickr-month .numInputWrapper span.arrowUp:hover:after,
     .flatpickr-month .numInputWrapper span.arrowDown:hover:after {
-      border-bottom-color: #0530ad;
-      border-top-color: #0530ad; }
+      border-bottom-color: #006aff;
+      border-top-color: #006aff; }
   .bx--date-picker__month .numInputWrapper span.arrowUp:after,
   .bx--date-picker__month .numInputWrapper span.arrowDown:after,
   .flatpickr-month .numInputWrapper span.arrowUp:after,
   .flatpickr-month .numInputWrapper span.arrowDown:after {
-    border-bottom-color: #0f6dff;
-    border-top-color: #0f6dff; }
+    border-bottom-color: #006aff;
+    border-top-color: #006aff; }
 
 .bx--date-picker__month .numInputWrapper span.arrowUp,
 .flatpickr-month .numInputWrapper span.arrowUp {
@@ -3818,7 +4541,7 @@ span.bx--date-picker__weekday,
 span.flatpickr-weekday {
   font-size: 0.75rem;
   font-weight: 600;
-  color: #171717; }
+  color: #252525; }
 
 .bx--date-picker__day,
 .flatpickr-day {
@@ -3838,19 +4561,19 @@ span.flatpickr-weekday {
   -webkit-box-pack: center;
   -ms-flex-pack: center;
   justify-content: center;
-  color: #171717;
+  color: #252525;
   border-radius: 0; }
   .bx--date-picker__day:hover,
   .flatpickr-day:hover {
-    background: #8a8a8a; }
+    background: #f3f3f3; }
   .bx--date-picker__day:focus,
   .flatpickr-day:focus {
     outline: none;
-    background: #8a8a8a; }
+    background: #f3f3f3; }
 
 .bx--date-picker__day.today,
 .flatpickr-day.today {
-  border: 2px solid #0f6dff; }
+  border: 2px solid #006aff; }
 
 .bx--date-picker__day.today.no-border,
 .flatpickr-day.today.no-border {
@@ -3859,22 +4582,22 @@ span.flatpickr-weekday {
 .bx--date-picker__day.disabled,
 .flatpickr-day.disabled {
   cursor: not-allowed;
-  color: #171717; }
+  color: #bebebe; }
   .bx--date-picker__day.disabled:hover,
   .flatpickr-day.disabled:hover {
     background: transparent; }
 
 .bx--date-picker__day.inRange,
 .flatpickr-day.inRange {
-  background: #0530ad;
-  -webkit-box-shadow: -6px 0 0 #0530ad, 6px 0 0 #0530ad;
-  box-shadow: -6px 0 0 #0530ad, 6px 0 0 #0530ad;
+  background: #006aff;
+  -webkit-box-shadow: -6px 0 0 #006aff, 6px 0 0 #006aff;
+  box-shadow: -6px 0 0 #006aff, 6px 0 0 #006aff;
   border: 2px solid transparent; }
 
 .bx--date-picker__day.selected,
 .flatpickr-day.selected {
-  background: #0f6dff;
-  color: #fff;
+  background: #006aff;
+  color: #ffffff;
   border: 2px solid transparent; }
 
 .bx--date-picker__day.startRange.selected,
@@ -3886,17 +4609,17 @@ span.flatpickr-weekday {
 .bx--date-picker__day.endRange.inRange,
 .flatpickr-day.endRange.inRange {
   background: #f3f3f3;
-  color: #171717;
-  border: 2px solid #0f6dff;
+  color: #252525;
+  border: 2px solid #006aff;
   z-index: 3;
   -webkit-box-shadow: none;
   box-shadow: none; }
 
 .bx--date-picker__day.endRange.inRange.selected,
 .flatpickr-day.endRange.inRange.selected {
-  background: #0f6dff;
+  background: #006aff;
   border: none;
-  color: #fff;
+  color: #ffffff;
   -webkit-box-shadow: none;
   box-shadow: none; }
 
@@ -3905,7 +4628,7 @@ span.flatpickr-weekday {
   -webkit-box-shadow: none;
   box-shadow: none;
   background: #f3f3f3;
-  border: 2px solid #0f6dff;
+  border: 2px solid #006aff;
   z-index: 3; }
 
 .bx--date-picker__days,
@@ -3923,16 +4646,31 @@ span.flatpickr-weekday {
 .bx--date-picker__weekdays,
 .flatpickr-weekdays {
   width: 14.0625rem;
-  margin-bottom: 0.325rem; }
+  margin-bottom: 0.25rem; }
 
+/**
+ * Generic `deprecate` mixin that is being used to indicate that a component is
+ * no longer going to be present in the next major release of Carbon.
+ */
+/**
+ * Generic `deprecate` mixin that is being used to indicate that a component is
+ * no longer going to be present in the next major release of Carbon.
+ */
+/**
+ * Generic `deprecate` mixin that is being used to indicate that a component is
+ * no longer going to be present in the next major release of Carbon.
+ */
+/**
+ * Generic `deprecate` mixin that is being used to indicate that a component is
+ * no longer going to be present in the next major release of Carbon.
+ */
 .bx--tabs {
   font-size: 0.875rem;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  font-family: 'IBM Helvetica', Helvetica Neue, HelveticaNeue, Helvetica, sans-serif;
-  color: #171717;
+  font-family: "ibm-plex-sans", Helvetica Neue, Arial, sans-serif;
+  color: #252525;
   font-weight: 600;
-  cursor: pointer;
   height: auto;
   width: 100%;
   position: relative; }
@@ -3951,15 +4689,16 @@ span.flatpickr-weekday {
   -webkit-box-pack: justify;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  padding: 0.8125rem 1rem;
+  padding: 0 1rem;
+  height: 2.5rem;
   cursor: pointer;
   background-color: #f3f3f3; }
   .bx--tabs-trigger svg {
     width: 0.75rem;
     height: 0.75rem;
-    fill: #0f6dff; }
+    fill: #006aff; }
   .bx--tabs-trigger:focus {
-    outline: 1px solid #0f6dff; }
+    outline: 1px solid #006aff; }
   @media screen and (min-width: 768px) {
     .bx--tabs-trigger {
       display: none; } }
@@ -3967,9 +4706,9 @@ span.flatpickr-weekday {
 .bx--tabs-trigger-text {
   text-decoration: none;
   font-weight: 600;
-  color: #171717; }
+  color: #252525; }
   .bx--tabs-trigger-text:focus {
-    outline: 1px solid #0f6dff; }
+    outline: 1px solid #006aff; }
 
 .bx--tabs__nav {
   -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1);
@@ -4013,9 +4752,10 @@ span.flatpickr-weekday {
 .bx--tabs__nav-item {
   font-size: 0.875rem;
   background-color: #f3f3f3;
-  padding: 0; }
+  padding: 0;
+  cursor: pointer; }
   .bx--tabs__nav-item:hover, .bx--tabs__nav-item:focus {
-    background-color: #0f6dff; }
+    background-color: #006aff; }
     @media screen and (min-width: 768px) {
       .bx--tabs__nav-item:hover, .bx--tabs__nav-item:focus {
         outline: 1px solid transparent;
@@ -4023,7 +4763,7 @@ span.flatpickr-weekday {
   @media screen and (min-width: 768px) {
     .bx--tabs__nav-item {
       background: transparent;
-      padding: 0.725rem 0 0.625rem; }
+      padding: 0.75rem 0 0.75rem; }
       .bx--tabs__nav-item + .bx--tabs__nav-item {
         margin-left: 3rem; } }
 
@@ -4031,21 +4771,21 @@ span.flatpickr-weekday {
   border: none; }
   @media screen and (min-width: 768px) {
     .bx--tabs__nav-item--selected {
-      border-bottom: 2px solid #0f6dff; }
+      border-bottom: 2px solid #006aff; }
       .bx--tabs__nav-item--selected .bx--tabs__nav-link {
-        color: #0f6dff; }
+        color: #006aff; }
         .bx--tabs__nav-item--selected .bx--tabs__nav-link:focus {
-          color: #0f6dff; } }
+          color: #006aff; } }
 
 .bx--tabs__nav-item:hover .bx--tabs__nav-link {
-  color: #fff; }
+  color: #ffffff; }
   @media screen and (min-width: 768px) {
     .bx--tabs__nav-item:hover .bx--tabs__nav-link {
-      color: #0f6dff; } }
+      color: #006aff; } }
 
 .bx--tabs__nav-link {
   display: inline-block;
-  color: #171717;
+  color: #252525;
   text-decoration: none;
   padding: 1rem;
   width: 100%;
@@ -4053,24 +4793,40 @@ span.flatpickr-weekday {
   text-overflow: ellipsis; }
   .bx--tabs__nav-link:focus {
     outline: 1px solid transparent;
-    background-color: #0f6dff;
-    color: #fff; }
+    background-color: #006aff;
+    color: #ffffff; }
   @media screen and (min-width: 768px) {
     .bx--tabs__nav-link {
-      padding: 0.05rem;
+      padding: 0 0.125rem;
       width: auto; }
       .bx--tabs__nav-link:hover {
-        color: #0f6dff; }
+        color: #006aff; }
       .bx--tabs__nav-link:focus {
         background-color: transparent;
-        color: #171717;
+        color: #252525;
         outline: 1px solid transparent;
-        -webkit-box-shadow: 0 0 0 1px #0f6dff;
-        box-shadow: 0 0 0 1px #0f6dff; } }
+        -webkit-box-shadow: 0 0 0 1px #006aff;
+        box-shadow: 0 0 0 1px #006aff; } }
 
+/**
+ * Generic `deprecate` mixin that is being used to indicate that a component is
+ * no longer going to be present in the next major release of Carbon.
+ */
+/**
+ * Generic `deprecate` mixin that is being used to indicate that a component is
+ * no longer going to be present in the next major release of Carbon.
+ */
+/**
+ * Generic `deprecate` mixin that is being used to indicate that a component is
+ * no longer going to be present in the next major release of Carbon.
+ */
+/**
+ * Generic `deprecate` mixin that is being used to indicate that a component is
+ * no longer going to be present in the next major release of Carbon.
+ */
 .bx--breadcrumb {
   font-size: 0.875rem;
-  font-family: 'IBM Helvetica', Helvetica Neue, HelveticaNeue, Helvetica, sans-serif;
+  font-family: "ibm-plex-sans", Helvetica Neue, Arial, sans-serif;
   display: none; }
   @media screen and (min-width: 500px) {
     .bx--breadcrumb {
@@ -4081,7 +4837,7 @@ span.flatpickr-weekday {
       flex-wrap: wrap; } }
 
 .bx--breadcrumb-item {
-  margin-right: 1.29125rem;
+  margin-right: 1rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -4092,7 +4848,7 @@ span.flatpickr-weekday {
 .bx--breadcrumb-item::after {
   content: '/';
   margin-left: 1rem;
-  color: #a3a3a3; }
+  color: #252525; }
 
 .bx--breadcrumb--no-trailing-slash .bx--breadcrumb-item:last-child::after {
   content: ''; }
@@ -4109,15 +4865,15 @@ span.flatpickr-weekday {
   border-bottom: 1px solid transparent; }
   .bx--breadcrumb .bx--link:hover, .bx--breadcrumb .bx--link:focus {
     outline: none;
-    color: #0f6dff;
-    border-bottom: 1px solid #0f6dff; }
+    color: #006aff;
+    border-bottom: 1px solid #006aff; }
 
 @-moz-document url-prefix() {
   .bx--breadcrumb .bx--link {
     border-bottom: none; } }
 
 .bx--detail-page-header--no-tabs {
-  font-family: 'IBM Helvetica', Helvetica Neue, HelveticaNeue, Helvetica, sans-serif;
+  font-family: "ibm-plex-sans", Helvetica Neue, Arial, sans-serif;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -4135,7 +4891,7 @@ span.flatpickr-weekday {
   max-height: 4.125rem;
   height: 4.125rem;
   left: 12.5rem;
-  background-color: #fff;
+  background-color: #ffffff;
   width: calc(100% - 200px);
   padding: 0.875rem 3%; }
   .bx--detail-page-header--no-tabs[data-header-active='true'] {
@@ -4148,7 +4904,7 @@ span.flatpickr-weekday {
       max-height: 5.5rem; } }
 
 .bx--detail-page-header--with-tabs {
-  font-family: 'IBM Helvetica', Helvetica Neue, HelveticaNeue, Helvetica, sans-serif;
+  font-family: "ibm-plex-sans", Helvetica Neue, Arial, sans-serif;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -4248,7 +5004,7 @@ span.flatpickr-weekday {
   -ms-flex-align: center;
   align-items: center;
   border-radius: 50%;
-  border: 1px solid #171717;
+  border: 1px solid #bebebe;
   height: 2.25rem;
   width: 2.25rem;
   margin-right: 0.625rem; }
@@ -4273,7 +5029,7 @@ span.flatpickr-weekday {
   border-radius: 50%;
   height: 0.75rem;
   width: 0.75rem;
-  background-color: #24a249;
+  background-color: #118837;
   margin-left: 0.625rem; }
 
 .bx--detail-page-header-menu {
@@ -4377,25 +5133,34 @@ span.flatpickr-weekday {
     -webkit-transform: translate3d(0, -0.5rem, 0);
     transform: translate3d(0, -0.5rem, 0); } }
 
+/**
+ * Generic `deprecate` mixin that is being used to indicate that a component is
+ * no longer going to be present in the next major release of Carbon.
+ */
+/**
+ * Generic `deprecate` mixin that is being used to indicate that a component is
+ * no longer going to be present in the next major release of Carbon.
+ */
 .bx--dropdown {
-  font-family: 'IBM Helvetica', Helvetica Neue, HelveticaNeue, Helvetica, sans-serif;
+  font-family: "ibm-plex-sans", Helvetica Neue, Arial, sans-serif;
   font-size: 0.875rem;
   position: relative;
   list-style: none;
   display: block;
   background-color: #f3f3f3;
   width: 100%;
+  height: 2.5rem;
   cursor: pointer;
-  color: #171717; }
+  color: #252525; }
   .bx--dropdown:focus {
-    outline: 1px solid #0f6dff; }
+    outline: 1px solid #006aff; }
   .bx--dropdown.bx--dropdown--open:focus {
     outline: 1px solid transparent;
-    -webkit-box-shadow: 0 -1px 0 0 #0f6dff, 1px 0 0 0 #0f6dff, -1px 0 0 0 #0f6dff;
-    box-shadow: 0 -1px 0 0 #0f6dff, 1px 0 0 0 #0f6dff, -1px 0 0 0 #0f6dff; }
+    -webkit-box-shadow: 0 -1px 0 0 #006aff, 1px 0 0 0 #006aff, -1px 0 0 0 #006aff;
+    box-shadow: 0 -1px 0 0 #006aff, 1px 0 0 0 #006aff, -1px 0 0 0 #006aff; }
 
 .bx--dropdown__arrow {
-  fill: #0f6dff;
+  fill: #006aff;
   position: absolute;
   right: 1rem;
   top: 1.175rem;
@@ -4410,13 +5175,14 @@ span.flatpickr-weekday {
   transform-origin: 50% 45%; }
 
 .bx--dropdown[data-value=''] .bx--dropdown-text {
-  color: #a3a3a3; }
+  color: #252525; }
 
 .bx--dropdown-text {
+  height: 2.5rem;
   padding-top: 0.8125rem;
   padding-bottom: 0.8125rem;
   padding-left: 1rem;
-  padding-right: 2.25rem;
+  padding-right: 2.5rem;
   font-weight: 600;
   white-space: nowrap;
   overflow: hidden;
@@ -4426,27 +5192,39 @@ span.flatpickr-weekday {
 .bx--dropdown-list {
   -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1);
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1);
+  font-size: 0.875rem;
+  background-color: #f3f3f3;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
   width: 100%;
   list-style: none;
   position: absolute;
   z-index: 7000;
   max-height: 0;
-  overflow: hidden;
-  -webkit-transition: 300ms cubic-bezier(0, 0, 0.25, 1);
-  transition: 300ms cubic-bezier(0, 0, 0.25, 1);
+  -webkit-transition: max-height 300ms cubic-bezier(0, 0, 0.25, 1);
+  transition: max-height 300ms cubic-bezier(0, 0, 0.25, 1);
+  overflow: hidden; }
+
+.bx--dropdown-item {
+  -webkit-transition: opacity 300ms cubic-bezier(0, 0, 0.25, 1);
+  transition: opacity 300ms cubic-bezier(0, 0, 0.25, 1);
   opacity: 0; }
 
 .bx--dropdown-link {
   display: block;
   color: currentColor;
   text-decoration: none;
-  padding-top: 1rem;
-  padding-bottom: 1rem;
-  padding-left: 1rem;
-  padding-right: 1.5rem; }
+  padding: 1rem 1.5rem 1rem 1rem;
+  text-overflow: ellipsis;
+  overflow: hidden; }
   .bx--dropdown-link:hover, .bx--dropdown-link:focus {
-    background-color: #0f6dff;
-    color: #fff;
+    background-color: #006aff;
+    color: #ffffff;
     outline: 1px solid transparent;
     text-decoration: underline; }
 
@@ -4458,24 +5236,15 @@ span.flatpickr-weekday {
   transform: rotate(-180deg); }
 
 .bx--dropdown--open .bx--dropdown-list {
-  font-size: 0.875rem;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  background-color: #f3f3f3;
-  max-height: 50rem;
-  overflow: visible;
-  -webkit-transition: 300ms cubic-bezier(0.25, 0, 1, 1);
-  transition: 300ms cubic-bezier(0.25, 0, 1, 1);
-  opacity: 1; }
+  max-height: 15rem;
+  overflow: auto; }
 
 .bx--dropdown--open:focus .bx--dropdown-list {
-  -webkit-box-shadow: 0 1px 0 0 #0f6dff, 1px 0 0 0 #0f6dff, -1px 0 0 0 #0f6dff;
-  box-shadow: 0 1px 0 0 #0f6dff, 1px 0 0 0 #0f6dff, -1px 0 0 0 #0f6dff; }
+  -webkit-box-shadow: 0 1px 0 0 #006aff, 1px 0 0 0 #006aff, -1px 0 0 0 #006aff;
+  box-shadow: 0 1px 0 0 #006aff, 1px 0 0 0 #006aff, -1px 0 0 0 #006aff; }
+
+.bx--dropdown--open .bx--dropdown-item {
+  opacity: 1; }
 
 .bx--dropdown--disabled {
   opacity: 0.5;
@@ -4514,8 +5283,16 @@ span.flatpickr-weekday {
   100% {
     stroke-dashoffset: 240; } }
 
+/**
+ * Generic `deprecate` mixin that is being used to indicate that a component is
+ * no longer going to be present in the next major release of Carbon.
+ */
+/**
+ * Generic `deprecate` mixin that is being used to indicate that a component is
+ * no longer going to be present in the next major release of Carbon.
+ */
 .bx--modal {
-  font-family: 'IBM Helvetica', Helvetica Neue, HelveticaNeue, Helvetica, sans-serif;
+  font-family: "ibm-plex-sans", Helvetica Neue, Arial, sans-serif;
   position: fixed;
   top: 0;
   right: 0;
@@ -4533,7 +5310,7 @@ span.flatpickr-weekday {
   justify-content: center;
   content: '';
   opacity: 0;
-  background-color: rgba(216, 216, 216, 0.5);
+  background-color: rgba(220, 220, 220, 0.5);
   -webkit-transition: opacity 200ms, z-index 0s 200ms, visibility 0s 200ms;
   transition: opacity 200ms, z-index 0s 200ms, visibility 0s 200ms;
   visibility: hidden; }
@@ -4543,6 +5320,9 @@ span.flatpickr-weekday {
     -webkit-transition: opacity 200ms;
     transition: opacity 200ms;
     visibility: visible; }
+
+.bx--modal--danger .bx--modal-container {
+  border-top-color: #e32328; }
 
 .bx--modal-container {
   -webkit-box-shadow: 0 12px 24px 0 rgba(0, 0, 0, 0.1);
@@ -4556,7 +5336,7 @@ span.flatpickr-weekday {
   -ms-flex-direction: column;
   flex-direction: column;
   background-color: #f3f3f3;
-  border-top: #0f6dff 4px solid;
+  border-top: #006aff 4px solid;
   min-width: 100%;
   max-height: 100%;
   height: 100%;
@@ -4567,7 +5347,7 @@ span.flatpickr-weekday {
       min-width: 500px;
       max-width: 75%;
       max-height: 90%;
-      padding: 2.75rem 3rem 0 3rem; } }
+      padding: 2.5rem 3rem 0 3rem; } }
   @media (min-width: 1024px) {
     .bx--modal-container {
       max-width: 50%;
@@ -4577,9 +5357,11 @@ span.flatpickr-weekday {
   margin-bottom: 1.5rem; }
 
 .bx--modal-header__label {
-  font-size: 0.875rem;
-  color: #171717;
+  font-size: 0.75rem;
+  color: #252525;
   font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
   margin-bottom: 0.5rem; }
 
 .bx--modal-header__heading {
@@ -4594,15 +5376,15 @@ span.flatpickr-weekday {
 .bx--modal-footer {
   margin-top: auto;
   text-align: right;
-  background-color: #d8d8d8;
+  background-color: #dcdcdc;
   margin-left: -1.5rem;
   margin-right: -1.5rem;
-  padding: 1.5rem 1.5rem; }
+  padding: 2rem 2rem; }
   @media (min-width: 600px) {
     .bx--modal-footer {
       margin-left: -3rem;
       margin-right: -3rem;
-      padding: 1.5rem 3rem; } }
+      padding: 2rem 3rem; } }
 
 .bx--modal-close {
   position: absolute;
@@ -4615,17 +5397,25 @@ span.flatpickr-weekday {
   border: none;
   padding: 0.25rem 0.25rem 0.125rem; }
   .bx--modal-close:focus {
-    outline: 1px solid #0f6dff; }
+    outline: 1px solid #006aff; }
 
 .bx--modal-close__icon {
   -webkit-transition: 200ms;
   transition: 200ms;
-  fill: #171717;
+  fill: #bebebe;
   width: 0.75rem;
   height: 0.75rem; }
 
+/**
+ * Generic `deprecate` mixin that is being used to indicate that a component is
+ * no longer going to be present in the next major release of Carbon.
+ */
+/**
+ * Generic `deprecate` mixin that is being used to indicate that a component is
+ * no longer going to be present in the next major release of Carbon.
+ */
 .bx--module {
-  font-family: 'IBM Helvetica', Helvetica Neue, HelveticaNeue, Helvetica, sans-serif;
+  font-family: "ibm-plex-sans", Helvetica Neue, Arial, sans-serif;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -4651,14 +5441,14 @@ span.flatpickr-weekday {
     -ms-flex-align: center;
     align-items: center;
     padding: 1rem 1.5rem;
-    border-bottom: 1px solid #8a8a8a; }
+    border-bottom: 1px solid #f3f3f3; }
   .bx--module .bx--module__title {
     font-size: 0.875rem;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     letter-spacing: 0;
     font-weight: 600;
-    color: #171717; }
+    color: #252525; }
   .bx--module .bx--module__content {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -4690,8 +5480,23 @@ span.flatpickr-weekday {
   .bx--module.bx--module--double {
     max-width: 62.5rem; }
 
+.bx--multi-select.bx--combo-box > .bx--list-box__field {
+  padding: 0 1rem; }
+
+.bx--multi-select.bx--combo-box input[role='combobox'] {
+  padding: 0;
+  outline: none; }
+
+/**
+ * Generic `deprecate` mixin that is being used to indicate that a component is
+ * no longer going to be present in the next major release of Carbon.
+ */
+/**
+ * Generic `deprecate` mixin that is being used to indicate that a component is
+ * no longer going to be present in the next major release of Carbon.
+ */
 .bx--inline-notification {
-  font-family: 'IBM Helvetica', Helvetica Neue, HelveticaNeue, Helvetica, sans-serif;
+  font-family: "ibm-plex-sans", Helvetica Neue, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-size: 0.875rem;
@@ -4704,33 +5509,33 @@ span.flatpickr-weekday {
   background-color: transparent;
   padding: 0.75rem 1rem;
   min-height: 2.5rem;
-  color: #a3a3a3;
+  color: #252525;
   margin-top: 1rem;
   margin-bottom: 1rem; }
 
 .bx--inline-notification--error {
-  border: 1px solid #e02730;
-  border-left: 6px solid #e02730; }
+  border: 1px solid #e32328;
+  border-left: 6px solid #e32328; }
   .bx--inline-notification--error .bx--inline-notification__icon {
-    fill: #e02730; }
+    fill: #e32328; }
 
 .bx--inline-notification--success {
-  border: 1px solid #24a249;
-  border-left: 6px solid #24a249; }
+  border: 1px solid #118837;
+  border-left: 6px solid #118837; }
   .bx--inline-notification--success .bx--inline-notification__icon {
-    fill: #24a249; }
+    fill: #118837; }
 
 .bx--inline-notification--info {
-  border: 1px solid #418cff;
-  border-left: 6px solid #418cff; }
+  border: 1px solid #252525;
+  border-left: 6px solid #252525; }
   .bx--inline-notification--info .bx--inline-notification__icon {
-    fill: #418cff; }
+    fill: #252525; }
 
 .bx--inline-notification--warning {
-  border: 1px solid #fdd13a;
-  border-left: 6px solid #fdd13a; }
+  border: 1px solid #fed21f;
+  border-left: 6px solid #fed21f; }
   .bx--inline-notification--warning .bx--inline-notification__icon {
-    fill: #fdd13a; }
+    fill: #fed21f; }
 
 .bx--inline-notification__details {
   display: -webkit-box;
@@ -4779,22 +5584,30 @@ span.flatpickr-weekday {
   width: 12px;
   position: relative; }
   .bx--inline-notification__close-button:focus {
-    outline: 1px solid #0f6dff; }
+    outline: 1px solid #006aff; }
 
 .bx--inline-notification__close-icon {
   height: 10px;
   width: 10px;
-  fill: #a3a3a3;
+  fill: #252525;
   position: absolute;
   top: 3px;
   right: 1px; }
 
+/**
+ * Generic `deprecate` mixin that is being used to indicate that a component is
+ * no longer going to be present in the next major release of Carbon.
+ */
+/**
+ * Generic `deprecate` mixin that is being used to indicate that a component is
+ * no longer going to be present in the next major release of Carbon.
+ */
 .bx--toast-notification {
-  font-family: 'IBM Helvetica', Helvetica Neue, HelveticaNeue, Helvetica, sans-serif;
+  font-family: "ibm-plex-sans", Helvetica Neue, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  -webkit-box-shadow: 0px 3px 3px 0 rgba(0, 0, 0, 0.1);
-  box-shadow: 0px 3px 3px 0 rgba(0, 0, 0, 0.1);
+  -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -4802,12 +5615,9 @@ span.flatpickr-weekday {
   -ms-flex-pack: justify;
   justify-content: space-between;
   width: 16.875rem;
-  padding-top: 1rem;
-  padding-bottom: 0.5rem;
-  padding-right: 1rem;
-  padding-left: 1rem;
-  background-color: #fff;
-  color: #171717;
+  padding: 1rem 1rem 0.5rem 1rem;
+  background-color: #ffffff;
+  color: #252525;
   margin-top: 0.5rem;
   margin-bottom: 0.5rem;
   margin-right: 1rem; }
@@ -4815,19 +5625,19 @@ span.flatpickr-weekday {
     margin-top: 1rem; }
 
 .bx--toast-notification--error {
-  border-left: 6px solid #e02730; }
+  border-left: 6px solid #e32328; }
 
 .bx--toast-notification--success {
-  border-left: 6px solid #24a249; }
+  border-left: 6px solid #118837; }
 
 .bx--toast-notification--info {
-  border-left: 6px solid #418cff; }
+  border-left: 6px solid #252525; }
 
 .bx--toast-notification--warning {
-  border-left: 6px solid #fdd13a; }
+  border-left: 6px solid #fed21f; }
 
 .bx--toast-notification__close-button {
-  background-color: #fff;
+  background-color: #ffffff;
   border: none;
   cursor: pointer;
   margin: 0;
@@ -4835,12 +5645,12 @@ span.flatpickr-weekday {
   height: 12px;
   position: relative; }
   .bx--toast-notification__close-button:focus {
-    outline: 1px solid #0f6dff; }
+    outline: 1px solid #006aff; }
 
 .bx--toast-notification__icon {
   height: 10px;
   width: 10px;
-  fill: #a3a3a3;
+  fill: #252525;
   position: absolute;
   top: 1px;
   right: 1px; }
@@ -4854,16 +5664,24 @@ span.flatpickr-weekday {
 
 .bx--toast-notification__subtitle {
   font-size: 0.75rem;
-  color: #a3a3a3;
+  color: #252525;
   margin-top: 0;
   margin-bottom: 1rem;
   line-height: 1.2; }
 
 .bx--toast-notification__caption {
   font-size: 0.75rem;
-  color: #a3a3a3;
+  color: #252525;
   line-height: 1; }
 
+/**
+ * Generic `deprecate` mixin that is being used to indicate that a component is
+ * no longer going to be present in the next major release of Carbon.
+ */
+/**
+ * Generic `deprecate` mixin that is being used to indicate that a component is
+ * no longer going to be present in the next major release of Carbon.
+ */
 .bx--tooltip--simple {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -4873,7 +5691,7 @@ span.flatpickr-weekday {
   align-items: center; }
 
 .bx--tooltip__trigger {
-  font-family: 'IBM Helvetica', Helvetica Neue, HelveticaNeue, Helvetica, sans-serif;
+  font-family: "ibm-plex-sans", Helvetica Neue, Arial, sans-serif;
   font-size: 1rem;
   display: -webkit-inline-box;
   display: -ms-inline-flexbox;
@@ -4881,17 +5699,17 @@ span.flatpickr-weekday {
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  color: #171717;
+  color: #252525;
   font-weight: 600; }
   .bx--tooltip__trigger svg {
-    fill: #0f6dff;
-    margin-left: 0.625rem;
+    fill: #006aff;
+    margin-left: 0.5rem;
     cursor: pointer; }
     .bx--tooltip__trigger svg:focus {
-      outline: 1px solid #0f6dff;
-      fill: #0530ad; }
+      outline: 1px solid #006aff;
+      fill: #006aff; }
   .bx--tooltip__trigger:hover svg, .bx--tooltip__trigger:focus svg {
-    fill: #0530ad; }
+    fill: #006aff; }
 
 .bx--tooltip {
   -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1);
@@ -4901,9 +5719,10 @@ span.flatpickr-weekday {
   max-width: 15rem;
   background: #f3f3f3;
   padding: 1.5rem;
-  border: 1px solid #8a8a8a; }
+  border: 1px solid #f3f3f3;
+  z-index: 10000; }
   .bx--tooltip p {
-    font-family: 'IBM Helvetica', Helvetica Neue, HelveticaNeue, Helvetica, sans-serif;
+    font-family: "ibm-plex-sans", Helvetica Neue, Arial, sans-serif;
     font-size: 0.875rem; }
   .bx--tooltip .bx--tooltip__label {
     font-weight: 600;
@@ -4918,12 +5737,12 @@ span.flatpickr-weekday {
     transform: rotate(-135deg);
     width: 0.6rem;
     height: 0.6rem;
-    border-right: 1px solid #8a8a8a;
-    border-bottom: 1px solid #8a8a8a;
+    border-right: 1px solid #f3f3f3;
+    border-bottom: 1px solid #f3f3f3;
     margin: 0 auto;
     content: ''; }
   .bx--tooltip[data-floating-menu-direction='left'] {
-    margin-left: -.6rem; }
+    margin-left: -0.75rem; }
     .bx--tooltip[data-floating-menu-direction='left']:before {
       left: auto;
       top: 44.7%;
@@ -4936,7 +5755,7 @@ span.flatpickr-weekday {
     -webkit-transform: rotate(45deg);
     transform: rotate(45deg); }
   .bx--tooltip[data-floating-menu-direction='right'] {
-    margin-left: 0.6rem; }
+    margin-left: 0.75rem; }
     .bx--tooltip[data-floating-menu-direction='right']:before {
       left: -0.375rem;
       top: 44.7%;
@@ -4949,7 +5768,7 @@ span.flatpickr-weekday {
 
 .bx--tooltip--simple__top,
 .bx--tooltip--simple__bottom {
-  font-family: 'IBM Helvetica', Helvetica Neue, HelveticaNeue, Helvetica, sans-serif;
+  font-family: "ibm-plex-sans", Helvetica Neue, Arial, sans-serif;
   font-size: 1.125rem;
   position: relative;
   display: -webkit-inline-box;
@@ -4961,12 +5780,12 @@ span.flatpickr-weekday {
   cursor: pointer; }
   .bx--tooltip--simple__top svg,
   .bx--tooltip--simple__bottom svg {
-    fill: #0f6dff;
-    margin-left: 0.625rem; }
+    fill: #006aff;
+    margin-left: 0.5rem; }
   .bx--tooltip--simple__top:before, .bx--tooltip--simple__top:after,
   .bx--tooltip--simple__bottom:before,
   .bx--tooltip--simple__bottom:after {
-    font-family: 'IBM Helvetica', Helvetica Neue, HelveticaNeue, Helvetica, sans-serif;
+    font-family: "ibm-plex-sans", Helvetica Neue, Arial, sans-serif;
     position: absolute;
     display: none;
     background: #f3f3f3; }
@@ -4977,9 +5796,9 @@ span.flatpickr-weekday {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1);
     max-width: 15rem;
     padding: 1.5rem;
-    border: 1px solid #8a8a8a;
+    border: 1px solid #f3f3f3;
     margin-left: 50%;
-    color: #171717;
+    color: #252525;
     content: attr(data-tooltip-text);
     -webkit-transform: translateX(-50%);
     transform: translateX(-50%);
@@ -4991,14 +5810,14 @@ span.flatpickr-weekday {
     left: 0;
     width: 0.6rem;
     height: 0.6rem;
-    border-right: 1px solid #8a8a8a;
-    border-bottom: 1px solid #8a8a8a;
+    border-right: 1px solid #f3f3f3;
+    border-bottom: 1px solid #f3f3f3;
     margin: 0 auto;
     content: ''; }
   .bx--tooltip--simple__top:hover svg, .bx--tooltip--simple__top:focus svg,
   .bx--tooltip--simple__bottom:hover svg,
   .bx--tooltip--simple__bottom:focus svg {
-    fill: #0530ad; }
+    fill: #006aff; }
   .bx--tooltip--simple__top:hover:before, .bx--tooltip--simple__top:hover:after, .bx--tooltip--simple__top:focus:before, .bx--tooltip--simple__top:focus:after,
   .bx--tooltip--simple__bottom:hover:before,
   .bx--tooltip--simple__bottom:hover:after,
@@ -5011,7 +5830,7 @@ span.flatpickr-weekday {
     outline: 1px solid transparent; }
     .bx--tooltip--simple__top:focus svg,
     .bx--tooltip--simple__bottom:focus svg {
-      outline: 1px solid #0f6dff; }
+      outline: 1px solid #006aff; }
 
 .bx--tooltip--simple__top:before {
   bottom: 1.8rem; }
@@ -5029,8 +5848,16 @@ span.flatpickr-weekday {
   -webkit-transform: rotate(-135deg);
   transform: rotate(-135deg); }
 
+/**
+ * Generic `deprecate` mixin that is being used to indicate that a component is
+ * no longer going to be present in the next major release of Carbon.
+ */
+/**
+ * Generic `deprecate` mixin that is being used to indicate that a component is
+ * no longer going to be present in the next major release of Carbon.
+ */
 .bx--tag {
-  font-family: 'IBM Helvetica', Helvetica Neue, HelveticaNeue, Helvetica, sans-serif;
+  font-family: "ibm-plex-sans", Helvetica Neue, Arial, sans-serif;
   font-size: 0.75rem;
   display: -webkit-inline-box;
   display: -ms-inline-flexbox;
@@ -5038,9 +5865,9 @@ span.flatpickr-weekday {
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  padding: 0 0.625rem;
+  padding: 0 0.5rem;
   height: 1.25rem;
-  margin: 0.1875rem;
+  margin: 0.125rem;
   border-radius: 0.9375rem; }
   .bx--tag:not(:first-child) {
     margin-left: 0; }
@@ -5075,6 +5902,14 @@ span.flatpickr-weekday {
   background-color: #fde876;
   color: #735f00; }
 
+/**
+ * Generic `deprecate` mixin that is being used to indicate that a component is
+ * no longer going to be present in the next major release of Carbon.
+ */
+/**
+ * Generic `deprecate` mixin that is being used to indicate that a component is
+ * no longer going to be present in the next major release of Carbon.
+ */
 .bx--left-nav__trigger {
   width: 3.75rem;
   height: 3.125rem;
@@ -5228,7 +6063,7 @@ span.flatpickr-weekday {
 .bx--global-header {
   -webkit-box-shadow: 0 6px 12px 0 rgba(0, 0, 0, 0.1);
   box-shadow: 0 6px 12px 0 rgba(0, 0, 0, 0.1);
-  font-family: 'IBM Helvetica', Helvetica Neue, HelveticaNeue, Helvetica, sans-serif;
+  font-family: "ibm-plex-sans", Helvetica Neue, Arial, sans-serif;
   width: 100%;
   position: fixed;
   top: 2.25rem;
@@ -5444,7 +6279,7 @@ span.flatpickr-weekday {
   background-color: #2d3f49; }
 
 .bx--top-nav {
-  font-family: 'IBM Helvetica', Helvetica Neue, HelveticaNeue, Helvetica, sans-serif;
+  font-family: "ibm-plex-sans", Helvetica Neue, Arial, sans-serif;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -5476,7 +6311,7 @@ span.flatpickr-weekday {
   font-size: 0.75rem;
   list-style: none;
   background-color: #0f212e;
-  color: #fff;
+  color: #ffffff;
   height: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -5487,7 +6322,7 @@ span.flatpickr-weekday {
 
 .bx--top-nav__left-container .bx--dropdown__arrow,
 .bx--top-nav__right-container .bx--dropdown__arrow {
-  fill: #fff;
+  fill: #ffffff;
   right: 0.75rem;
   width: 0.75rem;
   height: 1.5rem; }
@@ -5533,11 +6368,11 @@ span.flatpickr-weekday {
   .bx--top-nav__left-container .bx--dropdown-item:hover,
   .bx--top-nav__right-container .bx--dropdown-item:hover {
     background-color: #5aaafa;
-    color: #171717; }
+    color: #252525; }
 
 .bx--top-nav__left-container .bx--dropdown-link,
 .bx--top-nav__right-container .bx--dropdown-link {
-  color: #fff; }
+  color: #ffffff; }
 
 .bx--top-nav__left-container .bx--dropdown--open,
 .bx--top-nav__right-container .bx--dropdown--open {
@@ -5574,7 +6409,7 @@ span.flatpickr-weekday {
   -ms-flex-align: start;
   align-items: flex-start;
   text-decoration: none;
-  color: #fff;
+  color: #ffffff;
   font-weight: 600;
   margin-right: 1rem; }
   .bx--top-nav__left-container__link:hover, .bx--top-nav__left-container__link:focus {
@@ -5585,7 +6420,7 @@ span.flatpickr-weekday {
 .bx--top-nav__left-container__link--icon {
   width: 0.675rem;
   height: 0.7rem;
-  fill: #fff;
+  fill: #ffffff;
   margin-right: 0.3rem; }
 
 .bx--top-nav__left-container__item:focus {
@@ -5633,7 +6468,7 @@ span.flatpickr-weekday {
 .bx--top-nav__right-container__item[data-trial] .bx--dropdown-text,
 .bx--top-nav__right-container__item[data-credit] .bx--dropdown-text {
   padding: 0.75rem 2rem 0.75rem 1rem;
-  color: #fff; }
+  color: #ffffff; }
 
 .bx--top-nav__right-container__item[data-trial] .bx--dropdown-list,
 .bx--top-nav__right-container__item[data-credit] .bx--dropdown-list {
@@ -5696,7 +6531,7 @@ span.flatpickr-weekday {
   .bx--top-nav__right-container__item[data-credit] .bx--dropdown__credit-content:hover {
     outline: 0;
     background-color: initial;
-    color: #fff; }
+    color: #ffffff; }
 
 .bx--top-nav__right-container__item[data-trial] .bx--dropdown__trial-content--desc,
 .bx--top-nav__right-container__item[data-trial] .bx--dropdown__credit-content--desc,
@@ -5769,7 +6604,7 @@ span.flatpickr-weekday {
   overflow: hidden; }
   .bx--top-nav__right-container__item:last-child .bx--dropdown-text--profile-image .profile-image svg,
   .bx--top-nav__right-container__item:last-child .bx--dropdown-text--profile-image .profile-image img {
-    fill: #fff;
+    fill: #ffffff;
     max-height: 1.5rem;
     max-width: 1.5rem; }
 
@@ -5802,7 +6637,7 @@ span.flatpickr-weekday {
   max-height: 3rem;
   border-radius: 50%;
   width: 100%;
-  fill: #fff; }
+  fill: #ffffff; }
 
 .bx--dropdown__profile-dropdown--information {
   margin-left: 1rem; }
@@ -5929,21 +6764,21 @@ span.flatpickr-weekday {
   font-size: 1rem;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  color: #fff;
+  color: #ffffff;
   font-weight: 600;
   margin-right: auto; }
 
 .bx--left-nav__header--taxonomy-icon {
   width: 1.5rem;
   height: 1.5rem;
-  fill: #fff;
+  fill: #ffffff;
   margin-right: 1rem; }
 
 .bx--left-nav__header--close-icon {
   width: 0.875rem;
   height: 0.875rem;
   display: block;
-  fill: #fff; }
+  fill: #ffffff; }
 
 .bx--left-nav__sections {
   list-style: none;
@@ -5951,7 +6786,7 @@ span.flatpickr-weekday {
   width: 100%;
   z-index: 8000;
   position: relative;
-  border-bottom: 1px solid #8a8a8a;
+  border-bottom: 1px solid #f3f3f3;
   background-color: #fff; }
 
 .bx--left-nav__section {
@@ -5975,9 +6810,9 @@ span.flatpickr-weekday {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     font-weight: 600;
-    color: #fff; }
+    color: #ffffff; }
   .bx--left-nav__section:hover .bx--left-nav__section--taxonomy-icon {
-    fill: #fff; }
+    fill: #ffffff; }
 
 .bx--left-nav__section--active, .bx--left-nav__section--transition {
   -webkit-box-pack: start;
@@ -6018,12 +6853,12 @@ span.flatpickr-weekday {
     -webkit-transform: translateY(50px);
     transform: translateY(50px); }
   .bx--left-nav__section--transition .bx--left-nav__section--taxonomy-icon {
-    fill: #fff; }
+    fill: #ffffff; }
 
 .bx--left-nav__section--taxonomy-icon {
   width: 1.5rem;
   height: 1.5rem;
-  fill: #171717;
+  fill: #252525;
   margin-right: 1rem; }
 
 .bx--left-nav__section--anchor {
@@ -6045,7 +6880,7 @@ span.flatpickr-weekday {
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  color: #171717;
+  color: #252525;
   height: 3.125rem; }
 
 .bx--left-nav__main-nav {
@@ -6062,7 +6897,7 @@ span.flatpickr-weekday {
   -webkit-transition: all 250ms cubic-bezier(0, 0, 0.25, 1);
   transition: all 250ms cubic-bezier(0, 0, 0.25, 1);
   padding-top: 1rem;
-  background-color: #fff; }
+  background-color: #ffffff; }
 
 .bx--left-nav__main-nav--hidden {
   display: none; }
@@ -6106,14 +6941,14 @@ span.flatpickr-weekday {
   padding: 0.5rem 1.25rem;
   -webkit-transition: background-color 250ms cubic-bezier(0.5, 0, 0.1, 1);
   transition: background-color 250ms cubic-bezier(0.5, 0, 0.1, 1);
-  color: #171717; }
+  color: #252525; }
   .bx--parent-item__link .bx--parent-item__link--taxonomy-icon {
     width: 1.5rem;
     height: 1.5rem;
     -webkit-transition: 250ms cubic-bezier(0.5, 0, 0.1, 1);
     transition: 250ms cubic-bezier(0.5, 0, 0.1, 1);
     margin-right: 1rem;
-    fill: #171717; }
+    fill: #252525; }
   .bx--parent-item__link .bx--parent-item__link--down-icon {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -6124,7 +6959,7 @@ span.flatpickr-weekday {
       height: 0.625rem;
       -webkit-transition: 250ms cubic-bezier(0.5, 0, 0.1, 1);
       transition: 250ms cubic-bezier(0.5, 0, 0.1, 1);
-      fill: #171717; }
+      fill: #252525; }
   .bx--left-nav__main-nav[data-left-nav-list='apps'] .bx--parent-item__link:hover {
     color: #008571; }
     .bx--left-nav__main-nav[data-left-nav-list='apps'] .bx--parent-item__link:hover .bx--parent-item__link--taxonomy-icon,
@@ -6142,37 +6977,37 @@ span.flatpickr-weekday {
       fill: #3d70b2; }
 
 .bx--main-nav__parent-item.bx--active-list-item .bx--parent-item__link {
-  color: #fff; }
+  color: #ffffff; }
   .bx--left-nav__main-nav[data-left-nav-list='apps'] .bx--main-nav__parent-item.bx--active-list-item .bx--parent-item__link {
     background-color: #008571; }
     .bx--left-nav__main-nav[data-left-nav-list='apps'] .bx--main-nav__parent-item.bx--active-list-item .bx--parent-item__link:hover {
-      color: #fff; }
+      color: #ffffff; }
       .bx--left-nav__main-nav[data-left-nav-list='apps'] .bx--main-nav__parent-item.bx--active-list-item .bx--parent-item__link:hover .bx--parent-item__link--taxonomy-icon,
       .bx--left-nav__main-nav[data-left-nav-list='apps'] .bx--main-nav__parent-item.bx--active-list-item .bx--parent-item__link:hover .bx--parent-item__link--down-icon svg {
-        fill: #fff; }
+        fill: #ffffff; }
   .bx--left-nav__main-nav[data-left-nav-list='services'] .bx--main-nav__parent-item.bx--active-list-item .bx--parent-item__link {
     background-color: #734098; }
     .bx--left-nav__main-nav[data-left-nav-list='services'] .bx--main-nav__parent-item.bx--active-list-item .bx--parent-item__link:hover {
-      color: #fff; }
+      color: #ffffff; }
       .bx--left-nav__main-nav[data-left-nav-list='services'] .bx--main-nav__parent-item.bx--active-list-item .bx--parent-item__link:hover .bx--parent-item__link--taxonomy-icon,
       .bx--left-nav__main-nav[data-left-nav-list='services'] .bx--main-nav__parent-item.bx--active-list-item .bx--parent-item__link:hover .bx--parent-item__link--down-icon svg {
-        fill: #fff; }
+        fill: #ffffff; }
   .bx--left-nav__main-nav[data-left-nav-list='infrastructure'] .bx--main-nav__parent-item.bx--active-list-item .bx--parent-item__link {
     background-color: #3d70b2; }
     .bx--left-nav__main-nav[data-left-nav-list='infrastructure'] .bx--main-nav__parent-item.bx--active-list-item .bx--parent-item__link:hover {
-      color: #fff; }
+      color: #ffffff; }
       .bx--left-nav__main-nav[data-left-nav-list='infrastructure'] .bx--main-nav__parent-item.bx--active-list-item .bx--parent-item__link:hover .bx--parent-item__link--taxonomy-icon,
       .bx--left-nav__main-nav[data-left-nav-list='infrastructure'] .bx--main-nav__parent-item.bx--active-list-item .bx--parent-item__link:hover .bx--parent-item__link--down-icon svg {
-        fill: #fff; }
+        fill: #ffffff; }
 
 .bx--main-nav__parent-item.bx--active-list-item .bx--parent-item__link--taxonomy-icon {
-  fill: #fff; }
+  fill: #ffffff; }
 
 .bx--main-nav__parent-item.bx--active-list-item .bx--parent-item__link--down-icon svg {
-  fill: #fff; }
+  fill: #ffffff; }
 
 .bx--main-nav__parent-item.bx--active-list-item:hover {
-  color: #fff; }
+  color: #ffffff; }
 
 .bx--main-nav__nested-list {
   display: -webkit-box;
@@ -6213,7 +7048,7 @@ span.flatpickr-weekday {
 
 .bx--nested-list__item--link {
   font-size: 0.875rem;
-  color: #171717;
+  color: #252525;
   padding: 0.5rem 1.35rem 0.5rem 2rem;
   font-weight: 400;
   display: -webkit-box;
@@ -6244,31 +7079,31 @@ span.flatpickr-weekday {
 .bx--nested-list__item--icon svg {
   width: 0.625rem;
   height: 0.625rem;
-  fill: #171717; }
+  fill: #252525; }
 
 .bx--left-nav__main-nav[data-left-nav-list='apps'] .bx--nested-list__item.bx--active-list-item .bx--nested-list__item--link {
   background-color: #008571; }
   .bx--left-nav__main-nav[data-left-nav-list='apps'] .bx--nested-list__item.bx--active-list-item .bx--nested-list__item--link:hover {
-    color: #fff; }
+    color: #ffffff; }
     .bx--left-nav__main-nav[data-left-nav-list='apps'] .bx--nested-list__item.bx--active-list-item .bx--nested-list__item--link:hover .bx--parent-item__link--taxonomy-icon {
-      fill: #fff; }
+      fill: #ffffff; }
 
 .bx--left-nav__main-nav[data-left-nav-list='services'] .bx--nested-list__item.bx--active-list-item .bx--nested-list__item--link {
   background-color: #734098; }
   .bx--left-nav__main-nav[data-left-nav-list='services'] .bx--nested-list__item.bx--active-list-item .bx--nested-list__item--link:hover {
-    color: #fff; }
+    color: #ffffff; }
     .bx--left-nav__main-nav[data-left-nav-list='services'] .bx--nested-list__item.bx--active-list-item .bx--nested-list__item--link:hover .bx--parent-item__link--taxonomy-icon {
-      fill: #fff; }
+      fill: #ffffff; }
 
 .bx--left-nav__main-nav[data-left-nav-list='infrastructure'] .bx--nested-list__item.bx--active-list-item .bx--nested-list__item--link {
   background-color: #3d70b2; }
   .bx--left-nav__main-nav[data-left-nav-list='infrastructure'] .bx--nested-list__item.bx--active-list-item .bx--nested-list__item--link:hover {
-    color: #fff; }
+    color: #ffffff; }
     .bx--left-nav__main-nav[data-left-nav-list='infrastructure'] .bx--nested-list__item.bx--active-list-item .bx--nested-list__item--link:hover .bx--parent-item__link--taxonomy-icon {
-      fill: #fff; }
+      fill: #ffffff; }
 
 .bx--nested-list__item.bx--active-list-item .bx--nested-list__item--icon svg {
-  fill: #171717; }
+  fill: #252525; }
 
 .bx--nested-list__flyout-menu {
   -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1);
@@ -6279,7 +7114,7 @@ span.flatpickr-weekday {
   outline: none;
   position: absolute;
   z-index: 9999;
-  color: #fff; }
+  color: #ffffff; }
   .bx--nested-list__flyout-menu:before {
     content: '';
     display: block;
@@ -6293,12 +7128,12 @@ span.flatpickr-weekday {
 
 .bx--nested-list__flyout-menu--displayed {
   display: block;
-  border-left: 1px solid #8a8a8a; }
+  border-left: 1px solid #f3f3f3; }
 
 .bx--flyout-menu__item--link {
   font-size: 0.875rem;
   padding: 0 1.75rem 0 1rem;
-  color: #171717;
+  color: #252525;
   text-decoration: none; }
 
 .bx--flyout-menu__item {
@@ -6321,23 +7156,23 @@ span.flatpickr-weekday {
 .bx--left-nav__main-nav[data-left-nav-list='apps'] .bx--flyout-menu__item.bx--active-list-item {
   background-color: #008571; }
   .bx--left-nav__main-nav[data-left-nav-list='apps'] .bx--flyout-menu__item.bx--active-list-item .bx--flyout-menu__item--link {
-    color: #fff; }
+    color: #ffffff; }
     .bx--left-nav__main-nav[data-left-nav-list='apps'] .bx--flyout-menu__item.bx--active-list-item .bx--flyout-menu__item--link:hover {
-      color: #fff; }
+      color: #ffffff; }
 
 .bx--left-nav__main-nav[data-left-nav-list='services'] .bx--flyout-menu__item.bx--active-list-item {
   background-color: #734098; }
   .bx--left-nav__main-nav[data-left-nav-list='services'] .bx--flyout-menu__item.bx--active-list-item .bx--flyout-menu__item--link {
-    color: #fff; }
+    color: #ffffff; }
     .bx--left-nav__main-nav[data-left-nav-list='services'] .bx--flyout-menu__item.bx--active-list-item .bx--flyout-menu__item--link:hover {
-      color: #fff; }
+      color: #ffffff; }
 
 .bx--left-nav__main-nav[data-left-nav-list='infrastructure'] .bx--flyout-menu__item.bx--active-list-item {
   background-color: #3d70b2; }
   .bx--left-nav__main-nav[data-left-nav-list='infrastructure'] .bx--flyout-menu__item.bx--active-list-item .bx--flyout-menu__item--link {
-    color: #fff; }
+    color: #ffffff; }
     .bx--left-nav__main-nav[data-left-nav-list='infrastructure'] .bx--flyout-menu__item.bx--active-list-item .bx--flyout-menu__item--link:hover {
-      color: #fff; }
+      color: #ffffff; }
 
 .bx--account-switcher {
   list-style: none;
@@ -6355,7 +7190,7 @@ span.flatpickr-weekday {
   min-width: 21.875rem; }
 
 .bx--account-switcher__linked-icon {
-  fill: #fff;
+  fill: #ffffff;
   height: 1rem;
   width: 1rem;
   margin: 0 0.5rem;
@@ -6375,7 +7210,7 @@ span.flatpickr-weekday {
   -webkit-box-pack: center;
   -ms-flex-pack: center;
   justify-content: center;
-  color: #fff;
+  color: #ffffff;
   padding: 0 1rem;
   background-color: #0f212e;
   cursor: pointer; }
@@ -6445,7 +7280,7 @@ span.flatpickr-weekday {
   right: 0;
   -webkit-transform: translateY(-10%);
   transform: translateY(-10%);
-  color: #fff;
+  color: #ffffff;
   z-index: 8000; }
 
 .bx--account-switcher--open {
@@ -6612,8 +7447,16 @@ span.flatpickr-weekday {
   position: fixed;
   z-index: 6000; }
 
+/**
+ * Generic `deprecate` mixin that is being used to indicate that a component is
+ * no longer going to be present in the next major release of Carbon.
+ */
+/**
+ * Generic `deprecate` mixin that is being used to indicate that a component is
+ * no longer going to be present in the next major release of Carbon.
+ */
 .bx--interior-left-nav {
-  font-family: 'IBM Helvetica', Helvetica Neue, HelveticaNeue, Helvetica, sans-serif;
+  font-family: "ibm-plex-sans", Helvetica Neue, Arial, sans-serif;
   width: 15.625rem;
   position: fixed;
   top: 5.625rem;
@@ -6827,7 +7670,7 @@ span.flatpickr-weekday {
     text-decoration: none;
     padding: 0.25rem; }
     .bx--interior-left-nav--collapseable .bx--interior-left-nav-collapse__link:focus {
-      outline: 1px solid #0f6dff; }
+      outline: 1px solid #006aff; }
   .bx--interior-left-nav--collapseable .bx--interior-left-nav-collapse__arrow {
     -webkit-transform: rotate(0);
     transform: rotate(0);
@@ -6909,6 +7752,10 @@ span.flatpickr-weekday {
     transition: transform 300ms cubic-bezier(0.5, 0, 0.1, 1);
     transition: transform 300ms cubic-bezier(0.5, 0, 0.1, 1), -webkit-transform 300ms cubic-bezier(0.5, 0, 0.1, 1); }
 
+/**
+ * Generic `deprecate` mixin that is being used to indicate that a component is
+ * no longer going to be present in the next major release of Carbon.
+ */
 .bx--select--inline {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -6922,17 +7769,21 @@ span.flatpickr-weekday {
     font-weight: 400; }
   .bx--select--inline .bx--select-input {
     background-color: transparent;
-    color: #0f6dff;
+    color: #006aff;
     font-weight: 600; }
     .bx--select--inline .bx--select-input:disabled ~ * {
       opacity: 0.5;
       cursor: not-allowed; }
 
+/**
+ * Generic `deprecate` mixin that is being used to indicate that a component is
+ * no longer going to be present in the next major release of Carbon.
+ */
 .bx--data-table-v2-container + .bx--pagination {
   border-top: 0; }
 
 .bx--pagination {
-  font-family: 'IBM Helvetica', Helvetica Neue, HelveticaNeue, Helvetica, sans-serif;
+  font-family: "ibm-plex-sans", Helvetica Neue, Arial, sans-serif;
   width: 100%;
   background-color: #f3f3f3;
   padding: 0.5rem 1rem;
@@ -6942,7 +7793,7 @@ span.flatpickr-weekday {
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  border: 1px solid #8a8a8a; }
+  border: 1px solid #f3f3f3; }
   .bx--pagination .bx--form-item {
     -webkit-box-flex: 1;
     -ms-flex: auto;
@@ -6976,7 +7827,7 @@ span.flatpickr-weekday {
 .bx--pagination__button-icon {
   height: 0.75rem;
   width: 0.75rem;
-  fill: #171717;
+  fill: #bebebe;
   pointer-events: none;
   -webkit-transition: 250ms;
   transition: 250ms; }
@@ -6986,19 +7837,27 @@ span.flatpickr-weekday {
   background: none;
   cursor: pointer; }
   .bx--pagination__button:hover .bx--pagination__button-icon {
-    fill: #0f6dff; }
+    fill: #006aff; }
   .bx--pagination__button:focus {
-    outline: 1px solid #0f6dff; }
+    outline: 1px solid #006aff; }
+  .bx--pagination__button:disabled:hover {
+    cursor: default; }
+    .bx--pagination__button:disabled:hover .bx--pagination__button-icon {
+      fill: #bebebe; }
 
 .bx--pagination__button--backward {
-  margin-left: 1.25rem;
-  margin-right: 1.75rem; }
+  margin-left: 1rem;
+  margin-right: 1.5rem; }
 
 .bx--pagination__button--forward {
-  margin-left: 1.75rem; }
+  margin-left: 1.5rem; }
+
+.bx--pagination__button--no-index {
+  border-right: 0;
+  margin-right: 1px; }
 
 .bx--pagination .bx--select {
-  margin-right: 0.625rem; }
+  margin-right: 0.5rem; }
 
 .bx--pagination .bx--select--inline {
   margin-right: 0;
@@ -7011,7 +7870,7 @@ span.flatpickr-weekday {
   margin: 0;
   font-weight: 600; }
   .bx--pagination .bx--select-input:focus {
-    outline: 1px solid #0f6dff; }
+    outline: 1px solid #006aff; }
 
 .bx--pagination .bx--select__arrow {
   right: 0.5rem;
@@ -7026,7 +7885,7 @@ span.flatpickr-weekday {
   font-weight: 600;
   text-align: center; }
   .bx--pagination .bx--text-input:focus {
-    outline: 1px solid #0f6dff; }
+    outline: 1px solid #006aff; }
 
 .bx--pagination--inline {
   height: 42px;
@@ -7035,10 +7894,9 @@ span.flatpickr-weekday {
   margin-right: -1rem; }
   .bx--pagination--inline .bx--pagination__button {
     height: 100%;
-    border-left: 1px solid #8a8a8a;
-    border-right: 1px solid #8a8a8a;
-    padding-left: 0.9rem;
-    padding-right: 0.9rem;
+    border-left: 1px solid #f3f3f3;
+    border-right: 1px solid #f3f3f3;
+    width: 2.625rem;
     margin: 0; }
   .bx--pagination--inline .bx--pagination__button--forward {
     border-right: 0; }
@@ -7048,31 +7906,39 @@ span.flatpickr-weekday {
     position: relative;
     top: -1.5px; }
   .bx--pagination--inline .bx--select-input {
-    padding-left: 0.9rem; }
+    padding-left: 1rem; }
   .bx--pagination--inline .bx--select__arrow {
     right: 0.7rem; }
 
+/**
+ * Generic `deprecate` mixin that is being used to indicate that a component is
+ * no longer going to be present in the next major release of Carbon.
+ */
+/**
+ * Generic `deprecate` mixin that is being used to indicate that a component is
+ * no longer going to be present in the next major release of Carbon.
+ */
 .bx--accordion {
-  font-family: 'IBM Helvetica', Helvetica Neue, HelveticaNeue, Helvetica, sans-serif;
+  font-family: "ibm-plex-sans", Helvetica Neue, Arial, sans-serif;
   list-style: none;
   width: 100%; }
 
 .bx--accordion__item {
   -webkit-transition: all 250ms cubic-bezier(0.5, 0, 0.1, 1);
   transition: all 250ms cubic-bezier(0.5, 0, 0.1, 1);
-  border-top: 1px solid #8a8a8a;
+  border-top: 1px solid #f3f3f3;
   overflow: hidden; }
   .bx--accordion__item:focus {
     outline: none; }
     .bx--accordion__item:focus .bx--accordion__arrow {
-      outline: 1px solid #0f6dff;
+      outline: 1px solid #006aff;
       overflow: visible;
       outline-offset: -.5px; }
   .bx--accordion__item:last-child {
-    border-bottom: 1px solid #8a8a8a; }
+    border-bottom: 1px solid #f3f3f3; }
 
 .bx--accordion__heading {
-  font-family: 'IBM Helvetica', Helvetica Neue, HelveticaNeue, Helvetica, sans-serif;
+  font-family: "ibm-plex-sans", Helvetica Neue, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   letter-spacing: 0.5px;
@@ -7085,6 +7951,7 @@ span.flatpickr-weekday {
   padding: 0;
   cursor: pointer;
   width: 100%;
+  color: #252525;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -7105,7 +7972,7 @@ span.flatpickr-weekday {
   .bx--accordion__heading:focus {
     outline: none; }
     .bx--accordion__heading:focus .bx--accordion__arrow {
-      outline: 1px solid #0f6dff;
+      outline: 1px solid #006aff;
       overflow: visible;
       outline-offset: -.5px; }
 
@@ -7116,7 +7983,7 @@ span.flatpickr-weekday {
   width: 1.25rem;
   padding: 0.25rem 0.125rem 0.25rem 0.25rem;
   margin: 0 0 0 0.25rem;
-  fill: #171717; }
+  fill: #bebebe; }
 
 .bx--accordion__title {
   margin: 0 0 0 1rem; }
@@ -7144,10 +8011,10 @@ span.flatpickr-weekday {
   .bx--accordion__item--active .bx--accordion__arrow {
     -webkit-transform: rotate(90deg);
     transform: rotate(90deg);
-    fill: #0f6dff; }
+    fill: #006aff; }
 
 .bx--progress {
-  font-family: 'IBM Helvetica', Helvetica Neue, HelveticaNeue, Helvetica, sans-serif;
+  font-family: "ibm-plex-sans", Helvetica Neue, Arial, sans-serif;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -7193,24 +8060,24 @@ span.flatpickr-weekday {
   width: 75%; }
 
 .bx--progress-step--current circle:first-child {
-  stroke: #0f6dff;
+  stroke: #006aff;
   stroke-width: 5;
   fill: transparent; }
 
 .bx--progress-step--current circle:last-child {
-  fill: #0f6dff; }
+  fill: #006aff; }
 
 .bx--progress-step--current .bx--progress-label {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  color: #0f6dff;
+  color: #006aff;
   font-weight: 600; }
 
 .bx--progress-step--current .bx--progress-line {
-  background-color: #0f6dff; }
+  background-color: #006aff; }
 
 .bx--progress-step--incomplete circle {
-  stroke: #171717;
+  stroke: #bebebe;
   stroke-width: 5;
   fill: transparent; }
 
@@ -7218,27 +8085,55 @@ span.flatpickr-weekday {
   color: #565656; }
 
 .bx--progress-step--incomplete .bx--progress-line {
-  background-color: #171717; }
+  background-color: #bebebe; }
 
 .bx--progress-step--complete circle {
-  stroke: #0f6dff;
+  stroke: #006aff;
   stroke-width: 5;
   fill: transparent; }
 
 .bx--progress-step--complete polygon {
-  fill: #0f6dff; }
+  fill: #006aff; }
 
 .bx--progress-step--complete .bx--progress-label {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  color: #0f6dff;
+  color: #006aff;
   font-weight: 600; }
 
 .bx--progress-step--complete .bx--progress-line {
-  background-color: #0f6dff; }
+  background-color: #006aff; }
 
+/**
+ * Generic `deprecate` mixin that is being used to indicate that a component is
+ * no longer going to be present in the next major release of Carbon.
+ */
+/**
+ * Generic `deprecate` mixin that is being used to indicate that a component is
+ * no longer going to be present in the next major release of Carbon.
+ */
+/**
+ * Generic `deprecate` mixin that is being used to indicate that a component is
+ * no longer going to be present in the next major release of Carbon.
+ */
+/**
+ * Generic `deprecate` mixin that is being used to indicate that a component is
+ * no longer going to be present in the next major release of Carbon.
+ */
+/**
+ * Generic `deprecate` mixin that is being used to indicate that a component is
+ * no longer going to be present in the next major release of Carbon.
+ */
+/**
+ * Generic `deprecate` mixin that is being used to indicate that a component is
+ * no longer going to be present in the next major release of Carbon.
+ */
+/**
+ * Generic `deprecate` mixin that is being used to indicate that a component is
+ * no longer going to be present in the next major release of Carbon.
+ */
 .bx--toolbar {
-  font-family: 'IBM Helvetica', Helvetica Neue, HelveticaNeue, Helvetica, sans-serif;
+  font-family: "ibm-plex-sans", Helvetica Neue, Arial, sans-serif;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -7287,7 +8182,7 @@ span.flatpickr-weekday {
   .bx--toolbar .bx--checkbox-label {
     margin-bottom: 0; }
   .bx--toolbar .bx--overflow-menu--open > .bx--overflow-menu__icon {
-    fill: #0f6dff; }
+    fill: #006aff; }
 
 .bx--toolbar-search {
   width: 1.8rem;
@@ -7303,7 +8198,7 @@ span.flatpickr-weekday {
   height: 2rem;
   width: 2rem; }
   .bx--toolbar-search__btn:focus {
-    outline: 1px solid #0f6dff; }
+    outline: 1px solid #006aff; }
 
 .bx--toolbar-filter-icon {
   padding-left: 0;
@@ -7321,7 +8216,7 @@ span.flatpickr-weekday {
 .bx--toolbar-menu__divider {
   width: 100%;
   border: 0;
-  border-top: 1px solid #8a8a8a; }
+  border-top: 1px solid #f3f3f3; }
 
 .bx--radio-button-group {
   border: none; }
@@ -7341,7 +8236,7 @@ span.flatpickr-weekday {
   right: 0.875rem; }
 
 .bx--time-picker__input-field {
-  font-family: 'IBM Helvetica', Helvetica Neue, HelveticaNeue, Helvetica, sans-serif;
+  font-family: "ibm-plex-sans", Helvetica Neue, Arial, sans-serif;
   font-size: 0.875rem;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -7352,15 +8247,23 @@ span.flatpickr-weekday {
   background-color: #f3f3f3;
   border: 1px solid transparent;
   width: 4.875rem;
-  color: #171717;
+  color: #252525;
   height: 2.5rem;
   padding: 0 1rem; }
   .bx--time-picker__input-field:focus {
-    outline: 1px solid #0f6dff; }
+    outline: 1px solid #006aff; }
   .bx--time-picker__input-field:disabled {
     opacity: 0.5;
     cursor: not-allowed; }
 
+/**
+ * Generic `deprecate` mixin that is being used to indicate that a component is
+ * no longer going to be present in the next major release of Carbon.
+ */
+/**
+ * Generic `deprecate` mixin that is being used to indicate that a component is
+ * no longer going to be present in the next major release of Carbon.
+ */
 .bx--slider-container {
   max-width: 37.5rem;
   min-width: 12.5rem;
@@ -7396,7 +8299,7 @@ span.flatpickr-weekday {
   outline: none; }
 
 .bx--slider--disabled .bx--slider__thumb:active {
-  background: #0f6dff;
+  background: #006aff;
   -webkit-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%); }
 
@@ -7410,7 +8313,7 @@ span.flatpickr-weekday {
   position: absolute;
   width: 100%;
   height: 0.25rem;
-  background: #171717;
+  background: #bebebe;
   cursor: pointer;
   -webkit-transform: translate(0%, -50%);
   transform: translate(0%, -50%); }
@@ -7419,7 +8322,7 @@ span.flatpickr-weekday {
   position: absolute;
   width: 100%;
   height: 0.25rem;
-  background: #0f6dff;
+  background: #006aff;
   -webkit-transform-origin: left;
   transform-origin: left;
   pointer-events: none;
@@ -7430,17 +8333,20 @@ span.flatpickr-weekday {
   position: absolute;
   height: 1.5rem;
   width: 1.5rem;
-  background: #0f6dff;
+  background: #006aff;
   border-radius: 50%;
   top: 0;
   -webkit-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
-  -webkit-transition: background 100ms cubic-bezier(0.5, 0, 0.1, 1), left 250ms cubic-bezier(0.5, 0, 0.1, 1), -webkit-transform 100ms cubic-bezier(0.5, 0, 0.1, 1);
-  transition: background 100ms cubic-bezier(0.5, 0, 0.1, 1), left 250ms cubic-bezier(0.5, 0, 0.1, 1), -webkit-transform 100ms cubic-bezier(0.5, 0, 0.1, 1);
-  transition: transform 100ms cubic-bezier(0.5, 0, 0.1, 1), background 100ms cubic-bezier(0.5, 0, 0.1, 1), left 250ms cubic-bezier(0.5, 0, 0.1, 1);
-  transition: transform 100ms cubic-bezier(0.5, 0, 0.1, 1), background 100ms cubic-bezier(0.5, 0, 0.1, 1), left 250ms cubic-bezier(0.5, 0, 0.1, 1), -webkit-transform 100ms cubic-bezier(0.5, 0, 0.1, 1);
+  -webkit-transition: background 100ms cubic-bezier(0.5, 0, 0.1, 1), -webkit-transform 100ms cubic-bezier(0.5, 0, 0.1, 1);
+  transition: background 100ms cubic-bezier(0.5, 0, 0.1, 1), -webkit-transform 100ms cubic-bezier(0.5, 0, 0.1, 1);
+  transition: transform 100ms cubic-bezier(0.5, 0, 0.1, 1), background 100ms cubic-bezier(0.5, 0, 0.1, 1);
+  transition: transform 100ms cubic-bezier(0.5, 0, 0.1, 1), background 100ms cubic-bezier(0.5, 0, 0.1, 1), -webkit-transform 100ms cubic-bezier(0.5, 0, 0.1, 1);
   cursor: pointer;
   outline: none; }
+  .bx--slider__thumb--clicked {
+    -webkit-transition: left 250ms cubic-bezier(0.5, 0, 0.1, 1);
+    transition: left 250ms cubic-bezier(0.5, 0, 0.1, 1); }
   .bx--slider__thumb:hover {
     -webkit-transform: translate(-50%, -50%) scale(1.05);
     transform: translate(-50%, -50%) scale(1.05); }
@@ -7449,7 +8355,7 @@ span.flatpickr-weekday {
     box-shadow: 0 0 0 3px #7cc7ff;
     outline: 1px solid transparent; }
   .bx--slider__thumb:active {
-    background: #0060f5;
+    background: #005fe6;
     -webkit-transform: translate(-50%, -50%) scale(1.25);
     transform: translate(-50%, -50%) scale(1.25); }
 
@@ -7458,7 +8364,7 @@ span.flatpickr-weekday {
 
 .bx--slider-text-input,
 .bx-slider-text-input {
-  width: 2.75rem;
+  width: 3.75rem;
   min-width: 0;
   height: 2rem;
   padding: 0;
@@ -7470,6 +8376,18 @@ span.flatpickr-weekday {
   .bx-slider-text-input::-webkit-inner-spin-button {
     display: none; }
 
+/**
+ * Generic `deprecate` mixin that is being used to indicate that a component is
+ * no longer going to be present in the next major release of Carbon.
+ */
+/**
+ * Generic `deprecate` mixin that is being used to indicate that a component is
+ * no longer going to be present in the next major release of Carbon.
+ */
+/**
+ * Generic `deprecate` mixin that is being used to indicate that a component is
+ * no longer going to be present in the next major release of Carbon.
+ */
 .bx--order-summary {
   font-size: 0.875rem;
   background-color: #f3f3f3;
@@ -7492,7 +8410,7 @@ span.flatpickr-weekday {
   -ms-flex-align: center;
   align-items: center;
   padding: 0 0 0 1.25rem;
-  border-bottom: 1px solid #171717; }
+  border-bottom: 1px solid #bebebe; }
   .bx--order-header .bx--dropdown {
     -webkit-box-flex: 1;
     -ms-flex: 1;
@@ -7507,7 +8425,7 @@ span.flatpickr-weekday {
     text-overflow: ellipsis; }
   .bx--order-header .bx--dropdown[data-value=''] .bx--dropdown-text,
   .bx--order-header .bx--dropdown-text {
-    color: #0f6dff; }
+    color: #006aff; }
 
 .bx--order-header-title {
   font-size: 0.875rem;
@@ -7519,7 +8437,7 @@ span.flatpickr-weekday {
 .bx--order-list {
   padding: 1.25rem 0;
   margin: 0 1.25rem;
-  border-bottom: 1px solid #171717; }
+  border-bottom: 1px solid #bebebe; }
 
 .bx--order-item {
   display: -webkit-box;
@@ -7616,6 +8534,10 @@ span.flatpickr-weekday {
   margin-bottom: 0.25rem;
   text-transform: uppercase; }
 
+/**
+ * Generic `deprecate` mixin that is being used to indicate that a component is
+ * no longer going to be present in the next major release of Carbon.
+ */
 .bx--tile {
   -webkit-box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.1);
   box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.1);
@@ -7623,11 +8545,11 @@ span.flatpickr-weekday {
   min-width: 8rem;
   min-height: 4rem;
   background-color: #f3f3f3;
-  border: 1px solid #d8d8d8;
+  border: 1px solid #dcdcdc;
   position: relative;
   padding: 1rem; }
   .bx--tile:focus {
-    outline: 1px solid #0f6dff; }
+    outline: 1px solid #006aff; }
 
 .bx--tile--clickable,
 .bx--tile--selectable,
@@ -7638,7 +8560,7 @@ span.flatpickr-weekday {
   .bx--tile--clickable:hover,
   .bx--tile--selectable:hover,
   .bx--tile--expandable:hover {
-    border: 1px solid #8a8a8a; }
+    border: 1px solid #f3f3f3; }
   .bx--tile--clickable:hover .bx--tile__checkmark, .bx--tile--clickable:focus .bx--tile__checkmark,
   .bx--tile--selectable:hover .bx--tile__checkmark,
   .bx--tile--selectable:focus .bx--tile__checkmark,
@@ -7650,23 +8572,23 @@ span.flatpickr-weekday {
   .bx--tile--selectable:focus .bx--tile__chevron svg,
   .bx--tile--expandable:hover .bx--tile__chevron svg,
   .bx--tile--expandable:focus .bx--tile__chevron svg {
-    fill: #0f6dff; }
+    fill: #006aff; }
 
 .bx--tile--clickable:focus,
 .bx--tile--expandable:focus {
-  outline: 1px solid #0f6dff; }
+  outline: 1px solid #006aff; }
 
 .bx--tile--selectable {
   padding-right: 3rem; }
 
 .bx--tile--selectable:focus {
   outline: none;
-  border: 1px solid #0f6dff; }
+  border: 1px solid #006aff; }
 
 .bx--tile--is-clicked {
   -webkit-box-shadow: none;
   box-shadow: none;
-  border: 1px solid #8a8a8a; }
+  border: 1px solid #f3f3f3; }
 
 .bx--tile__checkmark,
 .bx--tile__chevron {
@@ -7677,7 +8599,7 @@ span.flatpickr-weekday {
   background: transparent; }
   .bx--tile__checkmark:focus,
   .bx--tile__chevron:focus {
-    outline: 1px solid #0f6dff; }
+    outline: 1px solid #006aff; }
 
 .bx--tile__checkmark {
   height: 1rem;
@@ -7685,7 +8607,9 @@ span.flatpickr-weekday {
   right: 1rem;
   opacity: 0; }
   .bx--tile__checkmark svg {
-    fill: rgba(15, 109, 255, 0.25); }
+    border-radius: 50%;
+    background-color: rgba(243, 243, 243, 0.25);
+    fill: rgba(0, 106, 255, 0.25); }
 
 .bx--tile__chevron {
   position: absolute;
@@ -7697,7 +8621,7 @@ span.flatpickr-weekday {
     transform-origin: center;
     -webkit-transition: 250ms cubic-bezier(0.5, 0, 0.1, 1);
     transition: 250ms cubic-bezier(0.5, 0, 0.1, 1);
-    fill: #171717; }
+    fill: #bebebe; }
   .bx--tile__chevron:hover {
     cursor: pointer; }
 
@@ -7731,14 +8655,15 @@ span.flatpickr-weekday {
 .bx--tile--is-selected,
 .bx--tile--is-selected:hover,
 .bx--tile--is-selected:focus {
-  border: 1px solid #0f6dff;
+  border: 1px solid #006aff;
   outline: none; }
 
 .bx--tile-input:checked + .bx--tile__checkmark {
   opacity: 1; }
 
 .bx--tile-input:checked + .bx--tile__checkmark svg {
-  fill: #0f6dff; }
+  fill: #006aff;
+  background-color: #f3f3f3; }
 
 .bx--tile-content {
   width: 100%;
@@ -7747,6 +8672,14 @@ span.flatpickr-weekday {
 .bx--tile-input {
   display: none; }
 
+/**
+ * Generic `deprecate` mixin that is being used to indicate that a component is
+ * no longer going to be present in the next major release of Carbon.
+ */
+/**
+ * Generic `deprecate` mixin that is being used to indicate that a component is
+ * no longer going to be present in the next major release of Carbon.
+ */
 .bx--lightbox {
   width: 66rem;
   -webkit-box-shadow: 0 12px 24px 0 rgba(0, 0, 0, 0.1);
@@ -7768,10 +8701,10 @@ span.flatpickr-weekday {
     -webkit-transform: rotate(180deg);
     transform: rotate(180deg); }
   .bx--lightbox__btn:focus {
-    outline: 1px solid #0f6dff; }
+    outline: 1px solid #006aff; }
   .bx--lightbox__btn svg {
     height: 1.5rem;
-    fill: #171717; }
+    fill: #bebebe; }
 
 .bx--lightbox__item {
   display: none;
@@ -7784,6 +8717,14 @@ span.flatpickr-weekday {
   background: #f3f3f3;
   overflow: hidden; }
 
+/**
+ * Generic `deprecate` mixin that is being used to indicate that a component is
+ * no longer going to be present in the next major release of Carbon.
+ */
+/**
+ * Generic `deprecate` mixin that is being used to indicate that a component is
+ * no longer going to be present in the next major release of Carbon.
+ */
 .bx--carousel {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -7812,7 +8753,7 @@ span.flatpickr-weekday {
   width: auto; }
 
 .bx--filmstrip-btn {
-  font-family: 'IBM Helvetica', Helvetica Neue, HelveticaNeue, Helvetica, sans-serif;
+  font-family: "ibm-plex-sans", Helvetica Neue, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   letter-spacing: 0.5px;
@@ -7835,10 +8776,10 @@ span.flatpickr-weekday {
   .bx--filmstrip-btn:hover {
     cursor: pointer; }
   .bx--filmstrip-btn:focus {
-    outline: 1px solid #0f6dff; }
+    outline: 1px solid #006aff; }
 
 .bx--carousel__btn {
-  font-family: 'IBM Helvetica', Helvetica Neue, HelveticaNeue, Helvetica, sans-serif;
+  font-family: "ibm-plex-sans", Helvetica Neue, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   letter-spacing: 0.5px;
@@ -7859,17 +8800,17 @@ span.flatpickr-weekday {
   .bx--carousel__btn:last-child {
     margin-left: 1.25rem; }
   .bx--carousel__btn:focus {
-    outline: 1px solid #0f6dff; }
+    outline: 1px solid #006aff; }
   .bx--carousel__btn:last-of-type {
     -webkit-transform: rotate(180deg);
     transform: rotate(180deg); }
   .bx--carousel__btn svg {
     height: 1.5rem;
     width: 1rem;
-    fill: #0f6dff; }
+    fill: #006aff; }
 
 .bx--carousel__item {
-  font-family: 'IBM Helvetica', Helvetica Neue, HelveticaNeue, Helvetica, sans-serif;
+  font-family: "ibm-plex-sans", Helvetica Neue, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   letter-spacing: 0.5px;
@@ -7889,18 +8830,30 @@ span.flatpickr-weekday {
   .bx--carousel__item::-moz-focus-inner {
     border: 0; }
   .bx--carousel__item:hover, .bx--carousel__item:focus {
-    outline: 1px solid #0f6dff; }
+    outline: 1px solid #006aff; }
 
 .bx--carousel__item--active {
-  outline: 1px solid #0f6dff; }
+  outline: 1px solid #006aff; }
 
+/**
+ * Generic `deprecate` mixin that is being used to indicate that a component is
+ * no longer going to be present in the next major release of Carbon.
+ */
+/**
+ * Generic `deprecate` mixin that is being used to indicate that a component is
+ * no longer going to be present in the next major release of Carbon.
+ */
+/**
+ * Generic `deprecate` mixin that is being used to indicate that a component is
+ * no longer going to be present in the next major release of Carbon.
+ */
 .bx--footer--bottom-fixed {
   position: fixed;
   bottom: 0;
   left: 0; }
 
 .bx--footer {
-  font-family: 'IBM Helvetica', Helvetica Neue, HelveticaNeue, Helvetica, sans-serif;
+  font-family: "ibm-plex-sans", Helvetica Neue, Arial, sans-serif;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
   display: -webkit-box;
@@ -7909,7 +8862,7 @@ span.flatpickr-weekday {
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  border-top: 2px solid #0f6dff;
+  border-top: 2px solid #006aff;
   background-color: #f3f3f3;
   min-height: 3.5rem;
   z-index: 5000;
@@ -7954,6 +8907,10 @@ span.flatpickr-weekday {
 .bx--footer-cta {
   margin-left: auto; }
 
+/**
+ * Generic `deprecate` mixin that is being used to indicate that a component is
+ * no longer going to be present in the next major release of Carbon.
+ */
 .bx--fab {
   -webkit-transform: rotate(0);
   transform: rotate(0);
