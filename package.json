@@ -7,7 +7,8 @@
   "author": "chrisdhanaraj <chrisdhanaraj@us.ibm.com>",
   "license": "Apache 2.0",
   "scripts": {
-    "semantic-release": "semantic-release pre && npm publish && semantic-release post"
+    "semantic-release": "semantic-release pre && npm publish && semantic-release post",
+    "test": ""
   },
   "devDependencies": {
     "gulp": "^3.9.1",

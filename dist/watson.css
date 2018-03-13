@@ -86,6 +86,13 @@ video {
   font: inherit;
   vertical-align: baseline; }
 
+button,
+input[type="button"],
+input[type="submit"],
+input[type="reset"],
+input[type="file"] {
+  border-radius: 0; }
+
 /* HTML5 display-role reset for older browsers */
 article,
 aside,
@@ -199,7 +206,6 @@ body {
 .bx--type-omega {
   font-size: 0.75rem;
   line-height: 1.25;
-  letter-spacing: 0.5px;
   font-weight: 600; }
 
 .bx--type-caption {
@@ -234,21 +240,18 @@ h1,
 .bx--type-alpha {
   font-size: 2.25rem;
   line-height: 1.25;
-  letter-spacing: 0.5px;
   font-weight: 300; }
 
 h2,
 .bx--type-beta {
   font-size: 1.75rem;
   line-height: 1.25;
-  letter-spacing: 0.5px;
   font-weight: 300; }
 
 h3,
 .bx--type-gamma {
   font-size: 1.25rem;
   line-height: 1.25;
-  letter-spacing: 0.5px;
   font-weight: 300; }
 
 h4,
@@ -1529,7 +1532,8 @@ select[data-invalid] {
   padding: 1rem;
   color: #272727;
   background-color: #ffffff;
-  border: 1px solid #c0bfc0; }
+  border: 1px solid #c0bfc0;
+  resize: vertical; }
   .bx--text-area:focus {
     outline: 1px solid #047cc0; }
   .bx--text-area::-webkit-input-placeholder {
@@ -1556,6 +1560,7 @@ select[data-invalid] {
   width: 100%;
   min-width: 9.375rem;
   padding-left: 1rem;
+  padding-right: 2rem;
   font-weight: 300;
   height: 2.5rem;
   color: #272727;
@@ -1960,6 +1965,7 @@ select[data-invalid] {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  padding-top: 0.5rem;
   padding-bottom: 0.5rem;
   width: 100%;
   position: relative; }
@@ -2013,7 +2019,9 @@ select[data-invalid] {
   height: 1rem;
   width: auto;
   max-width: 16px;
-  fill: #595859; }
+  fill: #595859;
+  -webkit-transition: 250ms;
+  transition: 250ms; }
 
 .bx--batch-actions {
   display: -webkit-box;
@@ -2099,16 +2107,22 @@ select[data-invalid] {
   cursor: pointer;
   font-size: 0.875rem;
   -webkit-font-smoothing: auto;
-  font-weight: 400;
   color: #ffffff;
   border-bottom: 1px solid #ffffff;
-  letter-spacing: 1;
+  font-weight: 600;
   cursor: pointer; }
   .bx--batch-summary__cancel::-moz-focus-inner {
     border: 0; }
-  .bx--batch-summary__cancel:hover, .bx--batch-summary__cancel:focus {
-    letter-spacing: 0;
-    font-weight: 700; }
+
+.bx--batch-actions ~ .bx--toolbar-search-container,
+.bx--batch-actions ~ .bx--toolbar-content {
+  opacity: 1;
+  -webkit-transition: opacity 250ms;
+  transition: opacity 250ms; }
+
+.bx--batch-actions--active ~ .bx--toolbar-search-container,
+.bx--batch-actions--active ~ .bx--toolbar-content {
+  opacity: 0; }
 
 .bx--data-table-v2-container {
   width: 100%;
@@ -2138,13 +2152,14 @@ select[data-invalid] {
         border-left: 1px solid #047cc0; }
       .bx--data-table-v2 tr:hover td:last-of-type {
         border-right: 1px solid #047cc0; }
+    .bx--data-table-v2 tr:hover .bx--overflow-menu {
+      opacity: 1; }
   .bx--data-table-v2 th {
     border-top: 1px solid #c0bfc0; }
   .bx--data-table-v2 th,
   .bx--data-table-v2 td {
     border-top: 1px solid #c0bfc0;
     padding-left: 0.75rem;
-    padding-right: 0.75rem;
     vertical-align: middle;
     text-align: left; }
     .bx--data-table-v2 th:first-of-type,
@@ -2157,8 +2172,6 @@ select[data-invalid] {
       border-right: 1px solid #c0bfc0; }
   .bx--data-table-v2 .bx--checkbox-appearance {
     margin-right: 0; }
-  .bx--data-table-v2 .bx--table-overflow:hover .bx--overflow-menu {
-    opacity: 1; }
   .bx--data-table-v2 .bx--overflow-menu {
     opacity: 0; }
     .bx--data-table-v2 .bx--overflow-menu:focus {
@@ -3749,6 +3762,11 @@ span.flatpickr-weekday {
 .flatpickr-month .flatpickr-current-month .cur-month {
   margin-right: 0.25rem; }
 
+.numInputWrapper,
+.flatpickr-current-month .numInputWrapper {
+  min-width: 2.375rem;
+  width: 2.375rem; }
+
 .bx--date-picker__month .numInputWrapper .numInput,
 .flatpickr-month .numInputWrapper .numInput {
   font-weight: 600;
@@ -3756,7 +3774,9 @@ span.flatpickr-weekday {
   background-color: #ffffff;
   border: none;
   border-radius: 0;
-  padding: 0.125rem 0.125rem 0.125rem 0.4rem; }
+  min-width: 2.375rem;
+  width: 2.375rem;
+  padding: .25rem; }
   .bx--date-picker__month .numInputWrapper .numInput:focus,
   .flatpickr-month .numInputWrapper .numInput:focus {
     outline: 1px solid #047cc0; }
@@ -4028,7 +4048,9 @@ span.flatpickr-weekday {
   color: #272727;
   text-decoration: none;
   padding: 1rem;
-  width: 100%; }
+  width: 100%;
+  white-space: nowrap;
+  text-overflow: ellipsis; }
   .bx--tabs__nav-link:focus {
     outline: 1px solid transparent;
     background-color: #047cc0;
