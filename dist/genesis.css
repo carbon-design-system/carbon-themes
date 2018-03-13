@@ -87,11 +87,14 @@ video {
   vertical-align: baseline; }
 
 button,
-input[type="button"],
-input[type="submit"],
-input[type="reset"],
-input[type="file"] {
+input[type='button'],
+input[type='submit'],
+input[type='reset'],
+input[type='file'] {
   border-radius: 0; }
+
+input[type='text']::-ms-clear {
+  display: none; }
 
 /* HTML5 display-role reset for older browsers */
 article,
@@ -109,6 +112,12 @@ section {
 
 body {
   line-height: 1; }
+
+sup {
+  vertical-align: super; }
+
+sub {
+  vertical-align: sub; }
 
 ol,
 ul {
@@ -133,41 +142,177 @@ table {
   -webkit-box-sizing: border-box;
   box-sizing: border-box; }
 
+/**
+ * Generic `deprecate` mixin that is being used to indicate that a component is
+ * no longer going to be present in the next major release of Carbon.
+ */
 @font-face {
-  font-family: 'IBM Helvetica';
+  font-family: 'ibm-plex-mono';
   font-style: normal;
   font-weight: 300;
-  src: url("https://unpkg.com/carbon-components@latest/src/globals/fonts/helvetica-neue-light.woff2") format("woff2"), url("https://unpkg.com/carbon-components@latest/src/globals/fonts/helvetica-neue-light.woff") format("woff"); }
+  src: url("https://unpkg.com/carbon-components@latest/src/globals/fonts/IBMPlexMono-Light-Pi.woff2") format("woff2"), url("https://unpkg.com/carbon-components@latest/src/globals/fonts/IBMPlexMono-Light-Pi.woff") format("woff");
+  unicode-range: "U+03C0, U+0E3F, U+2070, U+2074-2079, U+2080-2089, U+2113, U+2116, U+2126, U+212E, U+2150-2151, U+2153-215E, U+2190-2199, U+21A9-21AA, U+21B0-21B3, U+21B6-21B7, U+21BA-21BB, U+21C4, U+21C6, U+2202, U+2206, U+220F, U+2211, U+221A, U+221E, U+222B, U+2248, U+2260, U+2264-2265, U+25CA, U+2713, U+274C, U+2B0E-2B11, U+EBE1, U+EBE3-EBE4, U+EBE6-EBE7, U+ECE0, U+EFCC"; }
 
 @font-face {
-  font-family: 'IBM Helvetica';
-  font-style: italic;
+  font-family: 'ibm-plex-mono';
+  font-style: normal;
   font-weight: 300;
-  src: url("https://unpkg.com/carbon-components@latest/src/globals/fonts/helvetica-neue-light-italic.woff2") format("woff2"), url("https://unpkg.com/carbon-components@latest/src/globals/fonts/helvetica-neue-light-italic.woff") format("woff"); }
+  src: url("https://unpkg.com/carbon-components@latest/src/globals/fonts/IBMPlexMono-Light-Latin3.woff2") format("woff2"), url("https://unpkg.com/carbon-components@latest/src/globals/fonts/IBMPlexMono-Light-Latin3.woff") format("woff");
+  unicode-range: "U+0102-0103, U+1EA0-1EF9, U+20AB"; }
 
 @font-face {
-  font-family: 'IBM Helvetica';
+  font-family: 'ibm-plex-mono';
+  font-style: normal;
+  font-weight: 300;
+  src: url("https://unpkg.com/carbon-components@latest/src/globals/fonts/IBMPlexMono-Light-Latin2.woff2") format("woff2"), url("https://unpkg.com/carbon-components@latest/src/globals/fonts/IBMPlexMono-Light-Latin2.woff") format("woff");
+  unicode-range: "U+0100-024F, U+0259, U+1E00-1EFF, U+20A0-20AB, U+20AD-20CF, U+2C60-2C7F, U+A720-A7FF, U+FB01-FB02"; }
+
+@font-face {
+  font-family: 'ibm-plex-mono';
+  font-style: normal;
+  font-weight: 300;
+  src: url("https://unpkg.com/carbon-components@latest/src/globals/fonts/IBMPlexMono-Light-Latin1.woff2") format("woff2"), url("https://unpkg.com/carbon-components@latest/src/globals/fonts/IBMPlexMono-Light-Latin1.woff") format("woff");
+  unicode-range: "U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+20AC, U+2122, U+2212, U+FB01-FB02"; }
+
+@font-face {
+  font-family: 'ibm-plex-mono';
   font-style: normal;
   font-weight: 400;
-  src: url("https://unpkg.com/carbon-components@latest/src/globals/fonts/helvetica-neue-roman.woff2") format("woff2"), url("https://unpkg.com/carbon-components@latest/src/globals/fonts/helvetica-neue-roman.woff") format("woff"); }
+  src: url("https://unpkg.com/carbon-components@latest/src/globals/fonts/IBMPlexMono-Regular-Pi.woff2") format("woff2"), url("https://unpkg.com/carbon-components@latest/src/globals/fonts/IBMPlexMono-Regular-Pi.woff") format("woff");
+  unicode-range: "U+03C0, U+0E3F, U+2070, U+2074-2079, U+2080-2089, U+2113, U+2116, U+2126, U+212E, U+2150-2151, U+2153-215E, U+2190-2199, U+21A9-21AA, U+21B0-21B3, U+21B6-21B7, U+21BA-21BB, U+21C4, U+21C6, U+2202, U+2206, U+220F, U+2211, U+221A, U+221E, U+222B, U+2248, U+2260, U+2264-2265, U+25CA, U+2713, U+274C, U+2B0E-2B11, U+EBE1, U+EBE3-EBE4, U+EBE6-EBE7, U+ECE0, U+EFCC"; }
 
 @font-face {
-  font-family: 'IBM Helvetica';
-  font-style: italic;
-  font-weight: 400;
-  src: url("https://unpkg.com/carbon-components@latest/src/globals/fonts/helvetica-neue-roman-italic.woff2") format("woff2"), url("https://unpkg.com/carbon-components@latest/src/globals/fonts/helvetica-neue-roman-italic.woff") format("woff"); }
-
-@font-face {
-  font-family: 'IBM Helvetica';
+  font-family: 'ibm-plex-mono';
   font-style: normal;
-  font-weight: 700;
-  src: url("https://unpkg.com/carbon-components@latest/src/globals/fonts/helvetica-neue-bold.woff2") format("woff2"), url("https://unpkg.com/carbon-components@latest/src/globals/fonts/helvetica-neue-bold.woff") format("woff"); }
+  font-weight: 400;
+  src: url("https://unpkg.com/carbon-components@latest/src/globals/fonts/IBMPlexMono-Regular-Latin3.woff2") format("woff2"), url("https://unpkg.com/carbon-components@latest/src/globals/fonts/IBMPlexMono-Regular-Latin3.woff") format("woff");
+  unicode-range: "U+0102-0103, U+1EA0-1EF9, U+20AB"; }
 
 @font-face {
-  font-family: 'IBM Helvetica';
-  font-style: italic;
-  font-weight: 700;
-  src: url("https://unpkg.com/carbon-components@latest/src/globals/fonts/helvetica-neue-bold-italic.woff2") format("woff2"), url("https://unpkg.com/carbon-components@latest/src/globals/fonts/helvetica-neue-bold-italic.woff") format("woff"); }
+  font-family: 'ibm-plex-mono';
+  font-style: normal;
+  font-weight: 400;
+  src: url("https://unpkg.com/carbon-components@latest/src/globals/fonts/IBMPlexMono-Regular-Latin2.woff2") format("woff2"), url("https://unpkg.com/carbon-components@latest/src/globals/fonts/IBMPlexMono-Regular-Latin2.woff") format("woff");
+  unicode-range: "U+0100-024F, U+0259, U+1E00-1EFF, U+20A0-20AB, U+20AD-20CF, U+2C60-2C7F, U+A720-A7FF, U+FB01-FB02"; }
+
+@font-face {
+  font-family: 'ibm-plex-mono';
+  font-style: normal;
+  font-weight: 400;
+  src: url("https://unpkg.com/carbon-components@latest/src/globals/fonts/IBMPlexMono-Regular-Latin1.woff2") format("woff2"), url("https://unpkg.com/carbon-components@latest/src/globals/fonts/IBMPlexMono-Regular-Latin1.woff") format("woff");
+  unicode-range: "U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+20AC, U+2122, U+2212, U+FB01-FB02"; }
+
+@font-face {
+  font-family: 'ibm-plex-mono';
+  font-style: normal;
+  font-weight: 600;
+  src: url("https://unpkg.com/carbon-components@latest/src/globals/fonts/IBMPlexMono-SemiBold-Pi.woff2") format("woff2"), url("https://unpkg.com/carbon-components@latest/src/globals/fonts/IBMPlexMono-SemiBold-Pi.woff") format("woff");
+  unicode-range: "U+03C0, U+0E3F, U+2070, U+2074-2079, U+2080-2089, U+2113, U+2116, U+2126, U+212E, U+2150-2151, U+2153-215E, U+2190-2199, U+21A9-21AA, U+21B0-21B3, U+21B6-21B7, U+21BA-21BB, U+21C4, U+21C6, U+2202, U+2206, U+220F, U+2211, U+221A, U+221E, U+222B, U+2248, U+2260, U+2264-2265, U+25CA, U+2713, U+274C, U+2B0E-2B11, U+EBE1, U+EBE3-EBE4, U+EBE6-EBE7, U+ECE0, U+EFCC"; }
+
+@font-face {
+  font-family: 'ibm-plex-mono';
+  font-style: normal;
+  font-weight: 600;
+  src: url("https://unpkg.com/carbon-components@latest/src/globals/fonts/IBMPlexMono-SemiBold-Latin3.woff2") format("woff2"), url("https://unpkg.com/carbon-components@latest/src/globals/fonts/IBMPlexMono-SemiBold-Latin3.woff") format("woff");
+  unicode-range: "U+0102-0103, U+1EA0-1EF9, U+20AB"; }
+
+@font-face {
+  font-family: 'ibm-plex-mono';
+  font-style: normal;
+  font-weight: 600;
+  src: url("https://unpkg.com/carbon-components@latest/src/globals/fonts/IBMPlexMono-SemiBold-Latin2.woff2") format("woff2"), url("https://unpkg.com/carbon-components@latest/src/globals/fonts/IBMPlexMono-SemiBold-Latin2.woff") format("woff");
+  unicode-range: "U+0100-024F, U+0259, U+1E00-1EFF, U+20A0-20AB, U+20AD-20CF, U+2C60-2C7F, U+A720-A7FF, U+FB01-FB02"; }
+
+@font-face {
+  font-family: 'ibm-plex-mono';
+  font-style: normal;
+  font-weight: 600;
+  src: url("https://unpkg.com/carbon-components@latest/src/globals/fonts/IBMPlexMono-SemiBold-Latin1.woff2") format("woff2"), url("https://unpkg.com/carbon-components@latest/src/globals/fonts/IBMPlexMono-SemiBold-Latin1.woff") format("woff");
+  unicode-range: "U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+20AC, U+2122, U+2212, U+FB01-FB02"; }
+
+@font-face {
+  font-family: 'ibm-plex-sans';
+  font-style: normal;
+  font-weight: 300;
+  src: url("https://unpkg.com/carbon-components@latest/src/globals/fonts/IBMPlexSans-Light-Pi.woff2") format("woff2"), url("https://unpkg.com/carbon-components@latest/src/globals/fonts/IBMPlexSans-Light-Pi.woff") format("woff");
+  unicode-range: "U+03C0, U+0E3F, U+2070, U+2074-2079, U+2080-2089, U+2113, U+2116, U+2126, U+212E, U+2150-2151, U+2153-215E, U+2190-2199, U+21A9-21AA, U+21B0-21B3, U+21B6-21B7, U+21BA-21BB, U+21C4, U+21C6, U+2202, U+2206, U+220F, U+2211, U+221A, U+221E, U+222B, U+2248, U+2260, U+2264-2265, U+25CA, U+2713, U+274C, U+2B0E-2B11, U+EBE1, U+EBE3-EBE4, U+EBE6-EBE7, U+ECE0, U+EFCC"; }
+
+@font-face {
+  font-family: 'ibm-plex-sans';
+  font-style: normal;
+  font-weight: 300;
+  src: url("https://unpkg.com/carbon-components@latest/src/globals/fonts/IBMPlexSans-Light-Latin3.woff2") format("woff2"), url("https://unpkg.com/carbon-components@latest/src/globals/fonts/IBMPlexSans-Light-Latin3.woff") format("woff");
+  unicode-range: "U+0102-0103, U+1EA0-1EF9, U+20AB"; }
+
+@font-face {
+  font-family: 'ibm-plex-sans';
+  font-style: normal;
+  font-weight: 300;
+  src: url("https://unpkg.com/carbon-components@latest/src/globals/fonts/IBMPlexSans-Light-Latin2.woff2") format("woff2"), url("https://unpkg.com/carbon-components@latest/src/globals/fonts/IBMPlexSans-Light-Latin2.woff") format("woff");
+  unicode-range: "U+0100-024F, U+0259, U+1E00-1EFF, U+20A0-20AB, U+20AD-20CF, U+2C60-2C7F, U+A720-A7FF, U+FB01-FB02"; }
+
+@font-face {
+  font-family: 'ibm-plex-sans';
+  font-style: normal;
+  font-weight: 300;
+  src: url("https://unpkg.com/carbon-components@latest/src/globals/fonts/IBMPlexSans-Light-Latin1.woff2") format("woff2"), url("https://unpkg.com/carbon-components@latest/src/globals/fonts/IBMPlexSans-Light-Latin1.woff") format("woff");
+  unicode-range: "U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+20AC, U+2122, U+2212, U+FB01-FB02"; }
+
+@font-face {
+  font-family: 'ibm-plex-sans';
+  font-style: normal;
+  font-weight: 400;
+  src: url("https://unpkg.com/carbon-components@latest/src/globals/fonts/IBMPlexSans-Regular-Pi.woff2") format("woff2"), url("https://unpkg.com/carbon-components@latest/src/globals/fonts/IBMPlexSans-Regular-Pi.woff") format("woff");
+  unicode-range: "U+03C0, U+0E3F, U+2070, U+2074-2079, U+2080-2089, U+2113, U+2116, U+2126, U+212E, U+2150-2151, U+2153-215E, U+2190-2199, U+21A9-21AA, U+21B0-21B3, U+21B6-21B7, U+21BA-21BB, U+21C4, U+21C6, U+2202, U+2206, U+220F, U+2211, U+221A, U+221E, U+222B, U+2248, U+2260, U+2264-2265, U+25CA, U+2713, U+274C, U+2B0E-2B11, U+EBE1, U+EBE3-EBE4, U+EBE6-EBE7, U+ECE0, U+EFCC"; }
+
+@font-face {
+  font-family: 'ibm-plex-sans';
+  font-style: normal;
+  font-weight: 400;
+  src: url("https://unpkg.com/carbon-components@latest/src/globals/fonts/IBMPlexSans-Regular-Latin3.woff2") format("woff2"), url("https://unpkg.com/carbon-components@latest/src/globals/fonts/IBMPlexSans-Regular-Latin3.woff") format("woff");
+  unicode-range: "U+0102-0103, U+1EA0-1EF9, U+20AB"; }
+
+@font-face {
+  font-family: 'ibm-plex-sans';
+  font-style: normal;
+  font-weight: 400;
+  src: url("https://unpkg.com/carbon-components@latest/src/globals/fonts/IBMPlexSans-Regular-Latin2.woff2") format("woff2"), url("https://unpkg.com/carbon-components@latest/src/globals/fonts/IBMPlexSans-Regular-Latin2.woff") format("woff");
+  unicode-range: "U+0100-024F, U+0259, U+1E00-1EFF, U+20A0-20AB, U+20AD-20CF, U+2C60-2C7F, U+A720-A7FF, U+FB01-FB02"; }
+
+@font-face {
+  font-family: 'ibm-plex-sans';
+  font-style: normal;
+  font-weight: 400;
+  src: url("https://unpkg.com/carbon-components@latest/src/globals/fonts/IBMPlexSans-Regular-Latin1.woff2") format("woff2"), url("https://unpkg.com/carbon-components@latest/src/globals/fonts/IBMPlexSans-Regular-Latin1.woff") format("woff");
+  unicode-range: "U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+20AC, U+2122, U+2212, U+FB01-FB02"; }
+
+@font-face {
+  font-family: 'ibm-plex-sans';
+  font-style: normal;
+  font-weight: 600;
+  src: url("https://unpkg.com/carbon-components@latest/src/globals/fonts/IBMPlexSans-SemiBold-Pi.woff2") format("woff2"), url("https://unpkg.com/carbon-components@latest/src/globals/fonts/IBMPlexSans-SemiBold-Pi.woff") format("woff");
+  unicode-range: "U+03C0, U+0E3F, U+2070, U+2074-2079, U+2080-2089, U+2113, U+2116, U+2126, U+212E, U+2150-2151, U+2153-215E, U+2190-2199, U+21A9-21AA, U+21B0-21B3, U+21B6-21B7, U+21BA-21BB, U+21C4, U+21C6, U+2202, U+2206, U+220F, U+2211, U+221A, U+221E, U+222B, U+2248, U+2260, U+2264-2265, U+25CA, U+2713, U+274C, U+2B0E-2B11, U+EBE1, U+EBE3-EBE4, U+EBE6-EBE7, U+ECE0, U+EFCC"; }
+
+@font-face {
+  font-family: 'ibm-plex-sans';
+  font-style: normal;
+  font-weight: 600;
+  src: url("https://unpkg.com/carbon-components@latest/src/globals/fonts/IBMPlexSans-SemiBold-Latin3.woff2") format("woff2"), url("https://unpkg.com/carbon-components@latest/src/globals/fonts/IBMPlexSans-SemiBold-Latin3.woff") format("woff");
+  unicode-range: "U+0102-0103, U+1EA0-1EF9, U+20AB"; }
+
+@font-face {
+  font-family: 'ibm-plex-sans';
+  font-style: normal;
+  font-weight: 600;
+  src: url("https://unpkg.com/carbon-components@latest/src/globals/fonts/IBMPlexSans-SemiBold-Latin2.woff2") format("woff2"), url("https://unpkg.com/carbon-components@latest/src/globals/fonts/IBMPlexSans-SemiBold-Latin2.woff") format("woff");
+  unicode-range: "U+0100-024F, U+0259, U+1E00-1EFF, U+20A0-20AB, U+20AD-20CF, U+2C60-2C7F, U+A720-A7FF, U+FB01-FB02"; }
+
+@font-face {
+  font-family: 'ibm-plex-sans';
+  font-style: normal;
+  font-weight: 600;
+  src: url("https://unpkg.com/carbon-components@latest/src/globals/fonts/IBMPlexSans-SemiBold-Latin1.woff2") format("woff2"), url("https://unpkg.com/carbon-components@latest/src/globals/fonts/IBMPlexSans-SemiBold-Latin1.woff") format("woff");
+  unicode-range: "U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+20AC, U+2122, U+2212, U+FB01-FB02"; }
 
 .bx--visually-hidden {
   position: absolute;
@@ -182,17 +327,25 @@ table {
   white-space: nowrap; }
 
 .bx--body {
-  font-family: 'IBM Helvetica', Helvetica Neue, HelveticaNeue, Helvetica, sans-serif;
+  font-family: "ibm-plex-sans", Helvetica Neue, Arial, sans-serif;
   color: #152934;
   background-color: #ffffff;
   line-height: 1; }
 
+/**
+ * Generic `deprecate` mixin that is being used to indicate that a component is
+ * no longer going to be present in the next major release of Carbon.
+ */
 body {
-  font-family: 'IBM Helvetica', Helvetica Neue, HelveticaNeue, Helvetica, sans-serif;
+  font-family: "ibm-plex-sans", Helvetica Neue, Arial, sans-serif;
   color: #152934;
   background-color: #ffffff;
   line-height: 1; }
 
+/**
+ * Generic `deprecate` mixin that is being used to indicate that a component is
+ * no longer going to be present in the next major release of Carbon.
+ */
 .bx--type-giga {
   font-size: 4.75rem;
   line-height: 1.25;
@@ -582,6 +735,15 @@ h6,
   flex-grow: 1;
   max-width: 100%; }
 
+/**
+ * We flag this variable as true if someone uses the globals/scss/styles.scss
+ * entry-point. This allows us to collect all the messages and display them at
+ * the end of the file instead of bringing it up per-component.
+ *
+ * If a consumer instead gets the components by importing the partial directly,
+ * this variable _will not_ be set to true, so the deprecation message will be
+ * displayed after the @import.
+ */
 button.bx--btn {
   display: inline-block; }
 
@@ -598,7 +760,7 @@ button.bx--btn .bx--btn__icon {
       top: 0; } }
 
 .bx--btn {
-  font-family: 'IBM Helvetica', Helvetica Neue, HelveticaNeue, Helvetica, sans-serif;
+  font-family: "ibm-plex-sans", Helvetica Neue, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   letter-spacing: 0.5px;
@@ -684,6 +846,30 @@ button.bx--btn .bx--btn__icon {
   .bx--btn--secondary:hover:disabled, .bx--btn--secondary:focus:disabled {
     color: #3d70b2; }
 
+.bx--btn--tertiary {
+  background-color: transparent;
+  border-width: 2px;
+  border-style: solid;
+  border-color: #8c9ba5;
+  color: #8c9ba5; }
+  .bx--btn--tertiary:focus, .bx--btn--tertiary:hover {
+    background-color: #8c9ba5; }
+  .bx--btn--tertiary:focus {
+    border: 2px solid #ffffff;
+    outline: 2px solid #8c9ba5; }
+  .bx--btn--tertiary:disabled:hover, .bx--btn--tertiary:disabled:focus {
+    background-color: transparent; }
+  .bx--btn--tertiary:active {
+    background-color: transparent; }
+  .bx--btn--tertiary .bx--btn__icon {
+    fill: #8c9ba5; }
+  .bx--btn--tertiary:hover, .bx--btn--tertiary:focus {
+    color: #ffffff; }
+  .bx--btn--tertiary:active {
+    color: #8c9ba5; }
+  .bx--btn--tertiary:hover:disabled, .bx--btn--tertiary:focus:disabled {
+    color: #8c9ba5; }
+
 .bx--btn--ghost {
   background-color: transparent;
   border-width: 2px;
@@ -706,7 +892,7 @@ button.bx--btn .bx--btn__icon {
     .bx--btn--ghost:hover .bx--btn__icon, .bx--btn--ghost:focus .bx--btn__icon {
       fill: #ffffff; }
   .bx--btn--ghost .bx--btn__icon {
-    margin-left: 0.275rem; }
+    margin-left: 0.5rem; }
   .bx--btn--ghost:hover:disabled, .bx--btn--ghost:focus:disabled {
     color: #3d70b2; }
     .bx--btn--ghost:hover:disabled .bx--btn__icon, .bx--btn--ghost:focus:disabled .bx--btn__icon {
@@ -735,20 +921,43 @@ button.bx--btn .bx--btn__icon {
   .bx--btn--danger:focus {
     color: #ffffff; }
   .bx--btn--danger:hover:disabled, .bx--btn--danger:focus:disabled {
-    color: #8c9ba5;
-    border: 2px solid currentColor; }
-  .bx--btn--danger:hover > .bx--btn__icon,
-  .bx--btn--danger:focus > .bx--btn__icon {
+    color: #e71d32;
+    border: 2px solid #e71d32; }
+
+.bx--btn--danger--primary {
+  background-color: #e71d32;
+  border-width: 2px;
+  border-style: solid;
+  border-color: transparent;
+  color: #ffffff; }
+  .bx--btn--danger--primary:focus, .bx--btn--danger--primary:hover {
+    background-color: #bd1426; }
+  .bx--btn--danger--primary:focus {
+    border: 2px solid #ffffff;
+    outline: 2px solid #bd1426; }
+  .bx--btn--danger--primary:disabled:hover, .bx--btn--danger--primary:disabled:focus {
+    background-color: #e71d32; }
+  .bx--btn--danger--primary:active {
+    background-color: #8f0f1c; }
+  .bx--btn--danger--primary .bx--btn__icon {
     fill: #ffffff; }
+  .bx--btn--danger--primary:hover:disabled, .bx--btn--danger--primary:focus:disabled {
+    color: #ffffff;
+    border: 2px solid #e71d32; }
 
 .bx--btn--sm {
   height: 2rem;
   padding: 0 0.5rem;
   letter-spacing: 0; }
 
-.bx--btn--secondary + .bx--btn--primary {
+.bx--btn--secondary + .bx--btn--primary,
+.bx--btn--tertiary + .bx--btn--danger--primary {
   margin-left: 1rem; }
 
+/**
+ * Generic `deprecate` mixin that is being used to indicate that a component is
+ * no longer going to be present in the next major release of Carbon.
+ */
 .bx--btn--copy {
   position: relative;
   overflow: visible; }
@@ -791,11 +1000,19 @@ button.bx--btn .bx--btn__icon {
     display: -ms-inline-flexbox;
     display: inline-flex; }
 
+/**
+ * Generic `deprecate` mixin that is being used to indicate that a component is
+ * no longer going to be present in the next major release of Carbon.
+ */
+/**
+ * Generic `deprecate` mixin that is being used to indicate that a component is
+ * no longer going to be present in the next major release of Carbon.
+ */
 .bx--fieldset {
   margin-bottom: 2rem; }
 
 .bx--form-item {
-  font-family: 'IBM Helvetica', Helvetica Neue, HelveticaNeue, Helvetica, sans-serif;
+  font-family: "ibm-plex-sans", Helvetica Neue, Arial, sans-serif;
   -webkit-box-flex: 1;
   -ms-flex: 1;
   flex: 1;
@@ -806,12 +1023,15 @@ button.bx--btn .bx--btn__icon {
     margin-bottom: 0; }
 
 .bx--label {
-  font-family: 'IBM Helvetica', Helvetica Neue, HelveticaNeue, Helvetica, sans-serif;
+  font-family: "ibm-plex-sans", Helvetica Neue, Arial, sans-serif;
   font-size: 0.875rem;
   font-weight: 700;
   display: inline-block;
   vertical-align: baseline;
-  margin-bottom: 0.625rem; }
+  margin-bottom: 0.5rem; }
+
+.bx--label .bx--tooltip__trigger {
+  font-size: 0.875rem; }
 
 .bx--label--disabled {
   opacity: 0.5; }
@@ -965,7 +1185,8 @@ select[data-invalid] {
   -ms-flex-align: center;
   align-items: center;
   -webkit-transition: background-color 2000ms cubic-bezier(0.5, 0, 0.1, 1);
-  transition: background-color 2000ms cubic-bezier(0.5, 0, 0.1, 1); }
+  transition: background-color 2000ms cubic-bezier(0.5, 0, 0.1, 1);
+  z-index: 8000; }
 
 .bx--loading-overlay--stop {
   display: none; }
@@ -995,20 +1216,19 @@ select[data-invalid] {
   font-size: 0.875rem;
   line-height: 1.5;
   color: #5a6872;
-  margin-top: 0.25rem;
-  margin-bottom: 1.25rem; }
+  margin-bottom: 1.5rem; }
 
 .bx--file-container {
   display: block;
   width: 100%;
-  margin-top: 1.25rem; }
+  margin-top: 1.5rem; }
 
 .bx--file__selected-file {
   display: block;
-  width: 300px;
   overflow-x: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+  width: 300px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1021,17 +1241,17 @@ select[data-invalid] {
   min-height: 1.875rem;
   background-color: #eef6fe;
   padding: 0 1rem;
-  margin-bottom: 1.25rem; }
+  margin-bottom: 1rem; }
   .bx--file__selected-file:last-child {
     margin-bottom: 0; }
 
 .bx--file-filename {
   font-size: 0.75rem;
   display: block;
-  width: 100%;
   overflow-x: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+  width: 100%;
   display: -webkit-inline-box;
   display: -ms-inline-flexbox;
   display: inline-flex;
@@ -1052,7 +1272,7 @@ select[data-invalid] {
   .bx--file__state-container .bx--loading {
     width: 1.125rem;
     height: 1.125rem;
-    margin-right: -7px; }
+    margin-right: 0.5rem; }
   .bx--file__state-container .bx--loading__svg {
     stroke: #8c9ba5; }
 
@@ -1072,10 +1292,14 @@ select[data-invalid] {
 .bx--file__state-container .bx--file-complete {
   fill: #5aa700; }
 
+/**
+ * Generic `deprecate` mixin that is being used to indicate that a component is
+ * no longer going to be present in the next major release of Carbon.
+ */
 .bx--form-item.bx--checkbox-wrapper {
   margin-bottom: 1rem; }
   .bx--form-item.bx--checkbox-wrapper:first-of-type {
-    margin-top: 0.375rem; }
+    margin-top: 0.5rem; }
   .bx--form-item.bx--checkbox-wrapper:last-of-type {
     margin-bottom: 0; }
 
@@ -1092,7 +1316,7 @@ select[data-invalid] {
   white-space: nowrap; }
 
 .bx--checkbox-label {
-  font-family: 'IBM Helvetica', Helvetica Neue, HelveticaNeue, Helvetica, sans-serif;
+  font-family: "ibm-plex-sans", Helvetica Neue, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-size: 0.875rem;
@@ -1102,16 +1326,85 @@ select[data-invalid] {
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  cursor: pointer; }
+  cursor: pointer;
+  position: relative;
+  padding-left: 1.5rem;
+  min-height: 1rem; }
+
+.bx--checkbox-label::before {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  content: '';
+  position: absolute;
+  left: 0;
+  top: calc(50% - 9px);
+  height: 1.125rem;
+  width: 1.125rem;
+  border: 2px solid #8c9ba5;
+  background-color: #ffffff; }
+
+.bx--checkbox-label::after {
+  content: '';
+  width: 10px;
+  height: 5px;
+  background: none;
+  border-left: 2px solid #ffffff;
+  border-bottom: 2px solid #ffffff;
+  -webkit-transform: scale(0) rotate(-45deg);
+  transform: scale(0) rotate(-45deg);
+  position: absolute;
+  left: 0.1875rem;
+  top: 50%;
+  margin-top: -0.3125rem; }
+
+.bx--checkbox:checked + .bx--checkbox-label::before,
+.bx--checkbox:indeterminate + .bx--checkbox-label::before,
+.bx--checkbox-label[data-contained-checkbox-state='true']::before,
+.bx--checkbox-label[data-contained-checkbox-state='mixed']::before {
+  background-color: #3d70b2;
+  border-color: #3d70b2; }
+
+.bx--checkbox:checked + .bx--checkbox-label::after,
+.bx--checkbox-label[data-contained-checkbox-state='true']::after {
+  opacity: 1;
+  -webkit-transform: scale(1) rotate(-45deg);
+  transform: scale(1) rotate(-45deg); }
+
+.bx--checkbox:not(:checked) + .bx--checkbox-label::after {
+  opacity: 0;
+  -webkit-transform: scale(0) rotate(-45deg);
+  transform: scale(0) rotate(-45deg); }
+
+.bx--checkbox:focus + .bx--checkbox-label::before,
+.bx--checkbox-label__focus::before {
+  -webkit-box-shadow: 0 0 0 3px #7cc7ff;
+  box-shadow: 0 0 0 3px #7cc7ff;
+  outline: 1px solid transparent; }
+
+.bx--checkbox:indeterminate + .bx--checkbox-label::after,
+.bx--checkbox-label[data-contained-checkbox-state='mixed']::after {
+  -webkit-transform: scale(1) rotate(0deg);
+  transform: scale(1) rotate(0deg);
+  border-left: 0 solid #ffffff;
+  border-bottom: 2px solid #ffffff;
+  opacity: 1;
+  width: 0.75rem;
+  margin-top: -0.375rem; }
 
 .bx--checkbox-appearance {
+  position: absolute;
+  left: 0;
+  top: calc(50% - 9px);
   display: inline-block;
   height: 1.125rem;
   width: 1.125rem;
   margin-right: 0.5rem;
   background-color: #ffffff;
   border: 2px solid #8c9ba5;
-  min-width: 18px; }
+  min-width: 1.125rem; }
+
+.bx--checkbox:checked + .bx--checkbox-label .bx--checkbox-appearance {
+  top: -0.0625rem; }
 
 .bx--checkbox:checked + .bx--checkbox-appearance,
 .bx--checkbox:checked + .bx--checkbox-label .bx--checkbox-appearance {
@@ -1151,6 +1444,240 @@ select[data-invalid] {
   .bx--checkbox:checked + .bx--checkbox-label .bx--checkbox-appearance .bx--checkbox-checkmark {
     stroke: #3d70b2; } }
 
+.bx--list-box {
+  position: relative;
+  width: 100%;
+  height: 2.5rem;
+  max-height: 2.5rem;
+  background-color: rgba(238, 246, 254, 0.1); }
+
+.bx--list-box--disabled {
+  opacity: 0.5; }
+
+.bx--list-box--disabled,
+.bx--list-box--disabled .bx--list-box__field,
+.bx--list-box--disabled .bx--list-box__menu-icon {
+  cursor: not-allowed; }
+
+.bx--list-box--inline {
+  background-color: inherit;
+  width: auto;
+  height: 2rem; }
+
+.bx--list-box--inline .bx--list-box__label {
+  color: #3d70b2; }
+
+.bx--list-box--inline .bx--list-box__field {
+  padding: 0 0 0 0.625rem; }
+
+.bx--list-box--inline .bx--list-box__menu-icon {
+  position: static;
+  padding: 0 0.625rem 0 0.75rem; }
+
+.bx--list-box--inline > .bx--list-box__menu {
+  top: 2rem;
+  width: 18.75rem; }
+
+.bx--list-box--inline > .bx--list-box__field[aria-expanded='true'] ~ .bx--list-box__menu {
+  outline: 1px solid #3d70b2;
+  -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1); }
+
+.bx--list-box--inline > .bx--list-box__field[aria-expanded='true'] {
+  outline: none; }
+
+.bx--list-box__field {
+  font-family: "ibm-plex-sans", Helvetica Neue, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  letter-spacing: 0.5px;
+  display: inline-block;
+  background: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+  width: 100%;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  padding: 0 1rem;
+  cursor: pointer; }
+  .bx--list-box__field::-moz-focus-inner {
+    border: 0; }
+
+.bx--list-box__field:hover {
+  background: #eef6fe; }
+
+.bx--list-box__field:focus,
+.bx--list-box__field[aria-expanded='true'] {
+  outline: 1px solid #3d70b2; }
+
+.bx--list-box__field[disabled] {
+  outline: none; }
+
+.bx--list-box__field[aria-expanded='true'] ~ .bx--list-box__menu {
+  -webkit-box-shadow: 0 1px 0 0 #3d70b2, 1px 0 0 0 #3d70b2, -1px 0 0 0 #3d70b2, 0 4px 8px 0 rgba(0, 0, 0, 0.1);
+  box-shadow: 0 1px 0 0 #3d70b2, 1px 0 0 0 #3d70b2, -1px 0 0 0 #3d70b2, 0 4px 8px 0 rgba(0, 0, 0, 0.1); }
+
+.bx--list-box__label {
+  font-size: 0.875rem;
+  color: #152934;
+  font-weight: 600;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none; }
+
+.bx--list-box__menu-icon {
+  display: inline-block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  height: 100%;
+  padding: 0 1rem;
+  -webkit-transition: -webkit-transform 200ms cubic-bezier(0.5, 0, 0.1, 1);
+  transition: -webkit-transform 200ms cubic-bezier(0.5, 0, 0.1, 1);
+  transition: transform 200ms cubic-bezier(0.5, 0, 0.1, 1);
+  transition: transform 200ms cubic-bezier(0.5, 0, 0.1, 1), -webkit-transform 200ms cubic-bezier(0.5, 0, 0.1, 1);
+  cursor: pointer; }
+
+.bx--list-box__menu-icon > svg {
+  fill: #3d70b2;
+  height: 100%; }
+
+.bx--list-box__menu-icon--open {
+  -webkit-transform: rotate(180deg);
+  transform: rotate(180deg); }
+
+.bx--list-box__selection {
+  display: inline-block;
+  position: absolute;
+  top: 0;
+  right: 1.625rem;
+  bottom: 0;
+  height: 2.5rem;
+  padding: 0 1rem;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-transition: background-color 200ms cubic-bezier(0.5, 0, 0.1, 1);
+  transition: background-color 200ms cubic-bezier(0.5, 0, 0.1, 1); }
+
+.bx--list-box__selection > svg {
+  fill: #8c9ba5;
+  height: 100%; }
+
+.bx--list-box__selection:focus {
+  outline: 1px solid #3d70b2; }
+
+.bx--list-box__selection--multi {
+  font-size: 0.75rem;
+  position: static;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  padding: 0;
+  background-color: #3d70b2;
+  height: 1.125rem;
+  color: white;
+  line-height: 0;
+  padding: 0.3125rem;
+  margin-right: 0.625rem;
+  border-radius: 0.8125rem; }
+
+.bx--list-box__selection--multi > svg {
+  fill: white;
+  width: 0.5rem;
+  height: 0.5rem;
+  margin-left: 0.3125rem; }
+
+.bx--list-box__selection--multi:focus,
+.bx--list-box__selection--multi:hover {
+  background-color: #5596e6;
+  outline: none; }
+
+.bx--list-box__menu {
+  -webkit-box-shadow: 0px 3px 3px 0 rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 3px 3px 0 rgba(0, 0, 0, 0.1);
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 2.5rem;
+  width: 100%;
+  background-color: #ffffff;
+  max-height: 7.5rem;
+  overflow-y: auto;
+  z-index: 7000; }
+
+.bx--list-box__menu-item {
+  font-size: 0.875rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  height: 2.5rem;
+  padding: 0 1rem;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none; }
+
+.bx--list-box__menu-item:hover,
+.bx--list-box__menu-item--highlighted {
+  background-color: rgba(238, 246, 254, 0.1);
+  color: #152934; }
+
+.bx--list-box__menu-item > .bx--form-item.bx--checkbox-wrapper {
+  margin: 0; }
+
+.bx--list-box input[role='combobox'] {
+  background-color: inherit;
+  font-weight: 600;
+  outline-offset: 0; }
+
+.bx--list-box input[role='combobox']::-webkit-input-placeholder {
+  font-weight: 400; }
+
+.bx--list-box input[role='combobox']:-ms-input-placeholder {
+  font-weight: 400; }
+
+.bx--list-box input[role='combobox']::-ms-input-placeholder {
+  font-weight: 400; }
+
+.bx--list-box input[role='combobox']::placeholder {
+  font-weight: 400; }
+
+.bx--list-box--disabled input[role='combobox'] {
+  opacity: 1; }
+
+.bx--combo-box > .bx--list-box__field {
+  padding: 0; }
+
+/**
+ * Generic `deprecate` mixin that is being used to indicate that a component is
+ * no longer going to be present in the next major release of Carbon.
+ */
 .bx--radio-button-group {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1158,7 +1685,7 @@ select[data-invalid] {
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  margin-top: 0.375rem; }
+  margin-top: 0.5rem; }
 
 .bx--radio-button {
   position: absolute;
@@ -1174,7 +1701,7 @@ select[data-invalid] {
 
 .bx--radio-button__label {
   font-size: 0.875rem;
-  font-family: 'IBM Helvetica', Helvetica Neue, HelveticaNeue, Helvetica, sans-serif;
+  font-family: "ibm-plex-sans", Helvetica Neue, Arial, sans-serif;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1192,7 +1719,7 @@ select[data-invalid] {
   flex-shrink: 0;
   height: 1.125rem;
   width: 1.125rem;
-  margin-right: 0.625rem; }
+  margin-right: 0.5rem; }
 
 .bx--radio-button:checked + .bx--radio-button__label .bx--radio-button__appearance {
   display: -webkit-box;
@@ -1223,6 +1750,10 @@ select[data-invalid] {
   box-shadow: 0 0 0 3px #7cc7ff;
   outline: 1px solid transparent; }
 
+/**
+ * Generic `deprecate` mixin that is being used to indicate that a component is
+ * no longer going to be present in the next major release of Carbon.
+ */
 .bx--toggle {
   position: absolute;
   width: 1px;
@@ -1236,7 +1767,7 @@ select[data-invalid] {
   white-space: nowrap; }
 
 .bx--toggle__label {
-  font-family: 'IBM Helvetica', Helvetica Neue, HelveticaNeue, Helvetica, sans-serif;
+  font-family: "ibm-plex-sans", Helvetica Neue, Arial, sans-serif;
   position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1251,13 +1782,13 @@ select[data-invalid] {
 
 .bx--toggle__appearance {
   position: relative;
-  width: 48px; }
+  width: 3rem; }
   .bx--toggle__appearance:before {
     position: absolute;
     display: block;
     content: '';
     width: 100%;
-    height: 4px;
+    height: 0.25rem;
     top: -2px;
     background-color: #8c9ba5;
     -webkit-transition: 250ms cubic-bezier(0.5, 0, 0.1, 1);
@@ -1271,13 +1802,52 @@ select[data-invalid] {
     border: 2px solid #8c9ba5;
     cursor: pointer;
     top: -12px;
-    width: 24px;
-    height: 24px;
+    width: 1.5rem;
+    height: 1.5rem;
     background-color: #ffffff;
     border-radius: 50%;
     content: '';
     -webkit-transition: 250ms cubic-bezier(0.5, 0, 0.1, 1);
     transition: 250ms cubic-bezier(0.5, 0, 0.1, 1); }
+
+.bx--toggle--small + .bx--toggle__label {
+  width: 2rem; }
+
+.bx--toggle--small + .bx--toggle__label .bx--toggle__appearance {
+  width: 2rem;
+  height: 1rem; }
+  .bx--toggle--small + .bx--toggle__label .bx--toggle__appearance:before {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    height: 1rem;
+    width: 2rem;
+    border-radius: 0.9375rem;
+    background-color: transparent;
+    border: 2px solid #8c9ba5;
+    top: 0; }
+  .bx--toggle--small + .bx--toggle__label .bx--toggle__appearance:after {
+    width: 0.625rem;
+    height: 0.625rem;
+    background-color: #8c9ba5;
+    border: none;
+    top: 3px;
+    left: 3px; }
+
+.bx--toggle__check {
+  fill: #8c9ba5;
+  position: absolute;
+  left: 6px;
+  top: 6px;
+  z-index: 1;
+  -webkit-transition: 250ms cubic-bezier(0.5, 0, 0.1, 1);
+  transition: 250ms cubic-bezier(0.5, 0, 0.1, 1);
+  -webkit-transform: scale(0.2);
+  transform: scale(0.2); }
+
+.bx--toggle--small:checked + .bx--toggle__label .bx--toggle__check {
+  fill: #3d70b2;
+  -webkit-transform: scale(1) translateX(16px);
+  transform: scale(1) translateX(16px); }
 
 .bx--toggle__text--left,
 .bx--toggle__text--right {
@@ -1301,6 +1871,17 @@ select[data-invalid] {
   box-shadow: none;
   border-color: #3d70b2; }
 
+.bx--toggle--small:checked + .bx--toggle__label .bx--toggle__appearance:before {
+  background-color: #3d70b2;
+  border-color: #3d70b2; }
+
+.bx--toggle--small:checked + .bx--toggle__label .bx--toggle__appearance:after {
+  background-color: #ffffff;
+  border-color: #ffffff;
+  margin-left: 0px;
+  -webkit-transform: translateX(17px);
+  transform: translateX(17px); }
+
 .bx--toggle:focus + .bx--toggle__label .bx--toggle__appearance:before {
   outline: 1px solid transparent; }
 
@@ -1308,6 +1889,16 @@ select[data-invalid] {
   -webkit-box-shadow: 0 0 0 3px #7cc7ff;
   box-shadow: 0 0 0 3px #7cc7ff;
   outline: 1px solid transparent; }
+
+.bx--toggle--small:focus + .bx--toggle__label .bx--toggle__appearance:before {
+  -webkit-box-shadow: 0 0 0 3px #7cc7ff;
+  box-shadow: 0 0 0 3px #7cc7ff;
+  outline: 1px solid transparent; }
+
+.bx--toggle--small:focus + .bx--toggle__label .bx--toggle__appearance:after {
+  outline: none;
+  -webkit-box-shadow: none;
+  box-shadow: none; }
 
 .bx--toggle:disabled + .bx--toggle__label {
   cursor: not-allowed;
@@ -1318,6 +1909,10 @@ select[data-invalid] {
   -webkit-transition: 250ms cubic-bezier(0.5, 0, 0.1, 1);
   transition: 250ms cubic-bezier(0.5, 0, 0.1, 1); }
 
+/**
+ * Generic `deprecate` mixin that is being used to indicate that a component is
+ * no longer going to be present in the next major release of Carbon.
+ */
 .bx--search {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1338,7 +1933,7 @@ select[data-invalid] {
   white-space: nowrap; }
 
 .bx--search-input {
-  font-family: 'IBM Helvetica', Helvetica Neue, HelveticaNeue, Helvetica, sans-serif;
+  font-family: "ibm-plex-sans", Helvetica Neue, Arial, sans-serif;
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
@@ -1346,7 +1941,7 @@ select[data-invalid] {
   background-color: #eef6fe;
   color: #152934;
   font-weight: 600;
-  padding: 0 2.5rem 0 2.5rem;
+  padding: 0 2.5rem;
   text-overflow: ellipsis;
   width: 100%; }
   .bx--search-input:focus {
@@ -1363,6 +1958,8 @@ select[data-invalid] {
   .bx--search-input::placeholder {
     color: #5a6872;
     font-weight: 400; }
+  .bx--search-input::-ms-clear {
+    display: none; }
 
 .bx--search--sm .bx--search-input {
   font-size: 0.875rem;
@@ -1396,6 +1993,9 @@ select[data-invalid] {
 
 .bx--search--lg .bx--search-close {
   right: 6.25rem; }
+
+.bx--search--lg .bx--search-close:last-child {
+  right: 0.75rem; }
 
 .bx--search-button {
   border: 0;
@@ -1438,19 +2038,23 @@ select[data-invalid] {
 .bx--search-view--hidden {
   display: none; }
 
+/**
+ * Generic `deprecate` mixin that is being used to indicate that a component is
+ * no longer going to be present in the next major release of Carbon.
+ */
 .bx--select {
   position: relative;
   display: block; }
 
 .bx--select-input {
-  font-family: 'IBM Helvetica', Helvetica Neue, HelveticaNeue, Helvetica, sans-serif;
+  font-family: "ibm-plex-sans", Helvetica Neue, Arial, sans-serif;
   font-size: 0.875rem;
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
   display: block;
   width: 100%;
-  padding: 0.75rem 2.75rem 0.75rem 1rem;
+  padding: 0.75rem 2.5rem 0.75rem 1rem;
   color: #152934;
   background-color: #eef6fe;
   border: 1px solid transparent;
@@ -1503,8 +2107,12 @@ select[data-invalid] {
       opacity: 0.5;
       cursor: not-allowed; }
 
+/**
+ * Generic `deprecate` mixin that is being used to indicate that a component is
+ * no longer going to be present in the next major release of Carbon.
+ */
 .bx--text-input {
-  font-family: 'IBM Helvetica', Helvetica Neue, HelveticaNeue, Helvetica, sans-serif;
+  font-family: "ibm-plex-sans", Helvetica Neue, Arial, sans-serif;
   font-size: 0.875rem;
   display: block;
   width: 100%;
@@ -1524,8 +2132,12 @@ select[data-invalid] {
   .bx--text-input:disabled:hover {
     border: 1px solid transparent; }
 
+/**
+ * Generic `deprecate` mixin that is being used to indicate that a component is
+ * no longer going to be present in the next major release of Carbon.
+ */
 .bx--text-area {
-  font-family: 'IBM Helvetica', Helvetica Neue, HelveticaNeue, Helvetica, sans-serif;
+  font-family: "ibm-plex-sans", Helvetica Neue, Arial, sans-serif;
   font-size: 0.875rem;
   width: 100%;
   min-width: 10rem;
@@ -1544,6 +2156,10 @@ select[data-invalid] {
   .bx--text-area:disabled:hover {
     border: 1px solid transparent; }
 
+/**
+ * Generic `deprecate` mixin that is being used to indicate that a component is
+ * no longer going to be present in the next major release of Carbon.
+ */
 .bx--number {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1551,7 +2167,7 @@ select[data-invalid] {
 
 .bx--number input[type='number'] {
   font-size: 0.875rem;
-  font-family: 'IBM Helvetica', Helvetica Neue, HelveticaNeue, Helvetica, sans-serif;
+  font-family: "ibm-plex-sans", Helvetica Neue, Arial, sans-serif;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
   display: -webkit-inline-box;
@@ -1569,6 +2185,13 @@ select[data-invalid] {
   border-radius: 0; }
   .bx--number input[type='number']:focus {
     outline: 1px solid #3d70b2; }
+  .bx--number input[type='number']:disabled {
+    opacity: 0.5;
+    cursor: not-allowed; }
+  .bx--number input[type='number']:disabled ~ .bx--number__controls {
+    opacity: 0.5;
+    cursor: not-allowed;
+    pointer-events: none; }
 
 .bx--number input[type='number'] {
   -webkit-appearance: textfield;
@@ -1599,7 +2222,7 @@ select[data-invalid] {
   align-items: center; }
 
 .bx--number__control-btn {
-  font-family: 'IBM Helvetica', Helvetica Neue, HelveticaNeue, Helvetica, sans-serif;
+  font-family: "ibm-plex-sans", Helvetica Neue, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   letter-spacing: 0.5px;
@@ -1633,8 +2256,19 @@ select[data-invalid] {
     cursor: pointer;
     fill: #5596e6; }
 
+.bx--number[data-invalid] input[type='number'] {
+  -webkit-box-shadow: 0 2px 0px 0px #e71d32;
+  box-shadow: 0 2px 0px 0px #e71d32; }
+
+.bx--number[data-invalid] ~ .bx--form-requirement {
+  max-height: 12.5rem; }
+
+/**
+ * Generic `deprecate` mixin that is being used to indicate that a component is
+ * no longer going to be present in the next major release of Carbon.
+ */
 .bx--link {
-  font-family: 'IBM Helvetica', Helvetica Neue, HelveticaNeue, Helvetica, sans-serif;
+  font-family: "ibm-plex-sans", Helvetica Neue, Arial, sans-serif;
   font-size: 0.875rem;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -1649,11 +2283,14 @@ select[data-invalid] {
     color: #5596e6; }
   .bx--link:focus {
     outline: 1px solid #3d70b2; }
+  .bx--link[aria-disabled="true"] {
+    opacity: .5;
+    pointer-events: none; }
 
 .bx--list--nested,
 .bx--list--unordered,
 .bx--list--ordered {
-  font-family: 'IBM Helvetica', Helvetica Neue, HelveticaNeue, Helvetica, sans-serif;
+  font-family: "ibm-plex-sans", Helvetica Neue, Arial, sans-serif;
   font-size: 0.875rem;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -1685,13 +2322,27 @@ select[data-invalid] {
   content: '-';
   padding-right: 0.25rem; }
 
+/**
+ * Generic `deprecate` mixin that is being used to indicate that a component is
+ * no longer going to be present in the next major release of Carbon.
+ */
+/**
+ * Generic `deprecate` mixin that is being used to indicate that a component is
+ * no longer going to be present in the next major release of Carbon.
+ */
+/**
+ * Generic `deprecate` mixin that is being used to indicate that a component is
+ * no longer going to be present in the next major release of Carbon.
+ */
 .bx--overflow-menu {
   position: relative;
   width: 1.25rem;
   height: 2.375rem;
   cursor: pointer; }
   .bx--overflow-menu:focus {
-    outline: 1px solid #3d70b2; }
+    outline: 1px solid transparent;
+    -webkit-box-shadow: 0 0 0 1px #3d70b2;
+    box-shadow: 0 0 0 1px #3d70b2; }
 
 .bx--overflow-menu__icon {
   width: 100%;
@@ -1713,13 +2364,13 @@ select[data-invalid] {
   -ms-flex-align: start;
   align-items: flex-start;
   position: absolute;
-  z-index: 1;
+  z-index: 10000;
   background-color: #ffffff;
   border: 1px solid #dfe3e6;
   width: 11.25rem;
   list-style: none;
   margin-top: 0.25rem;
-  padding: 0.285rem 0 0.5rem;
+  padding: 0.25rem 0 0.5rem;
   left: -20px; }
 
 .bx--overflow-menu-options--open {
@@ -1758,7 +2409,7 @@ select[data-invalid] {
 
 .bx--overflow-menu-options__btn {
   font-size: 0.875rem;
-  font-family: 'IBM Helvetica', Helvetica Neue, HelveticaNeue, Helvetica, sans-serif;
+  font-family: "ibm-plex-sans", Helvetica Neue, Arial, sans-serif;
   font-weight: 400;
   width: 100%;
   height: 100%;
@@ -1766,7 +2417,7 @@ select[data-invalid] {
   display: inline-block;
   background-color: transparent;
   text-align: left;
-  padding: 0.5625rem 1rem;
+  padding: 0.5rem 1rem;
   cursor: pointer; }
   .bx--overflow-menu-options__btn:focus {
     outline: 1px solid transparent;
@@ -1793,7 +2444,7 @@ select[data-invalid] {
     left: 145px; }
 
 .bx--responsive-table-container {
-  font-family: 'IBM Helvetica', Helvetica Neue, HelveticaNeue, Helvetica, sans-serif;
+  font-family: "ibm-plex-sans", Helvetica Neue, Arial, sans-serif;
   overflow-x: auto;
   overflow-y: hidden;
   width: 99.9%; }
@@ -1961,6 +2612,10 @@ select[data-invalid] {
   .bx--table-overflow .bx--overflow-menu {
     padding: 0; }
 
+/**
+ * Generic `deprecate` mixin that is being used to indicate that a component is
+ * no longer going to be present in the next major release of Carbon.
+ */
 .bx--table-toolbar {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1975,6 +2630,10 @@ select[data-invalid] {
       -webkit-box-shadow: inset 0px 0px 0px 1px #3d70b2;
       box-shadow: inset 0px 0px 0px 1px #3d70b2;
       outline: 0; }
+  .bx--table-toolbar .bx--search-close {
+    height: 10px;
+    width: 10px;
+    top: calc(50% - 5px); }
 
 .bx--toolbar-content {
   display: -webkit-box;
@@ -1983,7 +2642,7 @@ select[data-invalid] {
   margin-left: auto; }
 
 .bx--toolbar-action {
-  font-family: 'IBM Helvetica', Helvetica Neue, HelveticaNeue, Helvetica, sans-serif;
+  font-family: "ibm-plex-sans", Helvetica Neue, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   letter-spacing: 0.5px;
@@ -2013,7 +2672,7 @@ select[data-invalid] {
     padding-right: 0; }
   .bx--toolbar-action ~ .bx--btn {
     margin-left: 0.75rem;
-    margin-right: 0.125rem; }
+    margin-right: 0.75rem; }
 
 .bx--toolbar-action__icon {
   height: 1rem;
@@ -2038,7 +2697,7 @@ select[data-invalid] {
   padding-right: 1.5rem;
   width: 100%;
   height: 100%;
-  z-index: 99999;
+  z-index: 6000;
   background-color: transparent;
   -webkit-transition: opacity 200ms cubic-bezier(0.5, 0, 0.1, 1), background-color 200ms cubic-bezier(0.5, 0, 0.1, 1);
   transition: opacity 200ms cubic-bezier(0.5, 0, 0.1, 1), background-color 200ms cubic-bezier(0.5, 0, 0.1, 1);
@@ -2093,7 +2752,7 @@ select[data-invalid] {
   margin-right: 1.5rem; }
 
 .bx--batch-summary__cancel {
-  font-family: 'IBM Helvetica', Helvetica Neue, HelveticaNeue, Helvetica, sans-serif;
+  font-family: "ibm-plex-sans", Helvetica Neue, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   letter-spacing: 0.5px;
@@ -2106,13 +2765,16 @@ select[data-invalid] {
   padding: 0;
   cursor: pointer;
   font-size: 0.875rem;
-  -webkit-font-smoothing: auto;
   color: #ffffff;
-  border-bottom: 1px solid #ffffff;
+  border-bottom: 1px solid transparent;
   font-weight: 600;
-  cursor: pointer; }
+  cursor: pointer;
+  -webkit-transition: border 250ms cubic-bezier(0.5, 0, 0.1, 1);
+  transition: border 250ms cubic-bezier(0.5, 0, 0.1, 1); }
   .bx--batch-summary__cancel::-moz-focus-inner {
     border: 0; }
+  .bx--batch-summary__cancel:hover, .bx--batch-summary__cancel:focus {
+    border-bottom: 1px solid #ffffff; }
 
 .bx--batch-actions ~ .bx--toolbar-search-container,
 .bx--batch-actions ~ .bx--toolbar-content {
@@ -2128,7 +2790,7 @@ select[data-invalid] {
   width: 100%;
   min-width: 31.25rem;
   overflow-x: auto;
-  padding-top: 2px; }
+  padding-top: 0.125rem; }
 
 .bx--data-table-v2 {
   border-collapse: collapse;
@@ -2170,19 +2832,24 @@ select[data-invalid] {
     .bx--data-table-v2 td:last-of-type {
       padding-right: 1.5rem;
       border-right: 1px solid #dfe3e6; }
-  .bx--data-table-v2 .bx--checkbox-appearance {
-    margin-right: 0; }
+  .bx--data-table-v2 .bx--checkbox-label {
+    padding-left: 1.75rem; }
   .bx--data-table-v2 .bx--overflow-menu {
     opacity: 0; }
     .bx--data-table-v2 .bx--overflow-menu:focus {
       outline: 0;
-      opacity: 1; }
+      opacity: 1;
+      -webkit-box-shadow: none;
+      box-shadow: none; }
       .bx--data-table-v2 .bx--overflow-menu:focus .bx--overflow-menu__icon {
         -webkit-box-shadow: inset 0px 0px 0px 1px #3d70b2;
         box-shadow: inset 0px 0px 0px 1px #3d70b2; }
   .bx--data-table-v2 .bx--overflow-menu__icon {
     -webkit-transform: rotate(90deg);
     transform: rotate(90deg); }
+
+.bx--data-table-v2-header {
+  margin-bottom: 0.5rem; }
 
 .bx--data-table-v2--zebra tbody tr:nth-child(even) {
   background-color: #ffffff; }
@@ -2209,6 +2876,10 @@ select[data-invalid] {
 
 .bx--data-table-v2--static {
   width: auto; }
+
+.bx--data-table-v2--zebra tbody tr.bx--data-table-v2--selected,
+tbody tr.bx--data-table-v2--selected {
+  background-color: rgba(85, 150, 230, 0.1); }
 
 tr.bx--expandable-row-v2.bx--expandable-row--hidden-v2 {
   display: none; }
@@ -2264,7 +2935,7 @@ tr.bx--expandable-row--hover-v2 > td:last-of-type {
   transition: transform 200ms cubic-bezier(0.5, 0, 0.1, 1), -webkit-transform 200ms cubic-bezier(0.5, 0, 0.1, 1); }
 
 .bx--table-expand-v2__button {
-  font-family: 'IBM Helvetica', Helvetica Neue, HelveticaNeue, Helvetica, sans-serif;
+  font-family: "ibm-plex-sans", Helvetica Neue, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   letter-spacing: 0.5px;
@@ -2295,7 +2966,7 @@ tr.bx--expandable-row--hover-v2 > td:last-of-type {
   height: 16px;
   width: auto;
   max-width: 16px;
-  padding: 2px; }
+  padding: 0.125rem; }
 
 .bx--table-sort-v2--ascending .bx--table-sort-v2__icon {
   -webkit-transform: rotate(180deg);
@@ -2312,7 +2983,7 @@ tr.bx--expandable-row--hover-v2 > td:last-of-type {
   opacity: 1; }
 
 .bx--table-sort-v2 {
-  font-family: 'IBM Helvetica', Helvetica Neue, HelveticaNeue, Helvetica, sans-serif;
+  font-family: "ibm-plex-sans", Helvetica Neue, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   letter-spacing: 0.5px;
@@ -2357,7 +3028,7 @@ tr.bx--expandable-row--hover-v2 > td:last-of-type {
   opacity: 0;
   fill: #8c9ba5;
   height: 0.5625rem;
-  padding: 2px;
+  padding: 0.125rem;
   width: auto;
   max-width: 14px; }
 
@@ -2378,7 +3049,7 @@ tr.bx--expandable-row--hover-v2 > td:last-of-type {
   display: none; }
 
 .bx--inline-edit-label__action {
-  font-family: 'IBM Helvetica', Helvetica Neue, HelveticaNeue, Helvetica, sans-serif;
+  font-family: "ibm-plex-sans", Helvetica Neue, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   letter-spacing: 0.5px;
@@ -2396,7 +3067,7 @@ tr.bx--expandable-row--hover-v2 > td:last-of-type {
     cursor: pointer; }
   .bx--inline-edit-label__action:focus {
     outline: 1px solid #3d70b2;
-    padding: 2px; }
+    padding: 0.125rem; }
     .bx--inline-edit-label__action:focus .bx--inline-edit-label__icon {
       width: auto;
       opacity: 1; }
@@ -2423,6 +3094,10 @@ tr.bx--expandable-row--hover-v2 > td:last-of-type {
 .bx--data-table-v2--short .bx--select__arrow {
   top: 0.875rem; }
 
+/**
+ * Generic `deprecate` mixin that is being used to indicate that a component is
+ * no longer going to be present in the next major release of Carbon.
+ */
 .bx--structured-list--selection .bx--structured-list-td,
 .bx--structured-list--selection .bx--structured-list-th {
   padding-left: 1rem;
@@ -2451,7 +3126,7 @@ tr.bx--expandable-row--hover-v2 > td:last-of-type {
   display: none; }
 
 .bx--structured-list {
-  font-family: 'IBM Helvetica', Helvetica Neue, HelveticaNeue, Helvetica, sans-serif;
+  font-family: "ibm-plex-sans", Helvetica Neue, Arial, sans-serif;
   display: table;
   overflow-x: auto;
   overflow-y: hidden;
@@ -2539,8 +3214,12 @@ tr.bx--expandable-row--hover-v2 > td:last-of-type {
 .bx--structured-list-content {
   font-size: 0.875rem; }
 
+/**
+ * Generic `deprecate` mixin that is being used to indicate that a component is
+ * no longer going to be present in the next major release of Carbon.
+ */
 .bx--snippet--code {
-  font-family: monospace;
+  font-family: "ibm-plex-mono", "Menlo", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", Courier, monospace;
   position: relative;
   max-width: 40rem;
   width: 100%;
@@ -2560,7 +3239,7 @@ tr.bx--expandable-row--hover-v2 > td:last-of-type {
   white-space: pre-wrap; }
 
 .bx--snippet--terminal {
-  font-family: monospace;
+  font-family: "ibm-plex-mono", "Menlo", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", Courier, monospace;
   position: relative;
   max-width: 40rem;
   width: 100%;
@@ -2582,7 +3261,6 @@ tr.bx--expandable-row--hover-v2 > td:last-of-type {
   position: relative; }
 
 .bx--snippet__icon {
-  cursor: pointer;
   fill: #3d70b2;
   height: 1.5rem;
   width: 1.125rem;
@@ -2597,6 +3275,7 @@ tr.bx--expandable-row--hover-v2 > td:last-of-type {
     fill: #5596e6; }
 
 .bx--snippet-button {
+  cursor: pointer;
   position: absolute;
   top: 0.5rem;
   right: 0.5rem;
@@ -2610,15 +3289,35 @@ tr.bx--expandable-row--hover-v2 > td:last-of-type {
     outline: 1px solid #3d70b2; }
 
 .bx--snippet .bx--btn--copy__feedback {
-  font-family: 'IBM Helvetica', Helvetica Neue, HelveticaNeue, Helvetica, sans-serif;
+  font-family: "ibm-plex-sans", Helvetica Neue, Arial, sans-serif;
   z-index: 8000;
   font-weight: 600;
   left: inherit;
   top: 1rem;
   right: 1.25rem; }
 
+/**
+ * Generic `deprecate` mixin that is being used to indicate that a component is
+ * no longer going to be present in the next major release of Carbon.
+ */
+/**
+ * Generic `deprecate` mixin that is being used to indicate that a component is
+ * no longer going to be present in the next major release of Carbon.
+ */
+/**
+ * Generic `deprecate` mixin that is being used to indicate that a component is
+ * no longer going to be present in the next major release of Carbon.
+ */
+/**
+ * Generic `deprecate` mixin that is being used to indicate that a component is
+ * no longer going to be present in the next major release of Carbon.
+ */
+/**
+ * Generic `deprecate` mixin that is being used to indicate that a component is
+ * no longer going to be present in the next major release of Carbon.
+ */
 .bx--card {
-  font-family: 'IBM Helvetica', Helvetica Neue, HelveticaNeue, Helvetica, sans-serif;
+  font-family: "ibm-plex-sans", Helvetica Neue, Arial, sans-serif;
   -webkit-box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.1);
   box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.1);
   display: -webkit-box;
@@ -2652,7 +3351,7 @@ tr.bx--expandable-row--hover-v2 > td:last-of-type {
     position: absolute;
     top: 1rem;
     right: 1rem;
-    z-index: 1;
+    z-index: 10000;
     margin: 0; }
 
 .bx--card-footer {
@@ -2669,6 +3368,15 @@ tr.bx--expandable-row--hover-v2 > td:last-of-type {
   background-color: #f0f3f6;
   padding-left: 1rem;
   padding-right: 1rem; }
+  .bx--card-footer > .bx--btn {
+    display: block;
+    overflow-x: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    margin-right: 0.25rem;
+    -webkit-box-flex: 1;
+    -ms-flex: 1;
+    flex: 1; }
 
 .bx--card-footer__link {
   font-size: 0.875rem; }
@@ -2689,42 +3397,40 @@ tr.bx--expandable-row--hover-v2 > td:last-of-type {
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  padding-top: 1rem; }
+  padding-top: 1rem;
+  width: 100%; }
 
 .bx--about__title {
   font-weight: 400;
-  padding-top: 1.5rem; }
+  padding-top: 1.5rem;
+  width: 100%; }
 
 .bx--about__title--name {
   font-size: 1.125rem;
   display: block;
-  width: 11.25rem;
   overflow-x: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
   font-weight: 400;
   margin: 0;
-  line-height: 1.2; }
+  line-height: 1.2;
+  overflow: hidden; }
 
 .bx--about__title--link {
   font-size: 0.75rem;
   display: block;
-  width: 11.25rem;
   overflow-x: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
-  display: inline;
   font-weight: 400;
   text-align: center; }
 
 .bx--about__title--additional-info {
   font-size: 0.75rem;
   display: block;
-  width: 11.25rem;
   overflow-x: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
-  display: inline;
   font-weight: 400;
   padding: 0;
   margin: 0;
@@ -2840,8 +3546,12 @@ tr.bx--expandable-row--hover-v2 > td:last-of-type {
   fill: #8c9ba5;
   cursor: pointer; }
 
+/**
+ * Generic `deprecate` mixin that is being used to indicate that a component is
+ * no longer going to be present in the next major release of Carbon.
+ */
 .bx--content-switcher {
-  font-family: 'IBM Helvetica', Helvetica Neue, HelveticaNeue, Helvetica, sans-serif;
+  font-family: "ibm-plex-sans", Helvetica Neue, Arial, sans-serif;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -2851,7 +3561,7 @@ tr.bx--expandable-row--hover-v2 > td:last-of-type {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-size: 0.875rem;
-  font-family: 'IBM Helvetica', Helvetica Neue, HelveticaNeue, Helvetica, sans-serif;
+  font-family: "ibm-plex-sans", Helvetica Neue, Arial, sans-serif;
   background-color: transparent;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -2879,6 +3589,12 @@ tr.bx--expandable-row--hover-v2 > td:last-of-type {
     background-color: #5596e6;
     border-color: #5596e6;
     color: #ffffff; }
+
+.bx--content-switcher__icon {
+  margin-right: 0.5rem;
+  fill: currentColor; }
+  .bx--content-switcher__icon * {
+    fill: currentColor; }
 
 .bx--content-switcher-btn:not(:last-of-type) {
   border-right: none; }
@@ -2914,6 +3630,10 @@ tr.bx--expandable-row--hover-v2 > td:last-of-type {
   .bx--content-switcher-btn.bx--content-switcher--selected:hover {
     border-color: #3d70b2; }
 
+/**
+ * Generic `deprecate` mixin that is being used to indicate that a component is
+ * no longer going to be present in the next major release of Carbon.
+ */
 .flatpickr-calendar {
   background: transparent;
   overflow: hidden;
@@ -3652,7 +4372,7 @@ span.flatpickr-weekday {
   width: 9rem; }
 
 .bx--date-picker__input {
-  font-family: 'IBM Helvetica', Helvetica Neue, HelveticaNeue, Helvetica, sans-serif;
+  font-family: "ibm-plex-sans", Helvetica Neue, Arial, sans-serif;
   font-size: 0.875rem;
   display: block;
   position: relative;
@@ -3681,7 +4401,7 @@ span.flatpickr-weekday {
   z-index: 1; }
 
 .bx--date-picker__icon + .bx--date-picker__input {
-  padding-left: 2.9rem; }
+  padding-left: 3rem; }
 
 .bx--date-picker--range {
   display: -webkit-box;
@@ -3703,6 +4423,7 @@ span.flatpickr-weekday {
 .flatpickr-calendar.open {
   -webkit-box-shadow: 0 12px 24px 0 rgba(0, 0, 0, 0.1);
   box-shadow: 0 12px 24px 0 rgba(0, 0, 0, 0.1);
+  background-color: #ffffff;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -3716,7 +4437,7 @@ span.flatpickr-weekday {
   -webkit-box-pack: center;
   -ms-flex-pack: center;
   justify-content: center;
-  padding: 0.875rem 1rem 0.25rem;
+  padding: 1rem 1rem 0.25rem;
   width: 17.8125rem;
   height: 14.375rem;
   border-radius: 0;
@@ -3734,14 +4455,15 @@ span.flatpickr-weekday {
 .bx--date-picker__month,
 .flatpickr-month {
   width: 100%;
-  margin-bottom: 0.2rem; }
+  margin-bottom: 0.25rem; }
 
 .bx--date-picker__month .flatpickr-prev-month,
 .bx--date-picker__month .flatpickr-next-month,
 .flatpickr-month .flatpickr-prev-month,
 .flatpickr-month .flatpickr-next-month {
   padding: 0;
-  line-height: 1.25rem; }
+  line-height: 1.25rem;
+  fill: #152934; }
   .bx--date-picker__month .flatpickr-prev-month:hover svg,
   .bx--date-picker__month .flatpickr-next-month:hover svg,
   .flatpickr-month .flatpickr-prev-month:hover svg,
@@ -3760,7 +4482,8 @@ span.flatpickr-weekday {
 
 .bx--date-picker__month .flatpickr-current-month .cur-month,
 .flatpickr-month .flatpickr-current-month .cur-month {
-  margin-right: 0.25rem; }
+  margin-right: 0.25rem;
+  color: #152934; }
 
 .numInputWrapper,
 .flatpickr-current-month .numInputWrapper {
@@ -3776,7 +4499,7 @@ span.flatpickr-weekday {
   border-radius: 0;
   min-width: 2.375rem;
   width: 2.375rem;
-  padding: .25rem; }
+  padding: 0.25rem; }
   .bx--date-picker__month .numInputWrapper .numInput:focus,
   .flatpickr-month .numInputWrapper .numInput:focus {
     outline: 1px solid #3d70b2; }
@@ -3923,16 +4646,31 @@ span.flatpickr-weekday {
 .bx--date-picker__weekdays,
 .flatpickr-weekdays {
   width: 14.0625rem;
-  margin-bottom: 0.325rem; }
+  margin-bottom: 0.25rem; }
 
+/**
+ * Generic `deprecate` mixin that is being used to indicate that a component is
+ * no longer going to be present in the next major release of Carbon.
+ */
+/**
+ * Generic `deprecate` mixin that is being used to indicate that a component is
+ * no longer going to be present in the next major release of Carbon.
+ */
+/**
+ * Generic `deprecate` mixin that is being used to indicate that a component is
+ * no longer going to be present in the next major release of Carbon.
+ */
+/**
+ * Generic `deprecate` mixin that is being used to indicate that a component is
+ * no longer going to be present in the next major release of Carbon.
+ */
 .bx--tabs {
   font-size: 0.875rem;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  font-family: 'IBM Helvetica', Helvetica Neue, HelveticaNeue, Helvetica, sans-serif;
+  font-family: "ibm-plex-sans", Helvetica Neue, Arial, sans-serif;
   color: #152934;
   font-weight: 600;
-  cursor: pointer;
   height: auto;
   width: 100%;
   position: relative; }
@@ -3951,7 +4689,8 @@ span.flatpickr-weekday {
   -webkit-box-pack: justify;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  padding: 0.8125rem 1rem;
+  padding: 0 1rem;
+  height: 2.5rem;
   cursor: pointer;
   background-color: #eef6fe; }
   .bx--tabs-trigger svg {
@@ -4013,7 +4752,8 @@ span.flatpickr-weekday {
 .bx--tabs__nav-item {
   font-size: 0.875rem;
   background-color: #ffffff;
-  padding: 0; }
+  padding: 0;
+  cursor: pointer; }
   .bx--tabs__nav-item:hover, .bx--tabs__nav-item:focus {
     background-color: #3d70b2; }
     @media screen and (min-width: 768px) {
@@ -4023,7 +4763,7 @@ span.flatpickr-weekday {
   @media screen and (min-width: 768px) {
     .bx--tabs__nav-item {
       background: transparent;
-      padding: 0.725rem 0 0.625rem; }
+      padding: 0.75rem 0 0.75rem; }
       .bx--tabs__nav-item + .bx--tabs__nav-item {
         margin-left: 3rem; } }
 
@@ -4057,7 +4797,7 @@ span.flatpickr-weekday {
     color: #ffffff; }
   @media screen and (min-width: 768px) {
     .bx--tabs__nav-link {
-      padding: 0.05rem;
+      padding: 0 0.125rem;
       width: auto; }
       .bx--tabs__nav-link:hover {
         color: #3d70b2; }
@@ -4068,9 +4808,25 @@ span.flatpickr-weekday {
         -webkit-box-shadow: 0 0 0 1px #3d70b2;
         box-shadow: 0 0 0 1px #3d70b2; } }
 
+/**
+ * Generic `deprecate` mixin that is being used to indicate that a component is
+ * no longer going to be present in the next major release of Carbon.
+ */
+/**
+ * Generic `deprecate` mixin that is being used to indicate that a component is
+ * no longer going to be present in the next major release of Carbon.
+ */
+/**
+ * Generic `deprecate` mixin that is being used to indicate that a component is
+ * no longer going to be present in the next major release of Carbon.
+ */
+/**
+ * Generic `deprecate` mixin that is being used to indicate that a component is
+ * no longer going to be present in the next major release of Carbon.
+ */
 .bx--breadcrumb {
   font-size: 0.875rem;
-  font-family: 'IBM Helvetica', Helvetica Neue, HelveticaNeue, Helvetica, sans-serif;
+  font-family: "ibm-plex-sans", Helvetica Neue, Arial, sans-serif;
   display: none; }
   @media screen and (min-width: 500px) {
     .bx--breadcrumb {
@@ -4081,7 +4837,7 @@ span.flatpickr-weekday {
       flex-wrap: wrap; } }
 
 .bx--breadcrumb-item {
-  margin-right: 1.29125rem;
+  margin-right: 1rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -4117,7 +4873,7 @@ span.flatpickr-weekday {
     border-bottom: none; } }
 
 .bx--detail-page-header--no-tabs {
-  font-family: 'IBM Helvetica', Helvetica Neue, HelveticaNeue, Helvetica, sans-serif;
+  font-family: "ibm-plex-sans", Helvetica Neue, Arial, sans-serif;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -4148,7 +4904,7 @@ span.flatpickr-weekday {
       max-height: 5.5rem; } }
 
 .bx--detail-page-header--with-tabs {
-  font-family: 'IBM Helvetica', Helvetica Neue, HelveticaNeue, Helvetica, sans-serif;
+  font-family: "ibm-plex-sans", Helvetica Neue, Arial, sans-serif;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -4377,14 +5133,23 @@ span.flatpickr-weekday {
     -webkit-transform: translate3d(0, -0.5rem, 0);
     transform: translate3d(0, -0.5rem, 0); } }
 
+/**
+ * Generic `deprecate` mixin that is being used to indicate that a component is
+ * no longer going to be present in the next major release of Carbon.
+ */
+/**
+ * Generic `deprecate` mixin that is being used to indicate that a component is
+ * no longer going to be present in the next major release of Carbon.
+ */
 .bx--dropdown {
-  font-family: 'IBM Helvetica', Helvetica Neue, HelveticaNeue, Helvetica, sans-serif;
+  font-family: "ibm-plex-sans", Helvetica Neue, Arial, sans-serif;
   font-size: 0.875rem;
   position: relative;
   list-style: none;
   display: block;
   background-color: #eef6fe;
   width: 100%;
+  height: 2.5rem;
   cursor: pointer;
   color: #152934; }
   .bx--dropdown:focus {
@@ -4413,10 +5178,11 @@ span.flatpickr-weekday {
   color: #5a6872; }
 
 .bx--dropdown-text {
+  height: 2.5rem;
   padding-top: 0.8125rem;
   padding-bottom: 0.8125rem;
   padding-left: 1rem;
-  padding-right: 2.25rem;
+  padding-right: 2.5rem;
   font-weight: 600;
   white-space: nowrap;
   overflow: hidden;
@@ -4426,24 +5192,36 @@ span.flatpickr-weekday {
 .bx--dropdown-list {
   -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1);
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1);
+  font-size: 0.875rem;
+  background-color: #ffffff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
   width: 100%;
   list-style: none;
   position: absolute;
   z-index: 7000;
   max-height: 0;
-  overflow: hidden;
-  -webkit-transition: 300ms cubic-bezier(0, 0, 0.25, 1);
-  transition: 300ms cubic-bezier(0, 0, 0.25, 1);
+  -webkit-transition: max-height 300ms cubic-bezier(0, 0, 0.25, 1);
+  transition: max-height 300ms cubic-bezier(0, 0, 0.25, 1);
+  overflow: hidden; }
+
+.bx--dropdown-item {
+  -webkit-transition: opacity 300ms cubic-bezier(0, 0, 0.25, 1);
+  transition: opacity 300ms cubic-bezier(0, 0, 0.25, 1);
   opacity: 0; }
 
 .bx--dropdown-link {
   display: block;
   color: currentColor;
   text-decoration: none;
-  padding-top: 1rem;
-  padding-bottom: 1rem;
-  padding-left: 1rem;
-  padding-right: 1.5rem; }
+  padding: 1rem 1.5rem 1rem 1rem;
+  text-overflow: ellipsis;
+  overflow: hidden; }
   .bx--dropdown-link:hover, .bx--dropdown-link:focus {
     background-color: #3d70b2;
     color: #ffffff;
@@ -4458,24 +5236,15 @@ span.flatpickr-weekday {
   transform: rotate(-180deg); }
 
 .bx--dropdown--open .bx--dropdown-list {
-  font-size: 0.875rem;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  background-color: #ffffff;
-  max-height: 50rem;
-  overflow: visible;
-  -webkit-transition: 300ms cubic-bezier(0.25, 0, 1, 1);
-  transition: 300ms cubic-bezier(0.25, 0, 1, 1);
-  opacity: 1; }
+  max-height: 15rem;
+  overflow: auto; }
 
 .bx--dropdown--open:focus .bx--dropdown-list {
   -webkit-box-shadow: 0 1px 0 0 #3d70b2, 1px 0 0 0 #3d70b2, -1px 0 0 0 #3d70b2;
   box-shadow: 0 1px 0 0 #3d70b2, 1px 0 0 0 #3d70b2, -1px 0 0 0 #3d70b2; }
+
+.bx--dropdown--open .bx--dropdown-item {
+  opacity: 1; }
 
 .bx--dropdown--disabled {
   opacity: 0.5;
@@ -4514,8 +5283,16 @@ span.flatpickr-weekday {
   100% {
     stroke-dashoffset: 240; } }
 
+/**
+ * Generic `deprecate` mixin that is being used to indicate that a component is
+ * no longer going to be present in the next major release of Carbon.
+ */
+/**
+ * Generic `deprecate` mixin that is being used to indicate that a component is
+ * no longer going to be present in the next major release of Carbon.
+ */
 .bx--modal {
-  font-family: 'IBM Helvetica', Helvetica Neue, HelveticaNeue, Helvetica, sans-serif;
+  font-family: "ibm-plex-sans", Helvetica Neue, Arial, sans-serif;
   position: fixed;
   top: 0;
   right: 0;
@@ -4544,6 +5321,9 @@ span.flatpickr-weekday {
     transition: opacity 200ms;
     visibility: visible; }
 
+.bx--modal--danger .bx--modal-container {
+  border-top-color: #e71d32; }
+
 .bx--modal-container {
   -webkit-box-shadow: 0 12px 24px 0 rgba(0, 0, 0, 0.1);
   box-shadow: 0 12px 24px 0 rgba(0, 0, 0, 0.1);
@@ -4567,7 +5347,7 @@ span.flatpickr-weekday {
       min-width: 500px;
       max-width: 75%;
       max-height: 90%;
-      padding: 2.75rem 3rem 0 3rem; } }
+      padding: 2.5rem 3rem 0 3rem; } }
   @media (min-width: 1024px) {
     .bx--modal-container {
       max-width: 50%;
@@ -4577,9 +5357,11 @@ span.flatpickr-weekday {
   margin-bottom: 1.5rem; }
 
 .bx--modal-header__label {
-  font-size: 0.875rem;
+  font-size: 0.75rem;
   color: #152934;
   font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
   margin-bottom: 0.5rem; }
 
 .bx--modal-header__heading {
@@ -4597,12 +5379,12 @@ span.flatpickr-weekday {
   background-color: #f0f3f6;
   margin-left: -1.5rem;
   margin-right: -1.5rem;
-  padding: 1.5rem 1.5rem; }
+  padding: 2rem 2rem; }
   @media (min-width: 600px) {
     .bx--modal-footer {
       margin-left: -3rem;
       margin-right: -3rem;
-      padding: 1.5rem 3rem; } }
+      padding: 2rem 3rem; } }
 
 .bx--modal-close {
   position: absolute;
@@ -4624,8 +5406,16 @@ span.flatpickr-weekday {
   width: 0.75rem;
   height: 0.75rem; }
 
+/**
+ * Generic `deprecate` mixin that is being used to indicate that a component is
+ * no longer going to be present in the next major release of Carbon.
+ */
+/**
+ * Generic `deprecate` mixin that is being used to indicate that a component is
+ * no longer going to be present in the next major release of Carbon.
+ */
 .bx--module {
-  font-family: 'IBM Helvetica', Helvetica Neue, HelveticaNeue, Helvetica, sans-serif;
+  font-family: "ibm-plex-sans", Helvetica Neue, Arial, sans-serif;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -4690,8 +5480,23 @@ span.flatpickr-weekday {
   .bx--module.bx--module--double {
     max-width: 62.5rem; }
 
+.bx--multi-select.bx--combo-box > .bx--list-box__field {
+  padding: 0 1rem; }
+
+.bx--multi-select.bx--combo-box input[role='combobox'] {
+  padding: 0;
+  outline: none; }
+
+/**
+ * Generic `deprecate` mixin that is being used to indicate that a component is
+ * no longer going to be present in the next major release of Carbon.
+ */
+/**
+ * Generic `deprecate` mixin that is being used to indicate that a component is
+ * no longer going to be present in the next major release of Carbon.
+ */
 .bx--inline-notification {
-  font-family: 'IBM Helvetica', Helvetica Neue, HelveticaNeue, Helvetica, sans-serif;
+  font-family: "ibm-plex-sans", Helvetica Neue, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-size: 0.875rem;
@@ -4789,12 +5594,20 @@ span.flatpickr-weekday {
   top: 3px;
   right: 1px; }
 
+/**
+ * Generic `deprecate` mixin that is being used to indicate that a component is
+ * no longer going to be present in the next major release of Carbon.
+ */
+/**
+ * Generic `deprecate` mixin that is being used to indicate that a component is
+ * no longer going to be present in the next major release of Carbon.
+ */
 .bx--toast-notification {
-  font-family: 'IBM Helvetica', Helvetica Neue, HelveticaNeue, Helvetica, sans-serif;
+  font-family: "ibm-plex-sans", Helvetica Neue, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  -webkit-box-shadow: 0px 3px 3px 0 rgba(0, 0, 0, 0.1);
-  box-shadow: 0px 3px 3px 0 rgba(0, 0, 0, 0.1);
+  -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -4802,10 +5615,7 @@ span.flatpickr-weekday {
   -ms-flex-pack: justify;
   justify-content: space-between;
   width: 16.875rem;
-  padding-top: 1rem;
-  padding-bottom: 0.5rem;
-  padding-right: 1rem;
-  padding-left: 1rem;
+  padding: 1rem 1rem 0.5rem 1rem;
   background-color: #ffffff;
   color: #152934;
   margin-top: 0.5rem;
@@ -4864,6 +5674,14 @@ span.flatpickr-weekday {
   color: #5a6872;
   line-height: 1; }
 
+/**
+ * Generic `deprecate` mixin that is being used to indicate that a component is
+ * no longer going to be present in the next major release of Carbon.
+ */
+/**
+ * Generic `deprecate` mixin that is being used to indicate that a component is
+ * no longer going to be present in the next major release of Carbon.
+ */
 .bx--tooltip--simple {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -4873,7 +5691,7 @@ span.flatpickr-weekday {
   align-items: center; }
 
 .bx--tooltip__trigger {
-  font-family: 'IBM Helvetica', Helvetica Neue, HelveticaNeue, Helvetica, sans-serif;
+  font-family: "ibm-plex-sans", Helvetica Neue, Arial, sans-serif;
   font-size: 1rem;
   display: -webkit-inline-box;
   display: -ms-inline-flexbox;
@@ -4885,7 +5703,7 @@ span.flatpickr-weekday {
   font-weight: 600; }
   .bx--tooltip__trigger svg {
     fill: #3d70b2;
-    margin-left: 0.625rem;
+    margin-left: 0.5rem;
     cursor: pointer; }
     .bx--tooltip__trigger svg:focus {
       outline: 1px solid #3d70b2;
@@ -4901,9 +5719,10 @@ span.flatpickr-weekday {
   max-width: 15rem;
   background: #ffffff;
   padding: 1.5rem;
-  border: 1px solid #dfe3e6; }
+  border: 1px solid #dfe3e6;
+  z-index: 10000; }
   .bx--tooltip p {
-    font-family: 'IBM Helvetica', Helvetica Neue, HelveticaNeue, Helvetica, sans-serif;
+    font-family: "ibm-plex-sans", Helvetica Neue, Arial, sans-serif;
     font-size: 0.875rem; }
   .bx--tooltip .bx--tooltip__label {
     font-weight: 600;
@@ -4923,7 +5742,7 @@ span.flatpickr-weekday {
     margin: 0 auto;
     content: ''; }
   .bx--tooltip[data-floating-menu-direction='left'] {
-    margin-left: -.6rem; }
+    margin-left: -0.75rem; }
     .bx--tooltip[data-floating-menu-direction='left']:before {
       left: auto;
       top: 44.7%;
@@ -4936,7 +5755,7 @@ span.flatpickr-weekday {
     -webkit-transform: rotate(45deg);
     transform: rotate(45deg); }
   .bx--tooltip[data-floating-menu-direction='right'] {
-    margin-left: 0.6rem; }
+    margin-left: 0.75rem; }
     .bx--tooltip[data-floating-menu-direction='right']:before {
       left: -0.375rem;
       top: 44.7%;
@@ -4949,7 +5768,7 @@ span.flatpickr-weekday {
 
 .bx--tooltip--simple__top,
 .bx--tooltip--simple__bottom {
-  font-family: 'IBM Helvetica', Helvetica Neue, HelveticaNeue, Helvetica, sans-serif;
+  font-family: "ibm-plex-sans", Helvetica Neue, Arial, sans-serif;
   font-size: 1.125rem;
   position: relative;
   display: -webkit-inline-box;
@@ -4962,11 +5781,11 @@ span.flatpickr-weekday {
   .bx--tooltip--simple__top svg,
   .bx--tooltip--simple__bottom svg {
     fill: #3d70b2;
-    margin-left: 0.625rem; }
+    margin-left: 0.5rem; }
   .bx--tooltip--simple__top:before, .bx--tooltip--simple__top:after,
   .bx--tooltip--simple__bottom:before,
   .bx--tooltip--simple__bottom:after {
-    font-family: 'IBM Helvetica', Helvetica Neue, HelveticaNeue, Helvetica, sans-serif;
+    font-family: "ibm-plex-sans", Helvetica Neue, Arial, sans-serif;
     position: absolute;
     display: none;
     background: #ffffff; }
@@ -5029,8 +5848,16 @@ span.flatpickr-weekday {
   -webkit-transform: rotate(-135deg);
   transform: rotate(-135deg); }
 
+/**
+ * Generic `deprecate` mixin that is being used to indicate that a component is
+ * no longer going to be present in the next major release of Carbon.
+ */
+/**
+ * Generic `deprecate` mixin that is being used to indicate that a component is
+ * no longer going to be present in the next major release of Carbon.
+ */
 .bx--tag {
-  font-family: 'IBM Helvetica', Helvetica Neue, HelveticaNeue, Helvetica, sans-serif;
+  font-family: "ibm-plex-sans", Helvetica Neue, Arial, sans-serif;
   font-size: 0.75rem;
   display: -webkit-inline-box;
   display: -ms-inline-flexbox;
@@ -5038,9 +5865,9 @@ span.flatpickr-weekday {
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  padding: 0 0.625rem;
+  padding: 0 0.5rem;
   height: 1.25rem;
-  margin: 0.1875rem;
+  margin: 0.125rem;
   border-radius: 0.9375rem; }
   .bx--tag:not(:first-child) {
     margin-left: 0; }
@@ -5075,6 +5902,14 @@ span.flatpickr-weekday {
   background-color: #fde876;
   color: #735f00; }
 
+/**
+ * Generic `deprecate` mixin that is being used to indicate that a component is
+ * no longer going to be present in the next major release of Carbon.
+ */
+/**
+ * Generic `deprecate` mixin that is being used to indicate that a component is
+ * no longer going to be present in the next major release of Carbon.
+ */
 .bx--left-nav__trigger {
   width: 3.75rem;
   height: 3.125rem;
@@ -5228,7 +6063,7 @@ span.flatpickr-weekday {
 .bx--global-header {
   -webkit-box-shadow: 0 6px 12px 0 rgba(0, 0, 0, 0.1);
   box-shadow: 0 6px 12px 0 rgba(0, 0, 0, 0.1);
-  font-family: 'IBM Helvetica', Helvetica Neue, HelveticaNeue, Helvetica, sans-serif;
+  font-family: "ibm-plex-sans", Helvetica Neue, Arial, sans-serif;
   width: 100%;
   position: fixed;
   top: 2.25rem;
@@ -5444,7 +6279,7 @@ span.flatpickr-weekday {
   background-color: #2d3f49; }
 
 .bx--top-nav {
-  font-family: 'IBM Helvetica', Helvetica Neue, HelveticaNeue, Helvetica, sans-serif;
+  font-family: "ibm-plex-sans", Helvetica Neue, Arial, sans-serif;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -6612,8 +7447,16 @@ span.flatpickr-weekday {
   position: fixed;
   z-index: 6000; }
 
+/**
+ * Generic `deprecate` mixin that is being used to indicate that a component is
+ * no longer going to be present in the next major release of Carbon.
+ */
+/**
+ * Generic `deprecate` mixin that is being used to indicate that a component is
+ * no longer going to be present in the next major release of Carbon.
+ */
 .bx--interior-left-nav {
-  font-family: 'IBM Helvetica', Helvetica Neue, HelveticaNeue, Helvetica, sans-serif;
+  font-family: "ibm-plex-sans", Helvetica Neue, Arial, sans-serif;
   width: 15.625rem;
   position: fixed;
   top: 5.625rem;
@@ -6909,6 +7752,10 @@ span.flatpickr-weekday {
     transition: transform 300ms cubic-bezier(0.5, 0, 0.1, 1);
     transition: transform 300ms cubic-bezier(0.5, 0, 0.1, 1), -webkit-transform 300ms cubic-bezier(0.5, 0, 0.1, 1); }
 
+/**
+ * Generic `deprecate` mixin that is being used to indicate that a component is
+ * no longer going to be present in the next major release of Carbon.
+ */
 .bx--select--inline {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -6928,11 +7775,15 @@ span.flatpickr-weekday {
       opacity: 0.5;
       cursor: not-allowed; }
 
+/**
+ * Generic `deprecate` mixin that is being used to indicate that a component is
+ * no longer going to be present in the next major release of Carbon.
+ */
 .bx--data-table-v2-container + .bx--pagination {
   border-top: 0; }
 
 .bx--pagination {
-  font-family: 'IBM Helvetica', Helvetica Neue, HelveticaNeue, Helvetica, sans-serif;
+  font-family: "ibm-plex-sans", Helvetica Neue, Arial, sans-serif;
   width: 100%;
   background-color: #ffffff;
   padding: 0.5rem 1rem;
@@ -6989,16 +7840,24 @@ span.flatpickr-weekday {
     fill: #3d70b2; }
   .bx--pagination__button:focus {
     outline: 1px solid #3d70b2; }
+  .bx--pagination__button:disabled:hover {
+    cursor: default; }
+    .bx--pagination__button:disabled:hover .bx--pagination__button-icon {
+      fill: #8c9ba5; }
 
 .bx--pagination__button--backward {
-  margin-left: 1.25rem;
-  margin-right: 1.75rem; }
+  margin-left: 1rem;
+  margin-right: 1.5rem; }
 
 .bx--pagination__button--forward {
-  margin-left: 1.75rem; }
+  margin-left: 1.5rem; }
+
+.bx--pagination__button--no-index {
+  border-right: 0;
+  margin-right: 1px; }
 
 .bx--pagination .bx--select {
-  margin-right: 0.625rem; }
+  margin-right: 0.5rem; }
 
 .bx--pagination .bx--select--inline {
   margin-right: 0;
@@ -7037,8 +7896,7 @@ span.flatpickr-weekday {
     height: 100%;
     border-left: 1px solid #dfe3e6;
     border-right: 1px solid #dfe3e6;
-    padding-left: 0.9rem;
-    padding-right: 0.9rem;
+    width: 2.625rem;
     margin: 0; }
   .bx--pagination--inline .bx--pagination__button--forward {
     border-right: 0; }
@@ -7048,12 +7906,20 @@ span.flatpickr-weekday {
     position: relative;
     top: -1.5px; }
   .bx--pagination--inline .bx--select-input {
-    padding-left: 0.9rem; }
+    padding-left: 1rem; }
   .bx--pagination--inline .bx--select__arrow {
     right: 0.7rem; }
 
+/**
+ * Generic `deprecate` mixin that is being used to indicate that a component is
+ * no longer going to be present in the next major release of Carbon.
+ */
+/**
+ * Generic `deprecate` mixin that is being used to indicate that a component is
+ * no longer going to be present in the next major release of Carbon.
+ */
 .bx--accordion {
-  font-family: 'IBM Helvetica', Helvetica Neue, HelveticaNeue, Helvetica, sans-serif;
+  font-family: "ibm-plex-sans", Helvetica Neue, Arial, sans-serif;
   list-style: none;
   width: 100%; }
 
@@ -7072,7 +7938,7 @@ span.flatpickr-weekday {
     border-bottom: 1px solid #dfe3e6; }
 
 .bx--accordion__heading {
-  font-family: 'IBM Helvetica', Helvetica Neue, HelveticaNeue, Helvetica, sans-serif;
+  font-family: "ibm-plex-sans", Helvetica Neue, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   letter-spacing: 0.5px;
@@ -7085,6 +7951,7 @@ span.flatpickr-weekday {
   padding: 0;
   cursor: pointer;
   width: 100%;
+  color: #152934;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -7147,7 +8014,7 @@ span.flatpickr-weekday {
     fill: #3d70b2; }
 
 .bx--progress {
-  font-family: 'IBM Helvetica', Helvetica Neue, HelveticaNeue, Helvetica, sans-serif;
+  font-family: "ibm-plex-sans", Helvetica Neue, Arial, sans-serif;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -7237,8 +8104,36 @@ span.flatpickr-weekday {
 .bx--progress-step--complete .bx--progress-line {
   background-color: #3d70b2; }
 
+/**
+ * Generic `deprecate` mixin that is being used to indicate that a component is
+ * no longer going to be present in the next major release of Carbon.
+ */
+/**
+ * Generic `deprecate` mixin that is being used to indicate that a component is
+ * no longer going to be present in the next major release of Carbon.
+ */
+/**
+ * Generic `deprecate` mixin that is being used to indicate that a component is
+ * no longer going to be present in the next major release of Carbon.
+ */
+/**
+ * Generic `deprecate` mixin that is being used to indicate that a component is
+ * no longer going to be present in the next major release of Carbon.
+ */
+/**
+ * Generic `deprecate` mixin that is being used to indicate that a component is
+ * no longer going to be present in the next major release of Carbon.
+ */
+/**
+ * Generic `deprecate` mixin that is being used to indicate that a component is
+ * no longer going to be present in the next major release of Carbon.
+ */
+/**
+ * Generic `deprecate` mixin that is being used to indicate that a component is
+ * no longer going to be present in the next major release of Carbon.
+ */
 .bx--toolbar {
-  font-family: 'IBM Helvetica', Helvetica Neue, HelveticaNeue, Helvetica, sans-serif;
+  font-family: "ibm-plex-sans", Helvetica Neue, Arial, sans-serif;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -7341,7 +8236,7 @@ span.flatpickr-weekday {
   right: 0.875rem; }
 
 .bx--time-picker__input-field {
-  font-family: 'IBM Helvetica', Helvetica Neue, HelveticaNeue, Helvetica, sans-serif;
+  font-family: "ibm-plex-sans", Helvetica Neue, Arial, sans-serif;
   font-size: 0.875rem;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -7361,6 +8256,14 @@ span.flatpickr-weekday {
     opacity: 0.5;
     cursor: not-allowed; }
 
+/**
+ * Generic `deprecate` mixin that is being used to indicate that a component is
+ * no longer going to be present in the next major release of Carbon.
+ */
+/**
+ * Generic `deprecate` mixin that is being used to indicate that a component is
+ * no longer going to be present in the next major release of Carbon.
+ */
 .bx--slider-container {
   max-width: 37.5rem;
   min-width: 12.5rem;
@@ -7435,12 +8338,15 @@ span.flatpickr-weekday {
   top: 0;
   -webkit-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
-  -webkit-transition: background 100ms cubic-bezier(0.5, 0, 0.1, 1), left 250ms cubic-bezier(0.5, 0, 0.1, 1), -webkit-transform 100ms cubic-bezier(0.5, 0, 0.1, 1);
-  transition: background 100ms cubic-bezier(0.5, 0, 0.1, 1), left 250ms cubic-bezier(0.5, 0, 0.1, 1), -webkit-transform 100ms cubic-bezier(0.5, 0, 0.1, 1);
-  transition: transform 100ms cubic-bezier(0.5, 0, 0.1, 1), background 100ms cubic-bezier(0.5, 0, 0.1, 1), left 250ms cubic-bezier(0.5, 0, 0.1, 1);
-  transition: transform 100ms cubic-bezier(0.5, 0, 0.1, 1), background 100ms cubic-bezier(0.5, 0, 0.1, 1), left 250ms cubic-bezier(0.5, 0, 0.1, 1), -webkit-transform 100ms cubic-bezier(0.5, 0, 0.1, 1);
+  -webkit-transition: background 100ms cubic-bezier(0.5, 0, 0.1, 1), -webkit-transform 100ms cubic-bezier(0.5, 0, 0.1, 1);
+  transition: background 100ms cubic-bezier(0.5, 0, 0.1, 1), -webkit-transform 100ms cubic-bezier(0.5, 0, 0.1, 1);
+  transition: transform 100ms cubic-bezier(0.5, 0, 0.1, 1), background 100ms cubic-bezier(0.5, 0, 0.1, 1);
+  transition: transform 100ms cubic-bezier(0.5, 0, 0.1, 1), background 100ms cubic-bezier(0.5, 0, 0.1, 1), -webkit-transform 100ms cubic-bezier(0.5, 0, 0.1, 1);
   cursor: pointer;
   outline: none; }
+  .bx--slider__thumb--clicked {
+    -webkit-transition: left 250ms cubic-bezier(0.5, 0, 0.1, 1);
+    transition: left 250ms cubic-bezier(0.5, 0, 0.1, 1); }
   .bx--slider__thumb:hover {
     -webkit-transform: translate(-50%, -50%) scale(1.05);
     transform: translate(-50%, -50%) scale(1.05); }
@@ -7458,7 +8364,7 @@ span.flatpickr-weekday {
 
 .bx--slider-text-input,
 .bx-slider-text-input {
-  width: 2.75rem;
+  width: 3.75rem;
   min-width: 0;
   height: 2rem;
   padding: 0;
@@ -7470,6 +8376,18 @@ span.flatpickr-weekday {
   .bx-slider-text-input::-webkit-inner-spin-button {
     display: none; }
 
+/**
+ * Generic `deprecate` mixin that is being used to indicate that a component is
+ * no longer going to be present in the next major release of Carbon.
+ */
+/**
+ * Generic `deprecate` mixin that is being used to indicate that a component is
+ * no longer going to be present in the next major release of Carbon.
+ */
+/**
+ * Generic `deprecate` mixin that is being used to indicate that a component is
+ * no longer going to be present in the next major release of Carbon.
+ */
 .bx--order-summary {
   font-size: 0.875rem;
   background-color: #ffffff;
@@ -7616,6 +8534,10 @@ span.flatpickr-weekday {
   margin-bottom: 0.25rem;
   text-transform: uppercase; }
 
+/**
+ * Generic `deprecate` mixin that is being used to indicate that a component is
+ * no longer going to be present in the next major release of Carbon.
+ */
 .bx--tile {
   -webkit-box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.1);
   box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.1);
@@ -7685,6 +8607,8 @@ span.flatpickr-weekday {
   right: 1rem;
   opacity: 0; }
   .bx--tile__checkmark svg {
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.25);
     fill: rgba(61, 112, 178, 0.25); }
 
 .bx--tile__chevron {
@@ -7738,7 +8662,8 @@ span.flatpickr-weekday {
   opacity: 1; }
 
 .bx--tile-input:checked + .bx--tile__checkmark svg {
-  fill: #3d70b2; }
+  fill: #3d70b2;
+  background-color: #ffffff; }
 
 .bx--tile-content {
   width: 100%;
@@ -7747,6 +8672,14 @@ span.flatpickr-weekday {
 .bx--tile-input {
   display: none; }
 
+/**
+ * Generic `deprecate` mixin that is being used to indicate that a component is
+ * no longer going to be present in the next major release of Carbon.
+ */
+/**
+ * Generic `deprecate` mixin that is being used to indicate that a component is
+ * no longer going to be present in the next major release of Carbon.
+ */
 .bx--lightbox {
   width: 66rem;
   -webkit-box-shadow: 0 12px 24px 0 rgba(0, 0, 0, 0.1);
@@ -7784,6 +8717,14 @@ span.flatpickr-weekday {
   background: #ffffff;
   overflow: hidden; }
 
+/**
+ * Generic `deprecate` mixin that is being used to indicate that a component is
+ * no longer going to be present in the next major release of Carbon.
+ */
+/**
+ * Generic `deprecate` mixin that is being used to indicate that a component is
+ * no longer going to be present in the next major release of Carbon.
+ */
 .bx--carousel {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -7812,7 +8753,7 @@ span.flatpickr-weekday {
   width: auto; }
 
 .bx--filmstrip-btn {
-  font-family: 'IBM Helvetica', Helvetica Neue, HelveticaNeue, Helvetica, sans-serif;
+  font-family: "ibm-plex-sans", Helvetica Neue, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   letter-spacing: 0.5px;
@@ -7838,7 +8779,7 @@ span.flatpickr-weekday {
     outline: 1px solid #3d70b2; }
 
 .bx--carousel__btn {
-  font-family: 'IBM Helvetica', Helvetica Neue, HelveticaNeue, Helvetica, sans-serif;
+  font-family: "ibm-plex-sans", Helvetica Neue, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   letter-spacing: 0.5px;
@@ -7869,7 +8810,7 @@ span.flatpickr-weekday {
     fill: #3d70b2; }
 
 .bx--carousel__item {
-  font-family: 'IBM Helvetica', Helvetica Neue, HelveticaNeue, Helvetica, sans-serif;
+  font-family: "ibm-plex-sans", Helvetica Neue, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   letter-spacing: 0.5px;
@@ -7894,13 +8835,25 @@ span.flatpickr-weekday {
 .bx--carousel__item--active {
   outline: 1px solid #3d70b2; }
 
+/**
+ * Generic `deprecate` mixin that is being used to indicate that a component is
+ * no longer going to be present in the next major release of Carbon.
+ */
+/**
+ * Generic `deprecate` mixin that is being used to indicate that a component is
+ * no longer going to be present in the next major release of Carbon.
+ */
+/**
+ * Generic `deprecate` mixin that is being used to indicate that a component is
+ * no longer going to be present in the next major release of Carbon.
+ */
 .bx--footer--bottom-fixed {
   position: fixed;
   bottom: 0;
   left: 0; }
 
 .bx--footer {
-  font-family: 'IBM Helvetica', Helvetica Neue, HelveticaNeue, Helvetica, sans-serif;
+  font-family: "ibm-plex-sans", Helvetica Neue, Arial, sans-serif;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
   display: -webkit-box;
@@ -7954,6 +8907,10 @@ span.flatpickr-weekday {
 .bx--footer-cta {
   margin-left: auto; }
 
+/**
+ * Generic `deprecate` mixin that is being used to indicate that a component is
+ * no longer going to be present in the next major release of Carbon.
+ */
 .bx--fab {
   -webkit-transform: rotate(0);
   transform: rotate(0);
