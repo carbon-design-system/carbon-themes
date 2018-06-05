@@ -1,6 +1,6 @@
 {
   "name": "carbon-themes",
-  "version": "0.0.0-development",
+  "version": "1.6.1",
   "description": "A collection of themes for use with Carbon Components",
   "main": "index.js",
   "repository": "git@github.com:carbon-design-system/carbon-themes.git",
