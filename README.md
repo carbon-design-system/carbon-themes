@@ -1,3 +1,11 @@
+# Deprecated
+
+ This project is deprecated and will no longer be updated, please use the icon package under [Carbon Elements](https://github.com/IBM/carbon-elements/tree/master/packages/themes) instead.
+
+ For help migrating from v7 to this new package, checkout our [migration guide](https://github.com/IBM/carbon-elements/blob/master/docs/migration/10.x-themes.md).
+
+ ---
+
 ### Carbon Themes
 
 #### A collection of themes for use with Carbon Components
