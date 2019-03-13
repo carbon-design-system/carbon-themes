@@ -1,6 +1,6 @@
 # Deprecated
 
- This project is deprecated and will no longer be updated, please use the icon package under [Carbon Elements](https://github.com/IBM/carbon-elements/tree/master/packages/themes) instead.
+ This project is deprecated and will no longer be updated, please use the theme package under [Carbon Elements](https://github.com/IBM/carbon-elements/tree/master/packages/themes) instead.
 
  For help migrating to this new package, checkout our [migration guide](https://github.com/IBM/carbon-elements/blob/master/docs/migration/10.x-themes.md).
 
