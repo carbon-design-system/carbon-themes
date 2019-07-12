@@ -1,8 +1,7 @@
-### Carbon Themes
+# Project moved to [`carbon-design-system/carbon`](https://github.com/carbon-design-system/carbon)
 
-#### A collection of themes for use with Carbon Components
-- [Carbon Design System](http://www.carbondesignsystem.com/)
-- [Carbon Components](https://github.com/carbon-design-system/carbon-components)
+This project has been moved to the Carbon monorepo. For more information about
+this transition, you can check out [this post](https://medium.com/carbondesign/carbon-is-moving-to-a-monorepo-c6bfcbe87de0).
 
-Don't see the theme you're looking for? Create your own with our [Theme Builder](http://themes.carbondesignsystem.com/)
-
+All issues and pull requests for this package should be made on that repo
+instead.
